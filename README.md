@@ -1,13 +1,15 @@
 # Heroes of Valor player ranking
 
-Last updated: Fri Jun 27 08:28:42 AM CEST 2025
+Last updated: Fri Jun 27 08:31:31 AM CEST 2025
 
 This leaderboard is derived from the two official leaderboards found here:
 
 - Total score: <https://steamcommunity.com/stats/2504090/leaderboards/16656646>
 - PvP score: <https://steamcommunity.com/stats/2504090/leaderboards/16808192>
 
-The last "Score ratio" column shows the player's total score divided by their PvP score.
+The last "Score ratio" column shows the player's total score divided by their
+PvP score. It's only calculated for players who are present on both
+leaderboards (as they only show the top 200 players).
 <br/>
 | I     | Name as link                                                                                                      | Total rank | Pvp rank | Total score | Pvp score | Score ratio |
 | :---- | :---------------------------------------------------------------------------------------------------------------- | :--------- | :------- | :---------- | :-------- | :---------- |
@@ -69,8 +71,8 @@ The last "Score ratio" column shows the player's total score divided by their Pv
 | 55    | <a href="https://steamcommunity.com/profiles/76561198062382212/stats/2504090/">tzw. kocik</a>                     | 178        | 128      | 775354      | 291326    | 0.376       |
 | 56    | <a href="https://steamcommunity.com/profiles/76561198044969962/stats/2504090/">Lonely Dragon</a>                  | 66         | 43       | 1320977     | 494473    | 0.374       |
 | 57    | <a href="https://steamcommunity.com/profiles/76561199506914556/stats/2504090/">Pyrre</a>                          | 166        | 126      | 801737      | 294108    | 0.367       |
-| 58    | <a href="https://steamcommunity.com/profiles/76561198212203249/stats/2504090/">yungIcey</a>                       | 160        | 123      | 815100      | 297496    | 0.365       |
-| 59    | <a href="https://steamcommunity.com/profiles/76561198148923885/stats/2504090/">Jacob</a>                          | 56         | 37       | 1404962     | 511850    | 0.364       |
+| 58    | <a href="https://steamcommunity.com/profiles/76561198148923885/stats/2504090/">Jacob</a>                          | 56         | 37       | 1404962     | 511850    | 0.364       |
+| 59    | <a href="https://steamcommunity.com/profiles/76561198212203249/stats/2504090/">yungIcey</a>                       | 160        | 123      | 817741      | 297496    | 0.364       |
 | 60    | <a href="https://steamcommunity.com/profiles/76561198132946300/stats/2504090/">Knoop</a>                          | 135        | 108      | 896585      | 322146    | 0.359       |
 | 61    | <a href="https://steamcommunity.com/profiles/76561198417517303/stats/2504090/">saLamanca</a>                      | 174        | 141      | 781699      | 280319    | 0.359       |
 | 62    | <a href="https://steamcommunity.com/profiles/76561198293664472/stats/2504090/">Rxptrz_</a>                        | 179        | 148      | 773696      | 275767    | 0.356       |
@@ -97,7 +99,7 @@ The last "Score ratio" column shows the player's total score divided by their Pv
 | 83    | <a href="https://steamcommunity.com/id/SaintLuv/stats/2504090/">Sidney ♡</a>                                      | 58         | 93       | 1383957     | 351912    | 0.254       |
 | 84    | <a href="https://steamcommunity.com/profiles/76561198117268383/stats/2504090/">szkodnik</a>                       | 123        | 195      | 959452      | 243445    | 0.254       |
 | 85    | <a href="https://steamcommunity.com/profiles/76561198168323592/stats/2504090/">Thorins</a>                        | 76         | 114      | 1241361     | 311401    | 0.251       |
-| 86    | <a href="https://steamcommunity.com/profiles/76561198269369311/stats/2504090/">wave</a>                           | 118        | 192      | 988916      | 247388    | 0.25        |
+| 86    | <a href="https://steamcommunity.com/profiles/76561198269369311/stats/2504090/">wave</a>                           | 119        | 192      | 988916      | 247388    | 0.25        |
 | 87    | <a href="https://steamcommunity.com/id/NewBieOrg/stats/2504090/">[CZETR] NewBie'</a>                              | 55         | 91       | 1437672     | 353024    | 0.246       |
 | 88    | <a href="https://steamcommunity.com/id/7656119804405968/stats/2504090/">Delta</a>                                 | 45         | 76       | 1581925     | 377321    | 0.239       |
 | 89    | <a href="https://steamcommunity.com/profiles/76561198202317834/stats/2504090/">Abbe</a>                           | 24         | 40       | 2119434     | 501224    | 0.236       |
@@ -124,13 +126,13 @@ The last "Score ratio" column shows the player's total score divided by their Pv
 | 110   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 12         | 86       | 2657963     | 361311    | 0.136       |
 | 111   | <a href="https://steamcommunity.com/id/ABlatnik5/stats/2504090/">Durthu</a>                                       | 3          | 27       | 4237371     | 570989    | 0.135       |
 | 112   | <a href="https://steamcommunity.com/profiles/76561198056602630/stats/2504090/">Premium</a>                        | 4          | 83       | 3802717     | 366829    | 0.096       |
-| 113   | <a href="https://steamcommunity.com/profiles/76561198072853322/stats/2504090/">Brap</a>                           | 9          |          | 2988431     |           |             |
-| 114   | <a href="https://steamcommunity.com/profiles/76561199015285140/stats/2504090/">Furry lover</a>                    | 10         |          | 2878552     |           |             |
+| 113   | <a href="https://steamcommunity.com/profiles/76561198072853322/stats/2504090/">Brap</a>                           | 9          |          | 2995497     |           |             |
+| 114   | <a href="https://steamcommunity.com/profiles/76561199015285140/stats/2504090/">Furry lover</a>                    | 10         |          | 2879286     |           |             |
 | 115   | <a href="https://steamcommunity.com/profiles/76561198200706150/stats/2504090/">Итальянец</a>                      | 11         |          | 2877910     |           |             |
 | 116   | <a href="https://steamcommunity.com/profiles/76561199191727188/stats/2504090/">[BDF] clancy brown</a>             | 13         |          | 2514767     |           |             |
 | 117   | <a href="https://steamcommunity.com/id/ginniboss/stats/2504090/">Ginni</a>                                        | 15         |          | 2416296     |           |             |
 | 118   | <a href="https://steamcommunity.com/profiles/76561198039173811/stats/2504090/">The Lonely Wolf</a>                | 17         |          | 2401117     |           |             |
-| 119   | <a href="https://steamcommunity.com/id/ELVIIIIIS/stats/2504090/">[E]LVIIIIIS[P]RESLEY</a>                         | 20         |          | 2297527     |           |             |
+| 119   | <a href="https://steamcommunity.com/id/ELVIIIIIS/stats/2504090/">[E]LVIIIIIS[P]RESLEY</a>                         | 20         |          | 2304363     |           |             |
 | 120   | <a href="https://steamcommunity.com/id/OlraNary/stats/2504090/">OrNary</a>                                        | 22         |          | 2202287     |           |             |
 | 121   | <a href="https://steamcommunity.com/id/leurisi/stats/2504090/">Leurisi</a>                                        | 23         |          | 2183912     |           |             |
 | 122   | <a href="https://steamcommunity.com/profiles/76561198050971986/stats/2504090/">Layflat</a>                        | 27         |          | 2069482     |           |             |
@@ -172,7 +174,7 @@ The last "Score ratio" column shows the player's total score divided by their Pv
 | 158   | <a href="https://steamcommunity.com/profiles/76561198294564375/stats/2504090/">ZawiszaCzorny</a>                  | 115        |          | 1012119     |           |             |
 | 159   | <a href="https://steamcommunity.com/profiles/76561198120187579/stats/2504090/">Tribbun</a>                        | 116        |          | 997126      |           |             |
 | 160   | <a href="https://steamcommunity.com/profiles/76561198304218963/stats/2504090/">♦Saint-Kaitech♦</a>                | 117        |          | 993116      |           |             |
-| 161   | <a href="https://steamcommunity.com/profiles/76561198074192489/stats/2504090/">Mayhem</a>                         | 119        |          | 988508      |           |             |
+| 161   | <a href="https://steamcommunity.com/profiles/76561198074192489/stats/2504090/">Mayhem</a>                         | 118        |          | 992786      |           |             |
 | 162   | <a href="https://steamcommunity.com/profiles/76561198029876026/stats/2504090/">[FGG] El Bolato</a>                | 120        |          | 986038      |           |             |
 | 163   | <a href="https://steamcommunity.com/id/keustyw/stats/2504090/">keusty</a>                                         | 121        |          | 976562      |           |             |
 | 164   | <a href="https://steamcommunity.com/id/RNGunther45/stats/2504090/">Mc Ronny</a>                                   | 126        |          | 949278      |           |             |
