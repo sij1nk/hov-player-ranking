@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: %DATE%
+Last updated: **%DATE%** (updated every 6 hours)
 
 This leaderboard is derived from the two official leaderboards found here:
 
