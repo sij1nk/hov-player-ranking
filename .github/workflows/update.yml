@@ -16,7 +16,8 @@ jobs:
           npm run generate
       - name: Push to master
         run: |
-          git config --global user.name "workflow"
+          git config --global user.name "sij1nk"
+          git config --global user.email "gergo.rajnavolgyi@gmail.com"
           git add .
           git commit -m "Update"
           git push --set-upstream origin master
