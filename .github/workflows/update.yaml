@@ -1,0 +1,20 @@
+on:
+  schedule:
+    - cron: "0 * * * *" # Every hour
+
+name: Update leaderboard
+jobs:
+  update:
+    runs-on: node:22-alpine
+    steps:
+      - name: Generate leaderboard
+        run: |
+          npm ci
+          npm run build
+          npm run generate
+      - name: Push to master
+        run: |
+          apk add git
+          git add .
+          git commit -m "Update"
+          git push --set-upstream origin master
