@@ -18,8 +18,8 @@ export type Player = PlayerCommon & {
 };
 
 export type PlayerMarkdownEntry = {
-  i: number;
-  nameAsLink: string;
+  rank: number;
+  player: string;
   totalRank?: number;
   pvpRank?: number;
   totalScore?: number;
@@ -32,8 +32,8 @@ export function playerToMarkdownEntry(
   i: number
 ): PlayerMarkdownEntry {
   return {
-    i,
-    nameAsLink: `<a href="${p.profileLink}">${p.name}</a>`,
+    rank: i,
+    player: `<a href="${p.profileLink}">${p.name}</a>`,
     totalRank: p.totalRank,
     pvpRank: p.pvpRank,
     totalScore: p.totalScore,

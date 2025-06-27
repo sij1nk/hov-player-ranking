@@ -1,3 +1,12 @@
+# Heroes of Valor player ranking
+
+This leaderboard is derived from the two official leaderboards found here:
+
+- Total score: <https://steamcommunity.com/stats/2504090/leaderboards/16656646>
+- PvP score: <https://steamcommunity.com/stats/2504090/leaderboards/16808192>
+
+The last "Score ratio" column shows the player's total score divided by their PvP score.
+<br/>
 | I     | Name as link                                                                                                      | Total rank | Pvp rank | Total score | Pvp score | Score ratio |
 | :---- | :---------------------------------------------------------------------------------------------------------------- | :--------- | :------- | :---------- | :-------- | :---------- |
 | 0     | <a href="https://steamcommunity.com/profiles/76561198081947976/stats/2504090/">bippsey</a>                        | 97         | 7        | 1107720     | 916662    | 0.828       |
@@ -104,22 +113,22 @@
 | 101   | <a href="https://steamcommunity.com/profiles/76561198325354159/stats/2504090/">Trusted Member of Society</a>      | 26         | 72       | 2096210     | 407645    | 0.194       |
 | 102   | <a href="https://steamcommunity.com/profiles/76561198253172551/stats/2504090/">[BDF] ẞjørnke03™</a>               | 1          | 5        | 5148762     | 951918    | 0.185       |
 | 103   | <a href="https://steamcommunity.com/id/Zaibazy/stats/2504090/">Zaibazy</a>                                        | 16         | 62       | 2410904     | 434992    | 0.18        |
-| 104   | <a href="https://steamcommunity.com/profiles/76561198021551726/stats/2504090/">[BDF] DIRK</a>                     | 2          | 10       | 4707940     | 833971    | 0.177       |
+| 104   | <a href="https://steamcommunity.com/profiles/76561198021551726/stats/2504090/">[BDF] DIRK</a>                     | 2          | 10       | 4709661     | 834007    | 0.177       |
 | 105   | <a href="https://steamcommunity.com/profiles/76561198061036994/stats/2504090/">AMOK Sago 420</a>                  | 19         | 74       | 2328927     | 396751    | 0.17        |
 | 106   | <a href="https://steamcommunity.com/id/Thrymbor/stats/2504090/">Thrymbor</a>                                      | 43         | 169      | 1678223     | 258540    | 0.154       |
 | 107   | <a href="https://steamcommunity.com/id/kwizyt/stats/2504090/">Kwizyt</a>                                          | 18         | 95       | 2333187     | 346830    | 0.149       |
 | 108   | <a href="https://steamcommunity.com/profiles/76561198386358088/stats/2504090/">✵【 Steven 】</a>                    | 28         | 121      | 2048226     | 300770    | 0.147       |
 | 109   | <a href="https://steamcommunity.com/id/Escoberry/stats/2504090/">󠀡󠀡᠌ ⁧⁧Escoberry</a>                            | 5          | 49       | 3465350     | 478435    | 0.138       |
-| 110   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 12         | 86       | 2646391     | 361020    | 0.136       |
+| 110   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 12         | 86       | 2657963     | 361311    | 0.136       |
 | 111   | <a href="https://steamcommunity.com/id/ABlatnik5/stats/2504090/">Durthu</a>                                       | 3          | 27       | 4237371     | 570989    | 0.135       |
 | 112   | <a href="https://steamcommunity.com/profiles/76561198056602630/stats/2504090/">Premium</a>                        | 4          | 83       | 3802717     | 366829    | 0.096       |
 | 113   | <a href="https://steamcommunity.com/profiles/76561198072853322/stats/2504090/">Brap</a>                           | 9          |          | 2988431     |           |             |
 | 114   | <a href="https://steamcommunity.com/profiles/76561198200706150/stats/2504090/">Итальянец</a>                      | 10         |          | 2877910     |           |             |
-| 115   | <a href="https://steamcommunity.com/profiles/76561199015285140/stats/2504090/">Furry lover</a>                    | 11         |          | 2875565     |           |             |
+| 115   | <a href="https://steamcommunity.com/profiles/76561199015285140/stats/2504090/">Furry lover</a>                    | 11         |          | 2877460     |           |             |
 | 116   | <a href="https://steamcommunity.com/profiles/76561199191727188/stats/2504090/">[BDF] clancy brown</a>             | 13         |          | 2514767     |           |             |
 | 117   | <a href="https://steamcommunity.com/id/ginniboss/stats/2504090/">Ginni</a>                                        | 15         |          | 2416296     |           |             |
 | 118   | <a href="https://steamcommunity.com/profiles/76561198039173811/stats/2504090/">The Lonely Wolf</a>                | 17         |          | 2401117     |           |             |
-| 119   | <a href="https://steamcommunity.com/id/ELVIIIIIS/stats/2504090/">[E]LVIIIIIS[P]RESLEY</a>                         | 20         |          | 2292804     |           |             |
+| 119   | <a href="https://steamcommunity.com/id/ELVIIIIIS/stats/2504090/">[E]LVIIIIIS[P]RESLEY</a>                         | 20         |          | 2297527     |           |             |
 | 120   | <a href="https://steamcommunity.com/id/OlraNary/stats/2504090/">OrNary</a>                                        | 22         |          | 2202287     |           |             |
 | 121   | <a href="https://steamcommunity.com/id/leurisi/stats/2504090/">Leurisi</a>                                        | 23         |          | 2183912     |           |             |
 | 122   | <a href="https://steamcommunity.com/profiles/76561198050971986/stats/2504090/">Layflat</a>                        | 27         |          | 2069482     |           |             |
