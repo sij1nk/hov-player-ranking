@@ -19,5 +19,4 @@ possible value. For these players, the minimum and maximum values are shown.
 
 Players are ranked based on their exact score ratio (if known), or their
 lowest possible score ratio (if unknown).
-
 <br/>
