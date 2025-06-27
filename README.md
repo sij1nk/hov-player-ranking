@@ -1,14 +1,14 @@
 # Heroes of Valor player ranking
 
-Last updated: Fri Jun 27 08:32:47 AM CEST 2025
+Last updated: Fri Jun 27 08:35:42 AM CEST 2025
 
 This leaderboard is derived from the two official leaderboards found here:
 
 - Total score: <https://steamcommunity.com/stats/2504090/leaderboards/16656646>
 - PvP score: <https://steamcommunity.com/stats/2504090/leaderboards/16808192>
 
-The last "Score ratio" column shows the player's total score divided by their
-PvP score. It's only calculated for players who are present on both
+The last "Score ratio" column shows the player's PvP score divided by their
+total score. It's only calculated for players who are present on both
 leaderboards (as they only show the top 200 players).
 <br/>
 | Rank  | Player                                                                                                            | Total rank | Pvp rank | Total score | Pvp score | Score ratio |
@@ -123,11 +123,11 @@ leaderboards (as they only show the top 200 players).
 | 108   | <a href="https://steamcommunity.com/id/kwizyt/stats/2504090/">Kwizyt</a>                                          | 19         | 95       | 2333187     | 346830    | 0.149       |
 | 109   | <a href="https://steamcommunity.com/profiles/76561198386358088/stats/2504090/">✵【 Steven 】</a>                    | 28         | 121      | 2048226     | 300770    | 0.147       |
 | 110   | <a href="https://steamcommunity.com/id/Escoberry/stats/2504090/">󠀡󠀡᠌ ⁧⁧Escoberry</a>                            | 5          | 49       | 3465350     | 478435    | 0.138       |
-| 111   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 12         | 86       | 2657963     | 361311    | 0.136       |
-| 112   | <a href="https://steamcommunity.com/id/ABlatnik5/stats/2504090/">Durthu</a>                                       | 3          | 27       | 4237371     | 570989    | 0.135       |
+| 111   | <a href="https://steamcommunity.com/id/ABlatnik5/stats/2504090/">Durthu</a>                                       | 3          | 27       | 4237371     | 570989    | 0.135       |
+| 112   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 12         | 86       | 2669207     | 361311    | 0.135       |
 | 113   | <a href="https://steamcommunity.com/profiles/76561198056602630/stats/2504090/">Premium</a>                        | 4          | 83       | 3802717     | 366829    | 0.096       |
 | 114   | <a href="https://steamcommunity.com/profiles/76561198072853322/stats/2504090/">Brap</a>                           | 9          |          | 2995497     |           |             |
-| 115   | <a href="https://steamcommunity.com/profiles/76561199015285140/stats/2504090/">Furry lover</a>                    | 10         |          | 2880065     |           |             |
+| 115   | <a href="https://steamcommunity.com/profiles/76561199015285140/stats/2504090/">Furry lover</a>                    | 10         |          | 2880447     |           |             |
 | 116   | <a href="https://steamcommunity.com/profiles/76561198200706150/stats/2504090/">Итальянец</a>                      | 11         |          | 2877910     |           |             |
 | 117   | <a href="https://steamcommunity.com/profiles/76561199191727188/stats/2504090/">[BDF] clancy brown</a>             | 13         |          | 2514767     |           |             |
 | 118   | <a href="https://steamcommunity.com/id/ginniboss/stats/2504090/">Ginni</a>                                        | 15         |          | 2416296     |           |             |
