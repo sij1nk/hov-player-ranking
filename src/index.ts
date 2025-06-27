@@ -1,18 +1,9 @@
-import fetch from "node-fetch";
-import { parse } from "node-html-parser";
-import process from "node:process";
+import { fetchPlayersFromLeaderboard } from "./fetch.ts";
 
-const result = await fetch(
-  "https://steamcommunity.com/stats/2504090/leaderboards/16808192?sr=1"
+const pvpScoreLeaderboardId = "16808192";
+const totalScoreLeaderboardId = "16656646";
+
+const totalScoreLeaderboard = await fetchPlayersFromLeaderboard(
+  totalScoreLeaderboardId
 );
-const text = await result.text();
-const root = parse(text);
-const stats = root.querySelector("#stats");
-if (!stats) {
-  console.error("no stats");
-  process.exit(1);
-}
-
-const first = stats.querySelectorAll(".lbentry")[0];
-const pname = first.querySelector(".playerName")?.innerText;
-console.log(pname);
+console.log(JSON.stringify(totalScoreLeaderboard));
