@@ -8,7 +8,8 @@
     "lint": "eslint",
     "format": "prettier -w .",
     "build": "esbuild src/index.ts --platform=node --target=node22 --format=esm --bundle --minify --outfile=dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node dist/index.js > out.json; tablemark out.json > README.md; rm out.json"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
@@ -17,6 +18,7 @@
     "esbuild": "^0.25.5",
     "eslint": "^9.29.0",
     "prettier": "^3.6.1",
+    "tablemark-cli": "^3.0.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.0"
   },

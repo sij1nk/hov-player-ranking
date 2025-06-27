@@ -9,18 +9,17 @@ const urlBase = "https://steamcommunity.com/stats/2504090/leaderboards";
 export async function fetchPlayersFromLeaderboard(
   leaderboardId: string
 ): Promise<LeaderboardPlayer[]> {
-  const players = [];
-
-  for (let i = 0; i < leaderboardSize; i += leaderboardPageSize) {
-    const url = `${urlBase}/${leaderboardId}?sr=${i}`;
-    const responseText = await fetch(url).then((res) => res.text());
-    const htmlRoot = parse(responseText);
-
-    const parsedPlayers = await parsePlayers(htmlRoot);
-    players.push(...parsedPlayers);
-  }
-
-  return players;
+  const range = [
+    ...Array(Math.ceil(leaderboardSize / leaderboardPageSize)),
+  ].map((_, i) => i * leaderboardPageSize);
+  return await Promise.all(
+    range.map(async (r) => {
+      const url = `${urlBase}/${leaderboardId}?sr=${r}`;
+      const res = await fetch(url);
+      const text = await res.text();
+      return await parsePlayers(parse(text));
+    })
+  ).then((arr) => arr.flat());
 }
 
 async function parsePlayers(root: HTMLElement): Promise<LeaderboardPlayer[]> {
@@ -44,12 +43,12 @@ async function parsePlayers(root: HTMLElement): Promise<LeaderboardPlayer[]> {
       10
     );
 
-    return new LeaderboardPlayer(
+    return {
       rank,
       name,
       score,
       profileLink,
-      profileImageLink
-    );
+      profileImageLink,
+    };
   });
 }
