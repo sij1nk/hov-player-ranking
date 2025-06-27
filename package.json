@@ -7,13 +7,13 @@
     "check": "tsc",
     "lint": "eslint",
     "format": "prettier -w .",
-    "build": "esbuild src/index.ts --platform=node --target=node22 --format=esm --bundle --minify --outfile=dist/index.js",
+    "build": "esbuild src/index.ts --platform=node --target=node20 --format=esm --bundle --minify --outfile=dist/index.js",
     "generate": "node dist/index.js > out.json; cp README_template.md README.md; sed -i \"s/%DATE%/$(date)/\" README.md; tablemark out.json >> README.md; rm out.json"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
     "@tsconfig/recommended": "^1.0.10",
-    "@types/node": "^24.0.4",
+    "@types/node": "^20.19.1",
     "esbuild": "^0.25.5",
     "eslint": "^9.29.0",
     "prettier": "^3.6.1",
