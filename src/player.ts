@@ -17,6 +17,31 @@ export type Player = PlayerCommon & {
   scoreRatio?: number;
 };
 
+export type PlayerMarkdownEntry = {
+  i: number;
+  nameAsLink: string;
+  totalRank?: number;
+  pvpRank?: number;
+  totalScore?: number;
+  pvpScore?: number;
+  scoreRatio?: number;
+};
+
+export function playerToMarkdownEntry(
+  p: Player,
+  i: number
+): PlayerMarkdownEntry {
+  return {
+    i,
+    nameAsLink: `<a href="${p.profileLink}">${p.name}</a>`,
+    totalRank: p.totalRank,
+    pvpRank: p.pvpRank,
+    totalScore: p.totalScore,
+    pvpScore: p.pvpScore,
+    scoreRatio: p.scoreRatio,
+  };
+}
+
 export function playerComparator(p1: Player, p2: Player): number {
   if (!p1.scoreRatio) return 1;
   if (!p2.scoreRatio) return -1;
