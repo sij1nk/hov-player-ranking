@@ -32,7 +32,7 @@ export function playerToMarkdownEntry(
   i: number
 ): PlayerMarkdownEntry {
   return {
-    rank: i,
+    rank: i + 1,
     player: `<a href="${p.profileLink}">${p.name}</a>`,
     totalRank: p.totalRank,
     pvpRank: p.pvpRank,
