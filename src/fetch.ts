@@ -17,7 +17,17 @@ export async function fetchPlayersFromLeaderboard(
       const url = `${urlBase}/${leaderboardId}?sr=${r + 1}`;
       const res = await fetch(url);
       const text = await res.text();
-      return await parsePlayers(parse(text));
+      let players = await parsePlayers(parse(text));
+
+      // steam always shows `leaderboardPageSize` entries per page, so we may
+      // need to throw away some entries from the last page
+      const entriesToDiscardFromBeginning =
+        r + leaderboardPageSize - leaderboardSize;
+      if (entriesToDiscardFromBeginning > 0) {
+        players = players.slice(entriesToDiscardFromBeginning);
+      }
+
+      return players;
     })
   ).then((arr) => arr.flat());
 }
