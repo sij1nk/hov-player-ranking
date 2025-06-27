@@ -14,7 +14,7 @@ export async function fetchPlayersFromLeaderboard(
   ].map((_, i) => i * leaderboardPageSize);
   return await Promise.all(
     range.map(async (r) => {
-      const url = `${urlBase}/${leaderboardId}?sr=${r}`;
+      const url = `${urlBase}/${leaderboardId}?sr=${r + 1}`;
       const res = await fetch(url);
       const text = await res.text();
       return await parsePlayers(parse(text));
