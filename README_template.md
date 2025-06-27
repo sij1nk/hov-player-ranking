@@ -1,5 +1,7 @@
 # Heroes of Valor player ranking
 
+Last updated: %DATE%
+
 This leaderboard is derived from the two official leaderboards found here:
 
 - Total score: <https://steamcommunity.com/stats/2504090/leaderboards/16656646>
