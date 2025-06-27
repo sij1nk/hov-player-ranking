@@ -16,7 +16,6 @@ jobs:
           npm run generate
       - name: Push to master
         run: |
-          apk add git
           git config --global user.name "workflow"
           git add .
           git commit -m "Update"
