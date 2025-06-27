@@ -1,12 +1,12 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *" # Every hour
+    - cron: "0 0,6,12,18 * * *" # Every 6 hours
 
 name: Update leaderboard
 jobs:
   update:
-    runs-on: node:22-alpine
+    runs-on: ubuntu-24.04
     steps:
       - name: Generate leaderboard
         run: |
@@ -16,6 +16,7 @@ jobs:
       - name: Push to master
         run: |
           apk add git
+          git config --global user.name "workflow"
           git add .
           git commit -m "Update"
           git push --set-upstream origin master
