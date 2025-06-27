@@ -9,12 +9,19 @@ export type LeaderboardPlayer = PlayerCommon & {
   score: number;
 };
 
+type ScoreRatio =
+  | {
+      _type: "known";
+      value: number;
+    }
+  | { _type: "unknown"; min: number; max: number };
+
 export type Player = PlayerCommon & {
   totalRank?: number;
   pvpRank?: number;
   totalScore?: number;
   pvpScore?: number;
-  scoreRatio?: number;
+  scoreRatio: ScoreRatio;
 };
 
 export type PlayerMarkdownEntry = {
@@ -24,7 +31,7 @@ export type PlayerMarkdownEntry = {
   pvpRank?: number;
   totalScore?: number;
   pvpScore?: number;
-  scoreRatio?: number;
+  scoreRatio?: string;
 };
 
 export function playerToMarkdownEntry(
@@ -38,33 +45,47 @@ export function playerToMarkdownEntry(
     pvpRank: p.pvpRank,
     totalScore: p.totalScore,
     pvpScore: p.pvpScore,
-    scoreRatio: p.scoreRatio,
+    scoreRatio:
+      p.scoreRatio._type === "known"
+        ? p.scoreRatio.value.toFixed(3)
+        : `${p.scoreRatio.min.toFixed(3)} - ${p.scoreRatio.max.toFixed(3)}`,
   };
 }
 
 export function playerComparator(p1: Player, p2: Player): number {
-  if (!p1.scoreRatio) return 1;
-  if (!p2.scoreRatio) return -1;
-  return p2.scoreRatio - p1.scoreRatio;
+  return getPlayerMinimumScoreRatio(p2) - getPlayerMinimumScoreRatio(p1);
 }
 
-function fromPvpOnlyPlayer(player: LeaderboardPlayer): Player {
+function getPlayerMinimumScoreRatio(p: Player): number {
+  if (p.scoreRatio._type === "known") return p.scoreRatio.value;
+  return p.scoreRatio.min;
+}
+
+function fromPvpOnlyPlayer(
+  player: LeaderboardPlayer,
+  maxTotalScore: number
+): Player {
   return {
     name: player.name,
     profileLink: player.profileLink,
     profileImageLink: player.profileImageLink,
     pvpRank: player.rank,
     pvpScore: player.score,
+    scoreRatio: { _type: "unknown", min: player.score / maxTotalScore, max: 1 },
   };
 }
 
-function fromTotalOnlyPlayer(player: LeaderboardPlayer): Player {
+function fromTotalOnlyPlayer(
+  player: LeaderboardPlayer,
+  maxPvpScore: number
+): Player {
   return {
     name: player.name,
     profileLink: player.profileLink,
     profileImageLink: player.profileImageLink,
     totalRank: player.rank,
     totalScore: player.score,
+    scoreRatio: { _type: "unknown", min: 0, max: maxPvpScore / player.score },
   };
 }
 
@@ -80,7 +101,7 @@ function fromPlayerOnBothLeaderboards(
     totalScore: totalPlayer.score,
     pvpRank: pvpPlayer.rank,
     pvpScore: pvpPlayer.score,
-    scoreRatio: Number((pvpPlayer.score / totalPlayer.score).toFixed(3)),
+    scoreRatio: { _type: "known", value: pvpPlayer.score / totalPlayer.score },
   };
 }
 
@@ -90,12 +111,15 @@ export function getPlayerList(
 ): Player[] {
   const players = [];
 
+  const lowestTotalScore = totalScoreLeaderboardPlayers.at(-1)!.score;
+  const lowestPvpScore = pvpScoreLeaderboardPlayers.at(-1)!.score;
+
   for (const player of totalScoreLeaderboardPlayers) {
     const pvpPlayerIndex = pvpScoreLeaderboardPlayers.findIndex(
       (p) => p?.name === player.name
     );
     if (pvpPlayerIndex < 0) {
-      players.push(fromTotalOnlyPlayer(player));
+      players.push(fromTotalOnlyPlayer(player, lowestPvpScore));
     } else {
       const pvpPlayer = pvpScoreLeaderboardPlayers.splice(
         pvpPlayerIndex,
@@ -114,7 +138,7 @@ export function getPlayerList(
   players.push(
     ...pvpScoreLeaderboardPlayers
       .filter((p): p is LeaderboardPlayer => Boolean(p))
-      .map(fromPvpOnlyPlayer)
+      .map((p) => fromPvpOnlyPlayer(p, lowestTotalScore))
   );
 
   return players;
