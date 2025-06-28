@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0,6,12,18 * * *" # Every 6 hours
+    - cron: "0 */3 * * *" # Every 3 hours
 
 name: Update leaderboard
 permissions:
