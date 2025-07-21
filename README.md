@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Mon Jul 21 06:03:13 UTC 2025** (updated every hour)
+Last updated: **Mon Jul 21 07:05:58 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -124,7 +124,7 @@ lowest possible score ratio (if unknown).
 | 100   | <a href="https://steamcommunity.com/profiles/76561198256916053/stats/2504090/">The_one_true_LuV</a>               | 122        | 76       | 1539218     | 550704    | 0.358         |
 | 101   | <a href="https://steamcommunity.com/profiles/76561198058297745/stats/2504090/">Catt.</a>                          |            | 150      |             | 408130    | 0.357 - 1.000 |
 | 102   | <a href="https://steamcommunity.com/profiles/76561198079450010/stats/2504090/">MiotaDerg</a>                      |            | 152      |             | 406724    | 0.355 - 1.000 |
-| 103   | <a href="https://steamcommunity.com/id/LunarTM/stats/2504090/">Lunar™</a>                                         | 72         | 43       | 2087125     | 739673    | 0.354         |
+| 103   | <a href="https://steamcommunity.com/id/LunarTM/stats/2504090/">Lunar™</a>                                         | 72         | 43       | 2091471     | 739673    | 0.354         |
 | 104   | <a href="https://steamcommunity.com/profiles/76561198069209496/stats/2504090/">[IVOP]Plasma</a>                   |            | 156      |             | 401330    | 0.351 - 1.000 |
 | 105   | <a href="https://steamcommunity.com/profiles/76561198015565718/stats/2504090/">SnexiHUN</a>                       |            | 157      |             | 399020    | 0.349 - 1.000 |
 | 106   | <a href="https://steamcommunity.com/id/TekiSEazy/stats/2504090/">qki</a>                                          |            | 158      |             | 398799    | 0.348 - 1.000 |
