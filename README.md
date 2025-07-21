@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Mon Jul 21 22:02:13 UTC 2025** (updated every hour)
+Last updated: **Mon Jul 21 23:02:21 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -26,7 +26,7 @@ lowest possible score ratio (if unknown).
 | 2     | <a href="https://steamcommunity.com/id/larppaaaa/stats/2504090/">larppa</a>                                       | 26         | 4        | 3294972     | 2425855   | 0.736         |
 | 3     | <a href="https://steamcommunity.com/profiles/76561198300221813/stats/2504090/">StarShower</a>                     | 8          | 1        | 4780463     | 3501529   | 0.732         |
 | 4     | <a href="https://steamcommunity.com/id/aimbotkid/stats/2504090/">f</a>                                            | 155        | 24       | 1312340     | 923882    | 0.704         |
-| 5     | <a href="https://steamcommunity.com/profiles/76561198074464348/stats/2504090/">Edwardo</a>                        | 29         | 5        | 3239375     | 2235937   | 0.690         |
+| 5     | <a href="https://steamcommunity.com/profiles/76561198074464348/stats/2504090/">Edwardo</a>                        | 29         | 5        | 3239595     | 2236068   | 0.690         |
 | 6     | <a href="https://steamcommunity.com/id/benjy_boi/stats/2504090/">BENJY</a>                                        |            | 42       |             | 785257    | 0.679 - 1.000 |
 | 7     | <a href="https://steamcommunity.com/profiles/76561198103173530/stats/2504090/">Mario</a>                          | 183        | 37       | 1205873     | 817752    | 0.678         |
 | 8     | <a href="https://steamcommunity.com/profiles/76561198025746180/stats/2504090/">sijink</a>                         | 119        | 20       | 1555522     | 1048967   | 0.674         |
@@ -60,7 +60,7 @@ lowest possible score ratio (if unknown).
 | 36    | <a href="https://steamcommunity.com/profiles/76561198197301194/stats/2504090/">ExtazyLSD</a>                      | 98         | 32       | 1727903     | 856051    | 0.495         |
 | 37    | <a href="https://steamcommunity.com/profiles/76561198057484708/stats/2504090/">Bruce</a>                          | 145        | 57       | 1352301     | 668398    | 0.494         |
 | 38    | <a href="https://steamcommunity.com/profiles/76561198066251440/stats/2504090/">Romeo</a>                          |            | 74       |             | 564952    | 0.489 - 1.000 |
-| 39    | <a href="https://steamcommunity.com/id/newr4s/stats/2504090/">r4s</a>                                             | 49         | 12       | 2495414     | 1197439   | 0.480         |
+| 39    | <a href="https://steamcommunity.com/id/newr4s/stats/2504090/">r4s</a>                                             | 50         | 12       | 2495414     | 1197439   | 0.480         |
 | 40    | <a href="https://steamcommunity.com/id/benk-/stats/2504090/">benk</a>                                             |            | 75       |             | 552126    | 0.478 - 1.000 |
 | 41    | <a href="https://steamcommunity.com/id/pedroaxn/stats/2504090/">Dro</a>                                           |            | 79       |             | 546588    | 0.473 - 1.000 |
 | 42    | <a href="https://steamcommunity.com/id/dzozb/stats/2504090/">ozd</a>                                              |            | 80       |             | 542883    | 0.470 - 1.000 |
@@ -75,9 +75,9 @@ lowest possible score ratio (if unknown).
 | 51    | <a href="https://steamcommunity.com/id/AlexReal38540/stats/2504090/">Real</a>                                     |            | 92       |             | 518642    | 0.449 - 1.000 |
 | 52    | <a href="https://steamcommunity.com/id/w00tl3z/stats/2504090/">wookles</a>                                        |            | 93       |             | 515189    | 0.446 - 1.000 |
 | 53    | <a href="https://steamcommunity.com/profiles/76561199034596708/stats/2504090/">panD</a>                           | 79         | 28       | 2004829     | 877456    | 0.438         |
-| 54    | <a href="https://steamcommunity.com/id/Furakutaru/stats/2504090/">aiden</a>                                       |            | 97       |             | 504013    | 0.436 - 1.000 |
-| 55    | <a href="https://steamcommunity.com/profiles/76561198063218060/stats/2504090/">H.a.p.p.y</a>                      |            | 98       |             | 503776    | 0.436 - 1.000 |
-| 56    | <a href="https://steamcommunity.com/id/benyahhman/stats/2504090/">Benyahman</a>                                   |            | 99       |             | 503247    | 0.435 - 1.000 |
+| 54    | <a href="https://steamcommunity.com/id/benyahhman/stats/2504090/">Benyahman</a>                                   |            | 97       |             | 505163    | 0.437 - 1.000 |
+| 55    | <a href="https://steamcommunity.com/id/Furakutaru/stats/2504090/">aiden</a>                                       |            | 98       |             | 504013    | 0.436 - 1.000 |
+| 56    | <a href="https://steamcommunity.com/profiles/76561198063218060/stats/2504090/">H.a.p.p.y</a>                      |            | 99       |             | 503776    | 0.436 - 1.000 |
 | 57    | <a href="https://steamcommunity.com/profiles/76561198244490020/stats/2504090/">PoKrFace</a>                       |            | 101      |             | 497966    | 0.431 - 1.000 |
 | 58    | <a href="https://steamcommunity.com/id/ZavocOfficial/stats/2504090/">Zavoc</a>                                    | 126        | 63       | 1473506     | 631976    | 0.429         |
 | 59    | <a href="https://steamcommunity.com/id/Convictive/stats/2504090/">taco</a>                                        |            | 103      |             | 495238    | 0.428 - 1.000 |
@@ -121,12 +121,12 @@ lowest possible score ratio (if unknown).
 | 97    | <a href="https://steamcommunity.com/profiles/76561198035771561/stats/2504090/">Mr. Yikes</a>                      |            | 148      |             | 415750    | 0.360 - 1.000 |
 | 98    | <a href="https://steamcommunity.com/profiles/76561198017511092/stats/2504090/">Radosław Rumian</a>                |            | 149      |             | 415046    | 0.359 - 1.000 |
 | 99    | <a href="https://steamcommunity.com/profiles/76561199123278013/stats/2504090/">Blitzz</a>                         | 103        | 66       | 1693597     | 607781    | 0.359         |
-| 100   | <a href="https://steamcommunity.com/id/Lowsound/stats/2504090/">Lowsound</a>                                      | 52         | 29       | 2427736     | 869225    | 0.358         |
+| 100   | <a href="https://steamcommunity.com/id/Lowsound/stats/2504090/">Lowsound</a>                                      | 53         | 29       | 2427736     | 869225    | 0.358         |
 | 101   | <a href="https://steamcommunity.com/profiles/76561198256916053/stats/2504090/">The_one_true_LuV</a>               | 123        | 76       | 1539218     | 550704    | 0.358         |
-| 102   | <a href="https://steamcommunity.com/profiles/76561198115263100/stats/2504090/">BaRoo</a>                          | 11         | 9        | 4166538     | 1471707   | 0.353         |
+| 102   | <a href="https://steamcommunity.com/profiles/76561198115263100/stats/2504090/">BaRoo</a>                          | 11         | 9        | 4185884     | 1485415   | 0.355         |
 | 103   | <a href="https://steamcommunity.com/profiles/76561198058297745/stats/2504090/">Catt.</a>                          |            | 150      |             | 408130    | 0.353 - 1.000 |
 | 104   | <a href="https://steamcommunity.com/profiles/76561198079450010/stats/2504090/">MiotaDerg</a>                      |            | 152      |             | 406724    | 0.352 - 1.000 |
-| 105   | <a href="https://steamcommunity.com/id/2Fat2Move/stats/2504090/">2Fat2Move</a>                                    | 25         | 14       | 3325570     | 1159610   | 0.349         |
+| 105   | <a href="https://steamcommunity.com/id/2Fat2Move/stats/2504090/">2Fat2Move</a>                                    | 25         | 14       | 3356569     | 1177412   | 0.351         |
 | 106   | <a href="https://steamcommunity.com/profiles/76561198069209496/stats/2504090/">[IVOP]Plasma</a>                   |            | 156      |             | 401330    | 0.347 - 1.000 |
 | 107   | <a href="https://steamcommunity.com/id/smileyexi/stats/2504090/">Ex3mpLe</a>                                      | 149        | 125      | 1343048     | 466088    | 0.347         |
 | 108   | <a href="https://steamcommunity.com/profiles/76561198015565718/stats/2504090/">SnexiHUN</a>                       |            | 157      |             | 399020    | 0.345 - 1.000 |
@@ -167,8 +167,8 @@ lowest possible score ratio (if unknown).
 | 143   | <a href="https://steamcommunity.com/profiles/76561198132946300/stats/2504090/">Knoop</a>                          |            | 199      |             | 356020    | 0.308 - 1.000 |
 | 144   | <a href="https://steamcommunity.com/id/naykou/stats/2504090/">NayKoU</a>                                          |            | 200      |             | 355980    | 0.308 - 1.000 |
 | 145   | <a href="https://steamcommunity.com/profiles/76561198293664472/stats/2504090/">Rxptrz_</a>                        | 68         | 55       | 2176609     | 670024    | 0.308         |
-| 146   | <a href="https://steamcommunity.com/profiles/76561198873921786/stats/2504090/">BeatenbyNoob</a>                   | 54         | 45       | 2426709     | 742512    | 0.306         |
-| 147   | <a href="https://steamcommunity.com/profiles/76561198026035360/stats/2504090/">CptGanja</a>                       | 50         | 44       | 2491281     | 760096    | 0.305         |
+| 146   | <a href="https://steamcommunity.com/profiles/76561198873921786/stats/2504090/">BeatenbyNoob</a>                   | 55         | 45       | 2426709     | 742512    | 0.306         |
+| 147   | <a href="https://steamcommunity.com/profiles/76561198026035360/stats/2504090/">CptGanja</a>                       | 51         | 44       | 2491281     | 760096    | 0.305         |
 | 148   | <a href="https://steamcommunity.com/profiles/76561198974934031/stats/2504090/">Awake2k</a>                        | 111        | 108      | 1617211     | 490677    | 0.303         |
 | 149   | <a href="https://steamcommunity.com/id/fluxpuck/stats/2504090/">Fluxpuck</a>                                      | 67         | 59       | 2183959     | 655563    | 0.300         |
 | 150   | <a href="https://steamcommunity.com/profiles/76561198219920927/stats/2504090/">[BDF] Jno the master piece</a>     | 40         | 41       | 2616668     | 785285    | 0.300         |
@@ -183,7 +183,7 @@ lowest possible score ratio (if unknown).
 | 159   | <a href="https://steamcommunity.com/profiles/76561197963065122/stats/2504090/">åhboj</a>                          | 81         | 94       | 1989489     | 511036    | 0.257         |
 | 160   | <a href="https://steamcommunity.com/id/virmant/stats/2504090/">Voply</a>                                          | 93         | 130      | 1808709     | 463801    | 0.256         |
 | 161   | <a href="https://steamcommunity.com/id/Flinthilll/stats/2504090/">Maestro™</a>                                    | 122        | 160      | 1551387     | 393317    | 0.254         |
-| 162   | <a href="https://steamcommunity.com/profiles/76561198178741817/stats/2504090/">Lumberjack</a>                     | 24         | 38       | 3361109     | 811563    | 0.241         |
+| 162   | <a href="https://steamcommunity.com/profiles/76561198178741817/stats/2504090/">Lumberjack</a>                     | 24         | 38       | 3372783     | 812763    | 0.241         |
 | 163   | <a href="https://steamcommunity.com/profiles/76561198124205089/stats/2504090/">styyz.</a>                         | 105        | 159      | 1662397     | 398487    | 0.240         |
 | 164   | <a href="https://steamcommunity.com/profiles/76561198388510517/stats/2504090/">VeNiQzZ</a>                        | 65         | 87       | 2217462     | 529232    | 0.239         |
 | 165   | <a href="https://steamcommunity.com/id/7656119804405968/stats/2504090/">Delta</a>                                 | 115        | 172      | 1581925     | 377321    | 0.239         |
@@ -194,7 +194,7 @@ lowest possible score ratio (if unknown).
 | 170   | <a href="https://steamcommunity.com/id/Thrymbor/stats/2504090/">Thrymbor</a>                                      | 71         | 136      | 2113617     | 451265    | 0.214         |
 | 171   | <a href="https://steamcommunity.com/profiles/76561198067676542/stats/2504090/">Sneakycheese</a>                   | 32         | 56       | 3149850     | 668568    | 0.212         |
 | 172   | <a href="https://steamcommunity.com/id/BuffZuViel/stats/2504090/">[AMOK] Shota</a>                                | 95         | 178      | 1787751     | 374545    | 0.210         |
-| 173   | <a href="https://steamcommunity.com/id/ginniboss/stats/2504090/">Ginni</a>                                        | 53         | 100      | 2427400     | 502864    | 0.207         |
+| 173   | <a href="https://steamcommunity.com/id/ginniboss/stats/2504090/">Ginni</a>                                        | 54         | 100      | 2427400     | 502864    | 0.207         |
 | 174   | <a href="https://steamcommunity.com/profiles/76561198169459924/stats/2504090/">Eigemyr</a>                        | 70         | 140      | 2150780     | 442669    | 0.206         |
 | 175   | <a href="https://steamcommunity.com/id/yungtype/stats/2504090/">-Okio-</a>                                        | 94         | 187      | 1803147     | 368227    | 0.204         |
 | 176   | <a href="https://steamcommunity.com/profiles/76561198084501012/stats/2504090/">TheThunder2201</a>                 | 80         | 151      | 2001110     | 406909    | 0.203         |
@@ -205,9 +205,9 @@ lowest possible score ratio (if unknown).
 | 181   | <a href="https://steamcommunity.com/profiles/76561198127097661/stats/2504090/">faceless</a>                       | 45         | 102      | 2535129     | 497011    | 0.196         |
 | 182   | <a href="https://steamcommunity.com/id/PapaKush/stats/2504090/">plb</a>                                           | 15         | 51       | 3638578     | 698982    | 0.192         |
 | 183   | <a href="https://steamcommunity.com/profiles/76561198095247131/stats/2504090/">FoxwarriorS999</a>                 | 82         | 194      | 1950439     | 359329    | 0.184         |
-| 184   | <a href="https://steamcommunity.com/id/CrazySonar/stats/2504090/">CrazySonaR</a>                                  | 48         | 139      | 2498804     | 444022    | 0.178         |
+| 184   | <a href="https://steamcommunity.com/id/CrazySonar/stats/2504090/">CrazySonaR</a>                                  | 49         | 139      | 2498804     | 444022    | 0.178         |
 | 185   | <a href="https://steamcommunity.com/id/SpinCone/stats/2504090/">ActuallySpin</a>                                  | 61         | 153      | 2305715     | 404867    | 0.176         |
-| 186   | <a href="https://steamcommunity.com/profiles/76561198304218963/stats/2504090/">♦Saint-Kaitech♦</a>                | 51         | 143      | 2433137     | 425332    | 0.175         |
+| 186   | <a href="https://steamcommunity.com/profiles/76561198304218963/stats/2504090/">♦Saint-Kaitech♦</a>                | 52         | 143      | 2433137     | 425332    | 0.175         |
 | 187   | <a href="https://steamcommunity.com/id/ABlatnik5/stats/2504090/">Durthu</a>                                       | 9          | 36       | 4736217     | 819445    | 0.173         |
 | 188   | <a href="https://steamcommunity.com/id/EnglishFitzPercy/stats/2504090/">Nano</a>                                  | 20         | 69       | 3548163     | 595174    | 0.168         |
 | 189   | <a href="https://steamcommunity.com/profiles/76561198029876026/stats/2504090/">[FGG] El Bolato</a>                | 34         | 104      | 2982242     | 494818    | 0.166         |
@@ -220,7 +220,7 @@ lowest possible score ratio (if unknown).
 | 196   | <a href="https://steamcommunity.com/profiles/76561198067645290/stats/2504090/">Whyskers</a>                       | 10         | 96       | 4304460     | 506734    | 0.118         |
 | 197   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 21         | 176      | 3543137     | 376477    | 0.106         |
 | 198   | <a href="https://steamcommunity.com/profiles/76561198253172551/stats/2504090/">[BDF] ẞjørnke03™</a>               | 4          | 19       | 10074039    | 1066185   | 0.106         |
-| 199   | <a href="https://steamcommunity.com/profiles/76561198061036994/stats/2504090/">[AMOK] Sago 420</a>                | 3          | 26       | 10409363    | 913662    | 0.088         |
+| 199   | <a href="https://steamcommunity.com/profiles/76561198061036994/stats/2504090/">[AMOK] Sago 420</a>                | 3          | 26       | 10425511    | 913662    | 0.088         |
 | 200   | <a href="https://steamcommunity.com/profiles/76561198021551726/stats/2504090/">[BDF] DIRK</a>                     | 2          | 25       | 11304862    | 915679    | 0.081         |
 | 201   | <a href="https://steamcommunity.com/profiles/76561198200706150/stats/2504090/">Итальянец</a>                      | 12         |          | 4013445     |           | 0.000 - 0.089 |
 | 202   | <a href="https://steamcommunity.com/profiles/76561199077298171/stats/2504090/">b.tychon</a>                       | 14         |          | 3867652     |           | 0.000 - 0.092 |
@@ -237,7 +237,7 @@ lowest possible score ratio (if unknown).
 | 213   | <a href="https://steamcommunity.com/id/OrNary/stats/2504090/">OrNary</a>                                          | 43         |          | 2567760     |           | 0.000 - 0.139 |
 | 214   | <a href="https://steamcommunity.com/profiles/76561198039173811/stats/2504090/">The Lonely Wolf</a>                | 44         |          | 2561922     |           | 0.000 - 0.139 |
 | 215   | <a href="https://steamcommunity.com/profiles/76561199191727188/stats/2504090/">[BDF] clancy brown</a>             | 46         |          | 2514767     |           | 0.000 - 0.142 |
-| 216   | <a href="https://steamcommunity.com/profiles/76561198452076744/stats/2504090/">Janoo</a>                          | 55         |          | 2424490     |           | 0.000 - 0.147 |
+| 216   | <a href="https://steamcommunity.com/profiles/76561198452076744/stats/2504090/">Janoo</a>                          | 48         |          | 2501718     |           | 0.000 - 0.142 |
 | 217   | <a href="https://steamcommunity.com/profiles/76561199182081370/stats/2504090/">Tyvec</a>                          | 57         |          | 2399127     |           | 0.000 - 0.148 |
 | 218   | <a href="https://steamcommunity.com/profiles/76561198396881604/stats/2504090/">Simedax</a>                        | 60         |          | 2327619     |           | 0.000 - 0.153 |
 | 219   | <a href="https://steamcommunity.com/profiles/76561198386358088/stats/2504090/">✵【 Steven 】</a>                    | 63         |          | 2267644     |           | 0.000 - 0.157 |
