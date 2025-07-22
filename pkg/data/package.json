@@ -8,9 +8,13 @@
     "lint": "eslint",
     "format": "prettier -w .",
     "build": "esbuild src/index.ts --platform=node --target=node20 --format=esm --bundle --minify --outfile=dist/index.js",
-    "generate": "node dist/index.js > out.json; cp README_template.md README.md; sed -i \"s/%DATE%/$(date -u)/\" README.md; tablemark out.json >> README.md; rm out.json"
+    "generate": "node dist/index.js > out.json; cp README_template.md README.md; sed -i \"s/%DATE%/$(date -u)/\" README.md; tablemark out.json >> README.md; rm out.json",
+    "prisma": "dotenv -c development -- npx prisma",
+    "prisma-prod": "dotenv -c production -- npx prisma"
   },
   "devDependencies": {
+    "dotenv-cli": "^8.0.0",
+    "prisma": "^6.12.0",
     "tablemark-cli": "^3.0.0"
   },
   "dependencies": {
