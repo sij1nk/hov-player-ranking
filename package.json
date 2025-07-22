@@ -2,13 +2,14 @@
   "name": "hov-player-ranking",
   "version": "1.0.0",
   "author": "sijink",
-  "type": "module",
+  "workspaces": [
+    "pkg/data",
+    "pkg/ui"
+  ],
   "scripts": {
-    "check": "tsc",
-    "lint": "eslint",
-    "format": "prettier -w .",
-    "build": "esbuild src/index.ts --platform=node --target=node20 --format=esm --bundle --minify --outfile=dist/index.js",
-    "generate": "node dist/index.js > out.json; cp README_template.md README.md; sed -i \"s/%DATE%/$(date -u)/\" README.md; tablemark out.json >> README.md; rm out.json"
+    "check": "npm run check --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "npm run format --workspaces --if-present"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
@@ -20,9 +21,5 @@
     "tablemark-cli": "^3.0.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.0"
-  },
-  "dependencies": {
-    "node-fetch": "^3.3.2",
-    "node-html-parser": "^7.0.1"
   }
 }
