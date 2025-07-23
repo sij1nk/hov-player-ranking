@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Wed Jul 23 07:04:42 UTC 2025** (updated every hour)
+Last updated: **Wed Jul 23 08:02:41 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -215,7 +215,7 @@ lowest possible score ratio (if unknown).
 | 191   | <a href="https://steamcommunity.com/id/SaintLuv/stats/2504090/">Sidney ♡</a>                                      | 16         | 78       | 3621994     | 546778    | 0.151         |
 | 192   | <a href="https://steamcommunity.com/id/Escoberry/stats/2504090/">󠀡󠀡᠌ ⁧⁧Escoberry</a>                            | 19         | 84       | 3563145     | 532839    | 0.150         |
 | 193   | <a href="https://steamcommunity.com/id/kwizyt/stats/2504090/">Kwizyt</a>                                          | 41         | 180      | 2639536     | 374869    | 0.142         |
-| 194   | <a href="https://steamcommunity.com/id/brapn/stats/2504090/">Brap</a>                                             | 6          | 46       | 5270037     | 731424    | 0.139         |
+| 194   | <a href="https://steamcommunity.com/id/brapn/stats/2504090/">Brap</a>                                             | 6          | 46       | 5270500     | 731424    | 0.139         |
 | 195   | <a href="https://steamcommunity.com/id/Zaibazy/stats/2504090/">Zaibazy</a>                                        | 5          | 34       | 6130735     | 844907    | 0.138         |
 | 196   | <a href="https://steamcommunity.com/profiles/76561198067645290/stats/2504090/">Whyskers</a>                       | 11         | 98       | 4304460     | 506734    | 0.118         |
 | 197   | <a href="https://steamcommunity.com/profiles/76561198253172551/stats/2504090/">[BDF] ẞjørnke03™</a>               | 4          | 19       | 10090520    | 1079611   | 0.107         |
@@ -234,7 +234,7 @@ lowest possible score ratio (if unknown).
 | 210   | <a href="https://steamcommunity.com/id/ELVIIIIIS/stats/2504090/">[E]LVIIIIISP]RESLEY</a>                          | 37         |          | 2806989     |           | 0.000 - 0.128 |
 | 211   | <a href="https://steamcommunity.com/id/s1c/stats/2504090/">sic</a>                                                | 38         |          | 2781879     |           | 0.000 - 0.129 |
 | 212   | <a href="https://steamcommunity.com/id/PanLimontop/stats/2504090/">PanLimontop</a>                                | 43         |          | 2602169     |           | 0.000 - 0.138 |
-| 213   | <a href="https://steamcommunity.com/id/OrNary/stats/2504090/">OrNary</a>                                          | 44         |          | 2592360     |           | 0.000 - 0.138 |
+| 213   | <a href="https://steamcommunity.com/id/OrNary/stats/2504090/">OrNary</a>                                          | 44         |          | 2593560     |           | 0.000 - 0.138 |
 | 214   | <a href="https://steamcommunity.com/profiles/76561198039173811/stats/2504090/">The Lonely Wolf</a>                | 45         |          | 2587086     |           | 0.000 - 0.138 |
 | 215   | <a href="https://steamcommunity.com/id/bucki2ksteam/stats/2504090/">EMBO</a>                                      | 46         |          | 2572929     |           | 0.000 - 0.139 |
 | 216   | <a href="https://steamcommunity.com/profiles/76561199191727188/stats/2504090/">[BDF] clancy brown</a>             | 48         |          | 2514767     |           | 0.000 - 0.142 |
