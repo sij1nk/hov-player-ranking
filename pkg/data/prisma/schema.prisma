@@ -37,7 +37,7 @@ model PlayerStats {
 
 model LeaderboardSnapshot {
   id    Int           @id @default(autoincrement())
-  date  DateTime
+  date  DateTime      @db.Timestamptz(0)
   stats PlayerStats[]
 
   @@map("leaderboard_snapshots")
