@@ -1,5 +1,5 @@
 import { parse, HTMLElement } from "node-html-parser";
-import { LeaderboardPlayer } from "./player.ts";
+import { getSteamIdType, LeaderboardPlayer } from "./player.ts";
 
 const leaderboardSize = 200;
 const leaderboardPageSize = 15;
@@ -43,10 +43,14 @@ async function parsePlayers(root: HTMLElement): Promise<LeaderboardPlayer[]> {
   return lbEntries.map((lbEntry) => {
     const rank = parseInt(lbEntry.querySelector(".rR")!.innerText.slice(1), 10);
     const profileImageLink =
-      lbEntry.querySelector(".avatarIcon > a")!.attributes["href"];
+      lbEntry.querySelector(".avatarIcon img")!.attributes["src"];
+    const profileImageId = profileImageLink.split(/\/|\./).at(-2)!;
 
     const playerNameElement = lbEntry.querySelector("a.playerName")!;
     const profileLink = playerNameElement.attributes["href"];
+    const profileLinkParts = profileLink.split("/");
+    const steamId = profileLinkParts[4];
+    const steamIdType = getSteamIdType(profileLinkParts[3])!;
     const name = playerNameElement.innerText;
     const score = parseInt(
       lbEntry.querySelector("div.score")!.innerText.replaceAll(",", ""),
@@ -57,8 +61,9 @@ async function parsePlayers(root: HTMLElement): Promise<LeaderboardPlayer[]> {
       rank,
       name,
       score,
-      profileLink,
-      profileImageLink,
+      steamId,
+      steamIdType,
+      profileImageId,
     };
   });
 }
