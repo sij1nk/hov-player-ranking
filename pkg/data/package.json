@@ -9,6 +9,7 @@
     "format": "prettier -w .",
     "build": "esbuild src/index.ts --platform=node --target=node20 --format=esm --bundle --minify --outfile=dist/index.js",
     "generate": "node dist/index.js > out.json; cp README_template.md README.md; sed -i \"s/%DATE%/$(date -u)/\" README.md; tablemark out.json >> README.md; rm out.json",
+    "take-snapshot": "dotenv -c development -- node dist/index.js",
     "prisma": "dotenv -c development -- npx prisma",
     "prisma-prod": "dotenv -c production -- npx prisma"
   },
