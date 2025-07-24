@@ -9,14 +9,19 @@ datasource db {
 }
 
 model Player {
-  id               Int           @id @default(autoincrement())
-  steamid          BigInt        @unique
-  name             String
-  profileLink      String
-  profileImageLink String
-  stats            PlayerStats[]
+  id             Int           @id @default(autoincrement())
+  steamId        String        @unique
+  steamIdType    SteamIdType
+  name           String
+  profileImageId String
+  stats          PlayerStats[]
 
   @@map("players")
+}
+
+enum SteamIdType {
+  ID
+  CUSTOM
 }
 
 model PlayerStats {
