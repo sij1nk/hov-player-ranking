@@ -1,9 +1,5 @@
 import { fetchPlayersFromLeaderboard } from "./fetch.ts";
-import {
-  getPlayerList,
-  playerComparator,
-  playerToMarkdownEntry,
-} from "./player.ts";
+import { getPlayerList, playerComparator } from "./player.ts";
 
 const pvpScoreLeaderboardId = "16808192";
 const totalScoreLeaderboardId = "16656646";
@@ -21,6 +17,4 @@ const players = getPlayerList(
 );
 players.sort(playerComparator);
 
-const markdownEntries = players.map(playerToMarkdownEntry);
-
-console.log(JSON.stringify(markdownEntries));
+console.log(JSON.stringify(players));

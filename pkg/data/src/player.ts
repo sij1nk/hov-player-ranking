@@ -1,8 +1,20 @@
 export type PlayerCommon = {
   name: string;
-  profileLink: string;
-  profileImageLink: string;
+  steamId: string;
+  steamIdType: SteamIdType;
+  profileImageId: string;
 };
+
+export enum SteamIdType {
+  Id,
+  Custom,
+}
+
+export function getSteamIdType(pathSegment: string): SteamIdType | null {
+  if (pathSegment === "id") return SteamIdType.Custom;
+  if (pathSegment === "profiles") return SteamIdType.Id;
+  return null;
+}
 
 export type LeaderboardPlayer = PlayerCommon & {
   rank: number;
@@ -24,34 +36,6 @@ export type Player = PlayerCommon & {
   scoreRatio: ScoreRatio;
 };
 
-export type PlayerMarkdownEntry = {
-  rank: number;
-  player: string;
-  totalRank?: number;
-  pvpRank?: number;
-  totalScore?: number;
-  pvpScore?: number;
-  scoreRatio?: string;
-};
-
-export function playerToMarkdownEntry(
-  p: Player,
-  i: number
-): PlayerMarkdownEntry {
-  return {
-    rank: i + 1,
-    player: `<a href="${p.profileLink}">${p.name}</a>`,
-    totalRank: p.totalRank,
-    pvpRank: p.pvpRank,
-    totalScore: p.totalScore,
-    pvpScore: p.pvpScore,
-    scoreRatio:
-      p.scoreRatio._type === "known"
-        ? p.scoreRatio.value.toFixed(3)
-        : `${p.scoreRatio.min.toFixed(3)} - ${p.scoreRatio.max.toFixed(3)}`,
-  };
-}
-
 export function playerComparator(p1: Player, p2: Player): number {
   return getPlayerMinimumScoreRatio(p2) - getPlayerMinimumScoreRatio(p1);
 }
@@ -65,12 +49,11 @@ function fromPvpOnlyPlayer(
   player: LeaderboardPlayer,
   maxTotalScore: number
 ): Player {
+  const { rank, score, ...rest } = player;
   return {
-    name: player.name,
-    profileLink: player.profileLink,
-    profileImageLink: player.profileImageLink,
-    pvpRank: player.rank,
-    pvpScore: player.score,
+    ...rest,
+    pvpRank: rank,
+    pvpScore: score,
     scoreRatio: { _type: "unknown", min: player.score / maxTotalScore, max: 1 },
   };
 }
@@ -79,12 +62,11 @@ function fromTotalOnlyPlayer(
   player: LeaderboardPlayer,
   maxPvpScore: number
 ): Player {
+  const { rank, score, ...rest } = player;
   return {
-    name: player.name,
-    profileLink: player.profileLink,
-    profileImageLink: player.profileImageLink,
-    totalRank: player.rank,
-    totalScore: player.score,
+    ...rest,
+    totalRank: rank,
+    totalScore: score,
     scoreRatio: { _type: "unknown", min: 0, max: maxPvpScore / player.score },
   };
 }
@@ -93,12 +75,11 @@ function fromPlayerOnBothLeaderboards(
   totalPlayer: LeaderboardPlayer,
   pvpPlayer: LeaderboardPlayer
 ): Player {
+  const { rank, score, ...rest } = totalPlayer;
   return {
-    name: totalPlayer.name,
-    profileLink: totalPlayer.profileLink,
-    profileImageLink: totalPlayer.profileImageLink,
-    totalRank: totalPlayer.rank,
-    totalScore: totalPlayer.score,
+    ...rest,
+    totalRank: rank,
+    totalScore: score,
     pvpRank: pvpPlayer.rank,
     pvpScore: pvpPlayer.score,
     scoreRatio: { _type: "known", value: pvpPlayer.score / totalPlayer.score },
