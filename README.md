@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Fri Jul 25 03:29:49 UTC 2025** (updated every hour)
+Last updated: **Fri Jul 25 04:14:55 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -78,8 +78,8 @@ lowest possible score ratio (if unknown).
 | 54    | <a href="https://steamcommunity.com/id/AlexReal38540/stats/2504090/">Real</a>                                     |            | 97       |             | 518642    | 0.433 - 1.000 |
 | 55    | <a href="https://steamcommunity.com/id/ZavocOfficial/stats/2504090/">Zavoc</a>                                    | 135        | 65       | 1473506     | 631976    | 0.429         |
 | 56    | <a href="https://steamcommunity.com/profiles/76561198117350049/stats/2504090/">phil12</a>                         | 164        | 74       | 1330635     | 569312    | 0.428         |
-| 57    | <a href="https://steamcommunity.com/id/benyahhman/stats/2504090/">Benyahman</a>                                   | 188        | 90       | 1242059     | 528270    | 0.425         |
-| 58    | <a href="https://steamcommunity.com/profiles/76561198205777252/stats/2504090/">Niko ❤</a>                         |            | 100      |             | 508726    | 0.424 - 1.000 |
+| 57    | <a href="https://steamcommunity.com/profiles/76561198205777252/stats/2504090/">Niko ❤</a>                         |            | 100      |             | 508726    | 0.424 - 1.000 |
+| 58    | <a href="https://steamcommunity.com/id/benyahhman/stats/2504090/">Benyahman</a>                                   | 187        | 90       | 1251349     | 528867    | 0.423         |
 | 59    | <a href="https://steamcommunity.com/id/Furakutaru/stats/2504090/">aiden</a>                                       |            | 101      |             | 504013    | 0.420 - 1.000 |
 | 60    | <a href="https://steamcommunity.com/profiles/76561198063218060/stats/2504090/">H.a.p.p.y</a>                      |            | 102      |             | 503776    | 0.420 - 1.000 |
 | 61    | <a href="https://steamcommunity.com/id/xnagash/stats/2504090/">xnagash</a>                                        |            | 105      |             | 502559    | 0.419 - 1.000 |
@@ -293,7 +293,7 @@ lowest possible score ratio (if unknown).
 | 269   | <a href="https://steamcommunity.com/profiles/76561198149878893/stats/2504090/">Mad Lad Karbus</a>                 | 181        |          | 1271162     |           | 0.000 - 0.287 |
 | 270   | <a href="https://steamcommunity.com/profiles/76561198024263516/stats/2504090/">Freddo</a>                         | 183        |          | 1267316     |           | 0.000 - 0.288 |
 | 271   | <a href="https://steamcommunity.com/id/cosmictoof/stats/2504090/">Toof</a>                                        | 185        |          | 1262985     |           | 0.000 - 0.289 |
-| 272   | <a href="https://steamcommunity.com/profiles/76561198114868970/stats/2504090/">Morthil</a>                        | 187        |          | 1250962     |           | 0.000 - 0.292 |
+| 272   | <a href="https://steamcommunity.com/profiles/76561198114868970/stats/2504090/">Morthil</a>                        | 188        |          | 1250962     |           | 0.000 - 0.292 |
 | 273   | <a href="https://steamcommunity.com/profiles/76561198078410356/stats/2504090/">Rawburn</a>                        | 189        |          | 1240330     |           | 0.000 - 0.294 |
 | 274   | <a href="https://steamcommunity.com/profiles/76561198849691755/stats/2504090/">Many</a>                           | 190        |          | 1238999     |           | 0.000 - 0.295 |
 | 275   | <a href="https://steamcommunity.com/id/sgtpaximus/stats/2504090/">SgtPaximus</a>                                  | 192        |          | 1236716     |           | 0.000 - 0.295 |
