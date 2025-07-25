@@ -30,8 +30,8 @@ model PlayerStats {
   totalScore    Int?
   pvpRank       Int?
   pvpScore      Int?
-  scoreRatioMin Int
-  scoreRatioMax Int
+  scoreRatioMin Float
+  scoreRatioMax Float
   player        Player              @relation(fields: [playerId], references: [id])
   playerId      Int
   snapshot      LeaderboardSnapshot @relation(fields: [snapshotId], references: [id])
