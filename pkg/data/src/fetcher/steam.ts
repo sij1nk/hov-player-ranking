@@ -41,7 +41,7 @@ export class SteamWebLeaderboardFetcher implements LeaderboardFetcher {
     const date = new Date();
 
     return {
-      date: date.toUTCString(),
+      date: date.toISOString(),
       players,
     };
   }
