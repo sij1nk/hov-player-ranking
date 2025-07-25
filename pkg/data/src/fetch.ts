@@ -1,5 +1,5 @@
 import { parse, HTMLElement } from "node-html-parser";
-import { getSteamIdType, LeaderboardPlayer } from "./player.ts";
+import { getSteamIdType, type LeaderboardPlayer } from "./player.ts";
 
 const leaderboardSize = 200;
 const leaderboardPageSize = 15;
