@@ -5,6 +5,7 @@
     "moduleResolution": "nodenext",
     "target": "es2022",
     "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
     "noEmit": true
   }
 }
