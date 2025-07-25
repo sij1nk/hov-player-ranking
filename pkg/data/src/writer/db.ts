@@ -13,89 +13,51 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
         },
       });
 
-      const p = leaderboard.players[0];
-      const newStats = {
-        snapshotId: newLeaderboardSnapshot.id,
-        totalRank: p.totalRank,
-        totalScore: p.totalScore,
-        pvpRank: p.pvpRank,
-        pvpScore: p.pvpScore,
-        scoreRatioMin:
-          p.scoreRatio._type === "known"
-            ? p.scoreRatio.value
-            : p.scoreRatio.min,
-        scoreRatioMax:
-          p.scoreRatio._type === "known"
-            ? p.scoreRatio.value
-            : p.scoreRatio.max,
-      };
-      await tx.player.upsert({
-        where: {
-          steamId: p.steamId,
-          steamIdType: p.steamIdType,
-        },
-        update: {
-          name: p.name,
-          profileImageId: p.profileImageId,
-          stats: {
-            create: newStats,
+      const upsertPlayerPromises = leaderboard.players.map((p) => {
+        const newStats = {
+          snapshotId: newLeaderboardSnapshot.id,
+          totalRank: p.totalRank,
+          totalScore: p.totalScore,
+          pvpRank: p.pvpRank,
+          pvpScore: p.pvpScore,
+          scoreRatioMin:
+            p.scoreRatio._type === "known"
+              ? p.scoreRatio.value
+              : p.scoreRatio.min,
+          scoreRatioMax:
+            p.scoreRatio._type === "known"
+              ? p.scoreRatio.value
+              : p.scoreRatio.max,
+        };
+
+        return tx.player.upsert({
+          where: {
+            steamId: p.steamId,
+            steamIdType: p.steamIdType,
           },
-        },
-        create: {
-          name: p.name,
-          steamId: p.steamId,
-          steamIdType: p.steamIdType,
-          profileImageId: p.profileImageId,
-          stats: {
-            create: newStats,
+          update: {
+            name: p.name,
+            profileImageId: p.profileImageId,
+            stats: {
+              create: newStats,
+            },
           },
-        },
-        include: {
-          stats: true,
-        },
+          create: {
+            name: p.name,
+            steamId: p.steamId,
+            steamIdType: p.steamIdType,
+            profileImageId: p.profileImageId,
+            stats: {
+              create: newStats,
+            },
+          },
+          include: {
+            stats: true,
+          },
+        });
       });
 
-      // const upsertPlayerPromises = players.map((p) => {
-      //   const newStats = {
-      //     Id: new.id,
-      //     totalRank: p.totalRank,
-      //     totalScore: p.totalScore,
-      //     pvpRank: p.pvpRank,
-      //     pvpScore: p.pvpScore,
-      //     scoreRatioMin:
-      //       p.scoreRatio._type === "known" ? p.scoreRatio.value : p.scoreRatio.min,
-      //     scoreRatioMax:
-      //       p.scoreRatio._type === "known" ? p.scoreRatio.value : p.scoreRatio.max,
-      //   };
-      //
-      //   tx.player.upsert({
-      //     where: {
-      //       steamId: p.steamId,
-      //       steamIdType: p.steamIdType,
-      //     },
-      //     update: {
-      //       name: p.name,
-      //       profileImageId: p.profileImageId,
-      //       stats: {
-      //         create: newStats,
-      //       },
-      //     },
-      //     create: {
-      //       name: p.name,
-      //       steamId: p.steamId,
-      //       steamIdType: p.steamIdType,
-      //       profileImageId: p.profileImageId,
-      //       stats: {
-      //         create: newStats,
-      //       },
-      //     },
-      //     include: {
-      //       stats: true,
-      //     },
-      //   });
-      // });
-      //
-      // await Promise.all(upsertPlayerPromises);
+      await Promise.all(upsertPlayerPromises);
     });
   }
 }
