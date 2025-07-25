@@ -5,15 +5,14 @@ export type PlayerCommon = {
   profileImageId: string;
 };
 
+export type Leaderboard = {
+  date: string;
+  players: Player[];
+};
+
 export enum SteamIdType {
   Id = "ID",
   Custom = "CUSTOM",
-}
-
-export function getSteamIdType(pathSegment: string): SteamIdType | null {
-  if (pathSegment === "id") return SteamIdType.Custom;
-  if (pathSegment === "profiles") return SteamIdType.Id;
-  return null;
 }
 
 export type LeaderboardPlayer = PlayerCommon & {
