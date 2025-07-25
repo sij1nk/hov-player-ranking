@@ -1,74 +1,35 @@
-import { fetchPlayersFromLeaderboard } from "./fetch.ts";
-import { getPlayerList, playerComparator } from "./player.ts";
-import { PrismaClient } from "./generated/prisma/index.js";
+import { CachedLeaderboardFetcher } from "./fetcher/cache.ts";
+import { SteamWebLeaderboardFetcher } from "./fetcher/steam.ts";
+import { Command } from "commander";
+import { CacheLeaderboardWriter } from "./writer/cache.ts";
+import { DbLeaderboardWriter } from "./writer/db.ts";
 
-const pvpScoreLeaderboardId = "16808192";
-const totalScoreLeaderboardId = "16656646";
+const program = new Command()
+  .option(
+    "--from-cache <string>",
+    "Fetch leaderboard snapshot from a cached snapshot JSON"
+  )
+  .option(
+    "--to-cache <string>",
+    "Write leaderboard snapshot to a JSON file on disk"
+  )
+  .parse();
 
-const totalScoreLeaderboardPlayers = await fetchPlayersFromLeaderboard(
-  totalScoreLeaderboardId
-);
-const pvpScoreLeaderboardPlayers = await fetchPlayersFromLeaderboard(
-  pvpScoreLeaderboardId
-);
+const opts = program.opts();
 
-const players = getPlayerList(
-  totalScoreLeaderboardPlayers,
-  pvpScoreLeaderboardPlayers
-);
-players.sort(playerComparator);
-
-const date = new Date();
-
-console.log(JSON.stringify(players));
-
-const prisma = new PrismaClient();
-
-await prisma.$transaction(async (tx) => {
-  const newSnapshot = await tx.leaderboardSnapshot.create({
-    data: {
-      date,
-    },
-  });
-
-  const upsertPlayerPromises = players.map((p) => {
-    const newStats = {
-      snapshotId: newSnapshot.id,
-      totalRank: p.totalRank,
-      totalScore: p.totalScore,
-      pvpRank: p.pvpRank,
-      pvpScore: p.pvpScore,
-      scoreRatioMin:
-        p.scoreRatio._type === "known" ? p.scoreRatio.value : p.scoreRatio.min,
-      scoreRatioMax:
-        p.scoreRatio._type === "known" ? p.scoreRatio.value : p.scoreRatio.max,
-    };
-
-    tx.player.upsert({
-      where: {
-        steamId: p.steamId,
-      },
-      update: {
-        name: p.name,
-        profileImageId: p.profileImageId,
-        stats: {
-          create: newStats,
-        },
-      },
-      create: {
-        name: p.name,
-        steamId: p.steamId,
-        steamIdType: p.steamIdType,
-        profileImageId: p.profileImageId,
-        stats: {
-          create: newStats,
-        },
-      },
-      include: {
-        stats: true,
-      },
+const leaderboardFetcher = opts.fromCache
+  ? new CachedLeaderboardFetcher({ path: opts.fromCache })
+  : new SteamWebLeaderboardFetcher({
+      gameId: "2504090",
+      totalScoreLeaderboardId: "16656646",
+      pvpScoreLeaderboardId: "16808192",
+      leaderboardSize: 200,
+      leaderboardPageSize: 15,
     });
-  });
 
-  await Promise.all(upsertPlayerPromises);
-});
+const leaderboardWriter = opts.toCache
+  ? new CacheLeaderboardWriter({ path: opts.toCache })
+  : new DbLeaderboardWriter();
+
+const leaderboard = await leaderboardFetcher.fetch();
+await leaderboardWriter.write(leaderboard);
