@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Fri Jul 25 02:38:52 UTC 2025** (updated every hour)
+Last updated: **Fri Jul 25 03:29:49 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -127,10 +127,10 @@ lowest possible score ratio (if unknown).
 | 103   | <a href="https://steamcommunity.com/id/smileyexi/stats/2504090/">Ex3mpLe</a>                                      | 160        | 131      | 1343048     | 466088    | 0.347         |
 | 104   | <a href="https://steamcommunity.com/profiles/76561198035771561/stats/2504090/">Mr. Yikes</a>                      |            | 154      |             | 415750    | 0.347 - 1.000 |
 | 105   | <a href="https://steamcommunity.com/profiles/76561198017511092/stats/2504090/">Radosław Rumian</a>                |            | 155      |             | 415046    | 0.346 - 1.000 |
-| 106   | <a href="https://steamcommunity.com/id/2Fat2Move/stats/2504090/">2Fat2Move</a>                                    | 19         | 12       | 3608910     | 1233998   | 0.342         |
-| 107   | <a href="https://steamcommunity.com/profiles/76561198058297745/stats/2504090/">Catt.</a>                          | 148        | 120      | 1406756     | 480705    | 0.342         |
-| 108   | <a href="https://steamcommunity.com/profiles/76561198980251711/stats/2504090/">dipshit</a>                        |            | 156      |             | 408499    | 0.341 - 1.000 |
-| 109   | <a href="https://steamcommunity.com/id/mcdiel/stats/2504090/">McDiel</a>                                          | 193        | 150      | 1234306     | 420498    | 0.341         |
+| 106   | <a href="https://steamcommunity.com/profiles/76561198058297745/stats/2504090/">Catt.</a>                          | 148        | 120      | 1406756     | 480705    | 0.342         |
+| 107   | <a href="https://steamcommunity.com/profiles/76561198980251711/stats/2504090/">dipshit</a>                        |            | 156      |             | 408499    | 0.341 - 1.000 |
+| 108   | <a href="https://steamcommunity.com/id/mcdiel/stats/2504090/">McDiel</a>                                          | 193        | 150      | 1234306     | 420498    | 0.341         |
+| 109   | <a href="https://steamcommunity.com/id/2Fat2Move/stats/2504090/">2Fat2Move</a>                                    | 17         | 12       | 3639523     | 1239679   | 0.341         |
 | 110   | <a href="https://steamcommunity.com/profiles/76561198079450010/stats/2504090/">MiotaDerg</a>                      |            | 158      |             | 406724    | 0.339 - 1.000 |
 | 111   | <a href="https://steamcommunity.com/profiles/76561199814439662/stats/2504090/">Flodelaqq</a>                      | 182        | 146      | 1269671     | 426991    | 0.336         |
 | 112   | <a href="https://steamcommunity.com/profiles/76561198069209496/stats/2504090/">[IVOP]Plasma</a>                   |            | 160      |             | 401330    | 0.335 - 1.000 |
@@ -203,7 +203,7 @@ lowest possible score ratio (if unknown).
 | 179   | <a href="https://steamcommunity.com/profiles/76561198325354159/stats/2504090/">Trusted Member of Society</a>      | 76         | 149      | 2111354     | 420677    | 0.199         |
 | 180   | <a href="https://steamcommunity.com/profiles/76561198168323592/stats/2504090/">Thorins</a>                        | 90         | 176      | 1916217     | 379744    | 0.198         |
 | 181   | <a href="https://steamcommunity.com/profiles/76561198127097661/stats/2504090/">faceless</a>                       | 50         | 107      | 2535129     | 497011    | 0.196         |
-| 182   | <a href="https://steamcommunity.com/id/PapaKush/stats/2504090/">plb</a>                                           | 17         | 54       | 3638578     | 698982    | 0.192         |
+| 182   | <a href="https://steamcommunity.com/id/PapaKush/stats/2504090/">plb</a>                                           | 18         | 54       | 3638578     | 698982    | 0.192         |
 | 183   | <a href="https://steamcommunity.com/profiles/76561198095247131/stats/2504090/">FoxwarriorS999</a>                 | 80         | 177      | 2058005     | 377779    | 0.184         |
 | 184   | <a href="https://steamcommunity.com/id/SpinCone/stats/2504090/">ActuallySpin</a>                                  | 51         | 138      | 2516355     | 454858    | 0.181         |
 | 185   | <a href="https://steamcommunity.com/id/CrazySonar/stats/2504090/">CrazySonaR</a>                                  | 54         | 142      | 2498804     | 444022    | 0.178         |
@@ -212,7 +212,7 @@ lowest possible score ratio (if unknown).
 | 188   | <a href="https://steamcommunity.com/id/EnglishFitzPercy/stats/2504090/">Nano</a>                                  | 23         | 69       | 3550047     | 595442    | 0.168         |
 | 189   | <a href="https://steamcommunity.com/profiles/76561198029876026/stats/2504090/">[FGG] El Bolato</a>                | 31         | 76       | 3338994     | 559179    | 0.167         |
 | 190   | <a href="https://steamcommunity.com/profiles/76561198046663567/stats/2504090/">ARES</a>                           | 16         | 77       | 3649052     | 557769    | 0.153         |
-| 191   | <a href="https://steamcommunity.com/id/SaintLuv/stats/2504090/">Sidney ♡</a>                                      | 18         | 79       | 3621994     | 546778    | 0.151         |
+| 191   | <a href="https://steamcommunity.com/id/SaintLuv/stats/2504090/">Sidney ♡</a>                                      | 19         | 79       | 3621994     | 546778    | 0.151         |
 | 192   | <a href="https://steamcommunity.com/id/Escoberry/stats/2504090/">󠀡󠀡᠌ ⁧⁧Escoberry</a>                            | 22         | 86       | 3563145     | 532839    | 0.150         |
 | 193   | <a href="https://steamcommunity.com/id/kwizyt/stats/2504090/">Kwizyt</a>                                          | 43         | 184      | 2639536     | 374869    | 0.142         |
 | 194   | <a href="https://steamcommunity.com/id/brapn/stats/2504090/">Brap</a>                                             | 7          | 49       | 5291004     | 733023    | 0.139         |
