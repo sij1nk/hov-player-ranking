@@ -6,8 +6,8 @@ export type PlayerCommon = {
 };
 
 export enum SteamIdType {
-  Id,
-  Custom,
+  Id = "ID",
+  Custom = "CUSTOM",
 }
 
 export function getSteamIdType(pathSegment: string): SteamIdType | null {
