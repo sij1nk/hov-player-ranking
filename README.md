@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Mon Jul 28 05:08:32 UTC 2025** (updated every hour)
+Last updated: **Mon Jul 28 06:03:48 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -216,7 +216,7 @@ lowest possible score ratio (if unknown).
 | 192   | <a href="https://steamcommunity.com/id/Escoberry/stats/2504090/">󠀡󠀡᠌ ⁧⁧Escoberry</a>                            | 23         | 91       | 3563145     | 532839    | 0.150         |
 | 193   | <a href="https://steamcommunity.com/id/kwizyt/stats/2504090/">Kwizyt</a>                                          | 47         | 191      | 2639536     | 374869    | 0.142         |
 | 194   | <a href="https://steamcommunity.com/id/brapn/stats/2504090/">Brap</a>                                             | 6          | 49       | 5328417     | 733244    | 0.138         |
-| 195   | <a href="https://steamcommunity.com/id/Zaibazy/stats/2504090/">Zaibazy</a>                                        | 5          | 36       | 6483666     | 874781    | 0.135         |
+| 195   | <a href="https://steamcommunity.com/id/Zaibazy/stats/2504090/">Zaibazy</a>                                        | 5          | 36       | 6544202     | 875995    | 0.134         |
 | 196   | <a href="https://steamcommunity.com/profiles/76561198067645290/stats/2504090/">Whyskers</a>                       | 9          | 71       | 4770602     | 594701    | 0.125         |
 | 197   | <a href="https://steamcommunity.com/profiles/76561198253172551/stats/2504090/">[BDF] ẞjørnke03™</a>               | 4          | 22       | 10090520    | 1079611   | 0.107         |
 | 198   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 25         | 189      | 3543137     | 376477    | 0.106         |
