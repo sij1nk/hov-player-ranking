@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Tue Jul 29 06:03:22 UTC 2025** (updated every hour)
+Last updated: **Tue Jul 29 07:04:34 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -215,8 +215,8 @@ lowest possible score ratio (if unknown).
 | 191   | <a href="https://steamcommunity.com/id/SaintLuv/stats/2504090/">Sidney ♡</a>                                      | 21         | 86       | 3621994     | 546778    | 0.151         |
 | 192   | <a href="https://steamcommunity.com/id/Escoberry/stats/2504090/">󠀡󠀡᠌ ⁧⁧Escoberry</a>                            | 23         | 94       | 3563145     | 532839    | 0.150         |
 | 193   | <a href="https://steamcommunity.com/id/kwizyt/stats/2504090/">Kwizyt</a>                                          | 47         | 194      | 2639536     | 374869    | 0.142         |
-| 194   | <a href="https://steamcommunity.com/id/brapn/stats/2504090/">Brap</a>                                             | 7          | 50       | 5335919     | 733244    | 0.137         |
-| 195   | <a href="https://steamcommunity.com/id/Zaibazy/stats/2504090/">Zaibazy</a>                                        | 5          | 34       | 6664899     | 891916    | 0.134         |
+| 194   | <a href="https://steamcommunity.com/id/brapn/stats/2504090/">Brap</a>                                             | 7          | 50       | 5336316     | 733244    | 0.137         |
+| 195   | <a href="https://steamcommunity.com/id/Zaibazy/stats/2504090/">Zaibazy</a>                                        | 5          | 34       | 6677207     | 891966    | 0.134         |
 | 196   | <a href="https://steamcommunity.com/profiles/76561198067645290/stats/2504090/">Whyskers</a>                       | 9          | 72       | 4770602     | 594701    | 0.125         |
 | 197   | <a href="https://steamcommunity.com/profiles/76561198253172551/stats/2504090/">[BDF] ẞjørnke03™</a>               | 4          | 22       | 10096789    | 1082259   | 0.107         |
 | 198   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 25         | 191      | 3543137     | 376477    | 0.106         |
@@ -233,7 +233,7 @@ lowest possible score ratio (if unknown).
 | 209   | <a href="https://steamcommunity.com/profiles/76561198164488470/stats/2504090/">Benny</a>                          | 38         |          | 2934329     |           | 0.000 - 0.127 |
 | 210   | <a href="https://steamcommunity.com/id/s1c/stats/2504090/">sic</a>                                                | 40         |          | 2809791     |           | 0.000 - 0.132 |
 | 211   | <a href="https://steamcommunity.com/id/ELVIIIIIS/stats/2504090/">[E]LVIIIIISP]RESLEY</a>                          | 41         |          | 2806989     |           | 0.000 - 0.132 |
-| 212   | <a href="https://steamcommunity.com/id/OrNary/stats/2504090/">OrNary</a>                                          | 43         |          | 2765926     |           | 0.000 - 0.134 |
+| 212   | <a href="https://steamcommunity.com/id/OrNary/stats/2504090/">OrNary</a>                                          | 43         |          | 2766576     |           | 0.000 - 0.134 |
 | 213   | <a href="https://steamcommunity.com/id/PanLimontop/stats/2504090/">PanLimontop</a>                                | 51         |          | 2602169     |           | 0.000 - 0.143 |
 | 214   | <a href="https://steamcommunity.com/profiles/76561198396881604/stats/2504090/">Simedax</a>                        | 52         |          | 2595729     |           | 0.000 - 0.143 |
 | 215   | <a href="https://steamcommunity.com/profiles/76561198039173811/stats/2504090/">The Lonely Wolf</a>                | 53         |          | 2587086     |           | 0.000 - 0.144 |
