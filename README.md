@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Tue Jul 29 03:33:40 UTC 2025** (updated every hour)
+Last updated: **Tue Jul 29 04:19:12 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -294,9 +294,9 @@ lowest possible score ratio (if unknown).
 | 270   | <a href="https://steamcommunity.com/profiles/76561198041766690/stats/2504090/">Sand_Reaver</a>                    | 184        |          | 1294151     |           | 0.000 - 0.287 |
 | 271   | <a href="https://steamcommunity.com/id/localscripter/stats/2504090/">rotta</a>                                    | 185        |          | 1293437     |           | 0.000 - 0.287 |
 | 272   | <a href="https://steamcommunity.com/profiles/76561198061172618/stats/2504090/">TrashTrouble</a>                   | 187        |          | 1290145     |           | 0.000 - 0.288 |
-| 273   | <a href="https://steamcommunity.com/profiles/76561198080735489/stats/2504090/">Blitzbumm</a>                      | 191        |          | 1273738     |           | 0.000 - 0.291 |
-| 274   | <a href="https://steamcommunity.com/profiles/76561198149878893/stats/2504090/">Mad Lad Karbus</a>                 | 192        |          | 1271162     |           | 0.000 - 0.292 |
-| 275   | <a href="https://steamcommunity.com/profiles/76561198018354338/stats/2504090/">MidNyte`Hammer</a>                 | 193        |          | 1270483     |           | 0.000 - 0.292 |
+| 273   | <a href="https://steamcommunity.com/profiles/76561198018354338/stats/2504090/">MidNyte`Hammer</a>                 | 191        |          | 1274498     |           | 0.000 - 0.291 |
+| 274   | <a href="https://steamcommunity.com/profiles/76561198080735489/stats/2504090/">Blitzbumm</a>                      | 192        |          | 1273738     |           | 0.000 - 0.291 |
+| 275   | <a href="https://steamcommunity.com/profiles/76561198149878893/stats/2504090/">Mad Lad Karbus</a>                 | 193        |          | 1271162     |           | 0.000 - 0.292 |
 | 276   | <a href="https://steamcommunity.com/profiles/76561198024263516/stats/2504090/">Freddo</a>                         | 194        |          | 1267316     |           | 0.000 - 0.293 |
 | 277   | <a href="https://steamcommunity.com/id/cosmictoof/stats/2504090/">Toof</a>                                        | 195        |          | 1262985     |           | 0.000 - 0.294 |
 | 278   | <a href="https://steamcommunity.com/id/OZZYSWIFT/stats/2504090/">OZZY</a>                                         | 196        |          | 1262963     |           | 0.000 - 0.294 |
