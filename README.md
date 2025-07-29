@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Tue Jul 29 02:46:26 UTC 2025** (updated every hour)
+Last updated: **Tue Jul 29 03:33:40 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -140,7 +140,7 @@ lowest possible score ratio (if unknown).
 | 116   | <a href="https://steamcommunity.com/profiles/76561198026107556/stats/2504090/">Rotofast</a>                       |            | 165      |             | 404637    | 0.325 - 1.000 |
 | 117   | <a href="https://steamcommunity.com/profiles/76561198073696140/stats/2504090/">Jürgen Jungspund</a>               |            | 166      |             | 404242    | 0.325 - 1.000 |
 | 118   | <a href="https://steamcommunity.com/profiles/76561198069209496/stats/2504090/">[IVOP]Plasma</a>                   |            | 169      |             | 401330    | 0.322 - 1.000 |
-| 119   | <a href="https://steamcommunity.com/profiles/76561199186072913/stats/2504090/">blitzed_u1</a>                     | 197        | 168      | 1252498     | 401859    | 0.321         |
+| 119   | <a href="https://steamcommunity.com/profiles/76561199186072913/stats/2504090/">blitzed_u1</a>                     | 198        | 168      | 1252498     | 401859    | 0.321         |
 | 120   | <a href="https://steamcommunity.com/id/TekiSEazy/stats/2504090/">qki</a>                                          |            | 171      |             | 398799    | 0.320 - 1.000 |
 | 121   | <a href="https://steamcommunity.com/profiles/76561197998451842/stats/2504090/">kazenisran</a>                     | 200        | 172      | 1244517     | 394766    | 0.317         |
 | 122   | <a href="https://steamcommunity.com/profiles/76561198148923885/stats/2504090/">Jacob</a>                          | 117        | 89       | 1700507     | 538545    | 0.317         |
@@ -221,7 +221,7 @@ lowest possible score ratio (if unknown).
 | 197   | <a href="https://steamcommunity.com/profiles/76561198253172551/stats/2504090/">[BDF] ẞjørnke03™</a>               | 4          | 22       | 10096789    | 1082259   | 0.107         |
 | 198   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 25         | 190      | 3543137     | 376477    | 0.106         |
 | 199   | <a href="https://steamcommunity.com/profiles/76561198061036994/stats/2504090/">[AMOK] Sago 420</a>                | 3          | 21       | 10929892    | 1118755   | 0.102         |
-| 200   | <a href="https://steamcommunity.com/profiles/76561198021551726/stats/2504090/">[BDF] DIRK</a>                     | 1          | 31       | 19100034    | 922470    | 0.048         |
+| 200   | <a href="https://steamcommunity.com/profiles/76561198021551726/stats/2504090/">[BDF] DIRK</a>                     | 1          | 31       | 19196419    | 922470    | 0.048         |
 | 201   | <a href="https://steamcommunity.com/profiles/76561199077298171/stats/2504090/">b.tychon</a>                       | 13         |          | 4506825     |           | 0.000 - 0.082 |
 | 202   | <a href="https://steamcommunity.com/profiles/76561198200706150/stats/2504090/">Итальянец</a>                      | 15         |          | 4065047     |           | 0.000 - 0.091 |
 | 203   | <a href="https://steamcommunity.com/id/RyyyaSenpai/stats/2504090/">SeNtiMentAlNaYa</a>                            | 22         |          | 3573980     |           | 0.000 - 0.104 |
@@ -296,10 +296,10 @@ lowest possible score ratio (if unknown).
 | 272   | <a href="https://steamcommunity.com/profiles/76561198061172618/stats/2504090/">TrashTrouble</a>                   | 187        |          | 1290145     |           | 0.000 - 0.288 |
 | 273   | <a href="https://steamcommunity.com/profiles/76561198080735489/stats/2504090/">Blitzbumm</a>                      | 191        |          | 1273738     |           | 0.000 - 0.291 |
 | 274   | <a href="https://steamcommunity.com/profiles/76561198149878893/stats/2504090/">Mad Lad Karbus</a>                 | 192        |          | 1271162     |           | 0.000 - 0.292 |
-| 275   | <a href="https://steamcommunity.com/profiles/76561198024263516/stats/2504090/">Freddo</a>                         | 193        |          | 1267316     |           | 0.000 - 0.293 |
-| 276   | <a href="https://steamcommunity.com/id/cosmictoof/stats/2504090/">Toof</a>                                        | 194        |          | 1262985     |           | 0.000 - 0.294 |
-| 277   | <a href="https://steamcommunity.com/id/OZZYSWIFT/stats/2504090/">OZZY</a>                                         | 195        |          | 1262963     |           | 0.000 - 0.294 |
-| 278   | <a href="https://steamcommunity.com/profiles/76561198177503049/stats/2504090/">Jhonnysan</a>                      | 196        |          | 1257760     |           | 0.000 - 0.295 |
-| 279   | <a href="https://steamcommunity.com/profiles/76561198018354338/stats/2504090/">MidNyte`Hammer</a>                 | 198        |          | 1247399     |           | 0.000 - 0.298 |
+| 275   | <a href="https://steamcommunity.com/profiles/76561198018354338/stats/2504090/">MidNyte`Hammer</a>                 | 193        |          | 1270483     |           | 0.000 - 0.292 |
+| 276   | <a href="https://steamcommunity.com/profiles/76561198024263516/stats/2504090/">Freddo</a>                         | 194        |          | 1267316     |           | 0.000 - 0.293 |
+| 277   | <a href="https://steamcommunity.com/id/cosmictoof/stats/2504090/">Toof</a>                                        | 195        |          | 1262985     |           | 0.000 - 0.294 |
+| 278   | <a href="https://steamcommunity.com/id/OZZYSWIFT/stats/2504090/">OZZY</a>                                         | 196        |          | 1262963     |           | 0.000 - 0.294 |
+| 279   | <a href="https://steamcommunity.com/profiles/76561198177503049/stats/2504090/">Jhonnysan</a>                      | 197        |          | 1257760     |           | 0.000 - 0.295 |
 | 280   | <a href="https://steamcommunity.com/id/tomowho/stats/2504090/">Tomo</a>                                           | 199        |          | 1247345     |           | 0.000 - 0.298 |
 
