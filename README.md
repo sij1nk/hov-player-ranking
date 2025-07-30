@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Wed Jul 30 02:41:32 UTC 2025** (updated every hour)
+Last updated: **Wed Jul 30 03:31:00 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -221,7 +221,7 @@ lowest possible score ratio (if unknown).
 | 197   | <a href="https://steamcommunity.com/profiles/76561198253172551/stats/2504090/">[BDF] ẞjørnke03™</a>               | 4          | 22       | 10097326    | 1082762   | 0.107         |
 | 198   | <a href="https://steamcommunity.com/profiles/76561198030279488/stats/2504090/">Capt Chad Buffington</a>           | 26         | 192      | 3543137     | 376477    | 0.106         |
 | 199   | <a href="https://steamcommunity.com/profiles/76561198061036994/stats/2504090/">[AMOK] Sago 420</a>                | 3          | 21       | 10929892    | 1118755   | 0.102         |
-| 200   | <a href="https://steamcommunity.com/profiles/76561198021551726/stats/2504090/">[BDF] DIRK</a>                     | 1          | 31       | 19936773    | 922543    | 0.046         |
+| 200   | <a href="https://steamcommunity.com/profiles/76561198021551726/stats/2504090/">[BDF] DIRK</a>                     | 1          | 31       | 19949389    | 922543    | 0.046         |
 | 201   | <a href="https://steamcommunity.com/profiles/76561198200706150/stats/2504090/">Итальянец</a>                      | 8          |          | 5112085     |           | 0.000 - 0.073 |
 | 202   | <a href="https://steamcommunity.com/profiles/76561199077298171/stats/2504090/">b.tychon</a>                       | 14         |          | 4582533     |           | 0.000 - 0.081 |
 | 203   | <a href="https://steamcommunity.com/id/RyyyaSenpai/stats/2504090/">SeNtiMentAlNaYa</a>                            | 22         |          | 3573980     |           | 0.000 - 0.104 |
@@ -261,8 +261,8 @@ lowest possible score ratio (if unknown).
 | 237   | <a href="https://steamcommunity.com/profiles/76561198116529402/stats/2504090/">PerryOde</a>                       | 117        |          | 1711588     |           | 0.000 - 0.218 |
 | 238   | <a href="https://steamcommunity.com/profiles/76561198118788293/stats/2504090/">Vito Corleon</a>                   | 118        |          | 1710167     |           | 0.000 - 0.218 |
 | 239   | <a href="https://steamcommunity.com/profiles/76561199212999749/stats/2504090/">KubaGlobalElite</a>                | 124        |          | 1670288     |           | 0.000 - 0.223 |
-| 240   | <a href="https://steamcommunity.com/profiles/76561197964600144/stats/2504090/">Soulonoscopy</a>                   | 125        |          | 1660620     |           | 0.000 - 0.224 |
-| 241   | <a href="https://steamcommunity.com/id/mass_grave/stats/2504090/">Massgrave</a>                                   | 126        |          | 1652065     |           | 0.000 - 0.225 |
+| 240   | <a href="https://steamcommunity.com/id/mass_grave/stats/2504090/">Massgrave</a>                                   | 125        |          | 1661828     |           | 0.000 - 0.224 |
+| 241   | <a href="https://steamcommunity.com/profiles/76561197964600144/stats/2504090/">Soulonoscopy</a>                   | 126        |          | 1660620     |           | 0.000 - 0.224 |
 | 242   | <a href="https://steamcommunity.com/profiles/76561198129807195/stats/2504090/">Katerlysator</a>                   | 127        |          | 1645063     |           | 0.000 - 0.226 |
 | 243   | <a href="https://steamcommunity.com/id/15162111231/stats/2504090/">Locus</a>                                      | 128        |          | 1618539     |           | 0.000 - 0.230 |
 | 244   | <a href="https://steamcommunity.com/id/docrack/stats/2504090/">Alberto Muerto</a>                                 | 130        |          | 1613718     |           | 0.000 - 0.231 |
@@ -296,7 +296,7 @@ lowest possible score ratio (if unknown).
 | 272   | <a href="https://steamcommunity.com/id/OZZYSWIFT/stats/2504090/">OZZY</a>                                         | 187        |          | 1293599     |           | 0.000 - 0.288 |
 | 273   | <a href="https://steamcommunity.com/id/localscripter/stats/2504090/">rotta</a>                                    | 188        |          | 1293437     |           | 0.000 - 0.288 |
 | 274   | <a href="https://steamcommunity.com/profiles/76561198061172618/stats/2504090/">TrashTrouble</a>                   | 190        |          | 1290145     |           | 0.000 - 0.289 |
-| 275   | <a href="https://steamcommunity.com/profiles/76561198288217164/stats/2504090/">Starkly_fox</a>                    | 194        |          | 1275997     |           | 0.000 - 0.292 |
+| 275   | <a href="https://steamcommunity.com/profiles/76561198288217164/stats/2504090/">Starkly_fox</a>                    | 194        |          | 1282311     |           | 0.000 - 0.290 |
 | 276   | <a href="https://steamcommunity.com/profiles/76561198018354338/stats/2504090/">MidNyte`Hammer</a>                 | 195        |          | 1274498     |           | 0.000 - 0.292 |
 | 277   | <a href="https://steamcommunity.com/profiles/76561198080735489/stats/2504090/">Blitzbumm</a>                      | 196        |          | 1273738     |           | 0.000 - 0.292 |
 | 278   | <a href="https://steamcommunity.com/profiles/76561198149878893/stats/2504090/">Mad Lad Karbus</a>                 | 197        |          | 1271162     |           | 0.000 - 0.293 |
