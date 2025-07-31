@@ -1,0 +1,12 @@
+{
+  "name": "migrate-old-snapshots",
+  "version": "1.0.0",
+  "author": "sijink",
+  "type": "module",
+  "scripts": {
+    "migrate-single-snapshot": "node --experimental-transform-types src/index.ts"
+  },
+  "devDependencies": {
+    "mdt2json": "^1.1.0"
+  }
+}
