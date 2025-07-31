@@ -4,7 +4,8 @@
   "author": "sijink",
   "workspaces": [
     "pkg/data",
-    "pkg/ui"
+    "pkg/ui",
+    "pkg/migrate-old-snapshots"
   ],
   "scripts": {
     "check": "npm run check --workspaces --if-present",
@@ -17,6 +18,7 @@
     "@types/node": "^20.19.1",
     "esbuild": "^0.25.5",
     "eslint": "^9.29.0",
+    "mdt2json": "^1.1.0",
     "prettier": "^3.6.1",
     "tablemark-cli": "^3.0.0",
     "typescript": "^5.8.3",
