@@ -13,7 +13,7 @@ model Player {
   steamId        String        @unique
   steamIdType    SteamIdType
   name           String
-  profileImageId String
+  profileImageId String?
   stats          PlayerStats[]
 
   @@map("players")
