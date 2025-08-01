@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Fri Aug  1 03:36:44 UTC 2025** (updated every hour)
+Last updated: **Fri Aug  1 04:23:33 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
