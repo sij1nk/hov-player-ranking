@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Fri Aug  1 04:23:33 UTC 2025** (updated every hour)
+Last updated: **Fri Aug  1 05:10:39 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -116,7 +116,7 @@ lowest possible score ratio (if unknown).
 | 92    | <a href="https://steamcommunity.com/profiles/76561198047229798/stats/2504090/">DEWSKI</a>                         | 184        | 134      | 1315379     | 477664    | 0.363         |
 | 93    | <a href="https://steamcommunity.com/profiles/76561198122430991/stats/2504090/">Skew</a>                           |            | 142      |             | 464408    | 0.362 - 1.000 |
 | 94    | <a href="https://steamcommunity.com/id/LunarTM/stats/2504090/">Lunar™</a>                                         | 32         | 16       | 3342018     | 1210157   | 0.362         |
-| 95    | <a href="https://steamcommunity.com/profiles/76561199123278013/stats/2504090/">Blitzz</a>                         | 60         | 32       | 2531592     | 915282    | 0.362         |
+| 95    | <a href="https://steamcommunity.com/profiles/76561199123278013/stats/2504090/">Blitzz</a>                         | 59         | 32       | 2553670     | 916207    | 0.359         |
 | 96    | <a href="https://steamcommunity.com/id/Lowsound/stats/2504090/">Lowsound</a>                                      | 51         | 29       | 2636873     | 942307    | 0.357         |
 | 97    | <a href="https://steamcommunity.com/profiles/76561198042786511/stats/2504090/">gillhouse</a>                      |            | 147      |             | 458223    | 0.357 - 1.000 |
 | 98    | <a href="https://steamcommunity.com/profiles/76561198128044414/stats/2504090/">Ionised</a>                        |            | 148      |             | 457694    | 0.357 - 1.000 |
@@ -202,7 +202,7 @@ lowest possible score ratio (if unknown).
 | 178   | <a href="https://steamcommunity.com/profiles/76561198202317834/stats/2504090/">Abbe</a>                           | 29         | 54       | 3531696     | 714741    | 0.202         |
 | 179   | <a href="https://steamcommunity.com/profiles/76561198325354159/stats/2504090/">Trusted Member of Society</a>      | 82         | 165      | 2111354     | 420677    | 0.199         |
 | 180   | <a href="https://steamcommunity.com/profiles/76561198169459924/stats/2504090/">Eigemyr</a>                        | 45         | 86       | 2817427     | 552952    | 0.196         |
-| 181   | <a href="https://steamcommunity.com/profiles/76561198127097661/stats/2504090/">faceless</a>                       | 59         | 119      | 2535129     | 497011    | 0.196         |
+| 181   | <a href="https://steamcommunity.com/profiles/76561198127097661/stats/2504090/">faceless</a>                       | 60         | 119      | 2535129     | 497011    | 0.196         |
 | 182   | <a href="https://steamcommunity.com/id/PapaKush/stats/2504090/">plb</a>                                           | 22         | 57       | 3638578     | 698982    | 0.192         |
 | 183   | <a href="https://steamcommunity.com/profiles/76561198168323592/stats/2504090/">Thorins</a>                        | 88         | 192      | 2039940     | 385008    | 0.189         |
 | 184   | <a href="https://steamcommunity.com/profiles/76561198095247131/stats/2504090/">FoxwarriorS999</a>                 | 71         | 155      | 2349748     | 433150    | 0.184         |
