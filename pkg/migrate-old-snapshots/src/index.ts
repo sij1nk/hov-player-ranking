@@ -4,11 +4,16 @@ import { promisify } from "node:util";
 import { exec as _exec } from "node:child_process";
 import type { Player } from "./types.ts";
 import { playerJsonToPlayer } from "./convert.ts";
-import { PrismaClient } from "../../data/src/generated/prisma/index.js";
+import {
+  PrismaClient,
+  SteamIdType,
+} from "../../data/src/generated/prisma/index.js";
 
-async function writeToDb(date: Date, players: Player[]): Promise<void> {
-  const prisma = new PrismaClient();
-
+async function writeToDb(
+  prisma: PrismaClient,
+  date: Date,
+  players: Player[]
+): Promise<void> {
   await prisma.$transaction(async (tx) => {
     const newLeaderboardSnapshot = await tx.leaderboardSnapshot.create({
       data: {
@@ -16,44 +21,49 @@ async function writeToDb(date: Date, players: Player[]): Promise<void> {
       },
     });
 
-    const upsertPlayerPromises = players.map((p) => {
-      const newStats = {
-        snapshotId: newLeaderboardSnapshot.id,
-        totalRank: p.totalRank,
-        totalScore: p.totalScore,
-        pvpRank: p.pvpRank,
-        pvpScore: p.pvpScore,
-        scoreRatioMin: p.scoreRatioMin,
-        scoreRatioMax: p.scoreRatioMax,
-      };
+    const dbPlayers = await tx.player.findMany();
 
-      return tx.player.upsert({
-        where: {
-          steamId: p.steamId,
-          steamIdType: p.steamIdType,
-        },
-        update: {
-          name: p.name,
-          stats: {
-            create: newStats,
-          },
-        },
-        create: {
-          name: p.name,
-          steamId: p.steamId,
-          steamIdType: p.steamIdType,
-          stats: {
-            create: newStats,
-          },
-        },
-        include: {
-          stats: true,
-        },
-      });
+    const missingPlayers = players.filter(
+      (p) => !dbPlayers.some((dbp) => isSamePlayer(dbp, p))
+    );
+
+    const addedDbPlayers = await tx.player.createManyAndReturn({
+      data: missingPlayers.map((p) => ({
+        name: p.name,
+        steamId: p.steamId,
+        steamIdType: p.steamIdType,
+      })),
     });
 
-    await Promise.all(upsertPlayerPromises);
+    const allDbPlayers = [...dbPlayers, ...addedDbPlayers];
+
+    const newStats = players.map((p) => ({
+      snapshotId: newLeaderboardSnapshot.id,
+      playerId: allDbPlayers.find((dbp) => isSamePlayer(dbp, p))!.id,
+      totalRank: p.totalRank,
+      totalScore: p.totalScore,
+      pvpRank: p.pvpRank,
+      pvpScore: p.pvpScore,
+      scoreRatioMin: p.scoreRatioMin,
+      scoreRatioMax: p.scoreRatioMax,
+    }));
+
+    await tx.playerStats.createMany({ data: newStats });
   });
+}
+
+type PlayerSecondaryId = {
+  steamId: string;
+  steamIdType: SteamIdType;
+};
+
+function isSamePlayer(
+  left: PlayerSecondaryId,
+  right: PlayerSecondaryId
+): boolean {
+  return (
+    left.steamId === right.steamId && left.steamIdType === right.steamIdType
+  );
 }
 
 function arg(i: number): number | undefined {
@@ -100,6 +110,8 @@ const currentShas = shas.slice(from, to);
 
 const now = new Date();
 
+const prisma = new PrismaClient();
+
 let i = from;
 for (const sha of currentShas) {
   console.log(`Processing (${i}/${to})...`);
@@ -140,5 +152,5 @@ for (const sha of currentShas) {
     continue;
   }
   const players = json.map(playerJsonToPlayer);
-  await writeToDb(date, players);
+  await writeToDb(prisma, date, players);
 }
