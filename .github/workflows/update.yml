@@ -3,23 +3,16 @@ on:
   schedule:
     - cron: "0 * * * *" # Every hour
 
-name: Update leaderboard
-permissions:
-  contents: write
+name: Take leaderboard snapshot
 jobs:
   update:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - name: Generate leaderboard
+      - name: Take leaderboard snapshot
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
+          cd pkg/data
           npm ci
-          npm run build
-          npm run generate
-      - name: Push to master
-        run: |
-          git config --global user.name "sij1nk"
-          git config --global user.email "gergo.rajnavolgyi@gmail.com"
-          git add README.md
-          git commit -m "Update"
-          git push
+          npm run take-snapshot
