@@ -4,6 +4,9 @@
   "author": "sijink",
   "type": "module",
   "scripts": {
+    "check": "tsc",
+    "lint": "eslint",
+    "format": "prettier -w .",
     "migrate-old-snapshots": "dotenv -c development -- node --experimental-transform-types src/index.ts",
     "migrate-old-snapshots-prod": "dotenv -c production -- node --experimental-transform-types src/index.ts"
   },
