@@ -4,7 +4,8 @@
   "author": "sijink",
   "type": "module",
   "scripts": {
-    "migrate-old-snapshots": "dotenv -c development -- node --experimental-transform-types src/index.ts"
+    "migrate-old-snapshots": "dotenv -c development -- node --experimental-transform-types src/index.ts",
+    "migrate-old-snapshots-prod": "dotenv -c production -- node --experimental-transform-types src/index.ts"
   },
   "devDependencies": {
     "dotenv-cli": "^8.0.0",
