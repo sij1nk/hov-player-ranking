@@ -7,6 +7,9 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
     const prisma = new PrismaClient();
 
     await prisma.$transaction(async (tx) => {
+      console.log(
+        `Creating new leaderboard snapshot for ${leaderboard.date}...`
+      );
       const newLeaderboardSnapshot = await tx.leaderboardSnapshot.create({
         data: {
           date: leaderboard.date,
@@ -19,6 +22,9 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
         (p) => !dbPlayers.some((dbp) => isSamePlayer(dbp, p))
       );
 
+      console.log(
+        `Adding player information for ${missingPlayers.length} new players...`
+      );
       const addedDbPlayers = await tx.player.createManyAndReturn({
         data: missingPlayers.map((p) => ({
           name: p.name,
@@ -45,6 +51,9 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
         });
       });
 
+      console.log(
+        `Updating player information for ${updatePlayerPromises.length} players...`
+      );
       await Promise.all(updatePlayerPromises);
 
       const newStats = leaderboard.players.map((p) => ({
@@ -64,6 +73,7 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
             : p.scoreRatio.max,
       }));
 
+      console.log(`Updating stats of ${newStats.length} players...`);
       await tx.playerStats.createMany({ data: newStats });
     });
   }
