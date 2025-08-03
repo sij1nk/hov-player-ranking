@@ -6,6 +6,10 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
   public async write(leaderboard: Leaderboard): Promise<void> {
     const prisma = new PrismaClient();
 
+    const txOptions = {
+      timeout: 60000,
+    };
+
     await prisma.$transaction(async (tx) => {
       console.log(
         `Creating new leaderboard snapshot for ${leaderboard.date}...`
@@ -35,21 +39,23 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
 
       const allDbPlayers = [...dbPlayers, ...addedDbPlayers];
 
-      const updatePlayerPromises = leaderboard.players.map((p) => {
-        const dbp = allDbPlayers.find((_dbp) => isSamePlayer(_dbp, p))!;
-        if (dbp.name === p.name && dbp.profileImageId === p.profileImageId)
-          return null;
-        return tx.player.update({
-          where: {
-            steamId: p.steamId,
-            steamIdType: p.steamIdType,
-          },
-          data: {
-            name: p.name,
-            profileImageId: p.profileImageId,
-          },
-        });
-      });
+      const updatePlayerPromises = leaderboard.players
+        .map((p) => {
+          const dbp = allDbPlayers.find((_dbp) => isSamePlayer(_dbp, p))!;
+          if (dbp.name === p.name && dbp.profileImageId === p.profileImageId)
+            return null;
+          return tx.player.update({
+            where: {
+              steamId: p.steamId,
+              steamIdType: p.steamIdType,
+            },
+            data: {
+              name: p.name,
+              profileImageId: p.profileImageId,
+            },
+          });
+        })
+        .filter(Boolean);
 
       console.log(
         `Updating player information for ${updatePlayerPromises.length} players...`
@@ -75,6 +81,6 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
 
       console.log(`Updating stats of ${newStats.length} players...`);
       await tx.playerStats.createMany({ data: newStats });
-    });
+    }, txOptions);
   }
 }
