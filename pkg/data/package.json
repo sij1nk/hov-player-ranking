@@ -8,6 +8,7 @@
     "lint": "eslint",
     "format": "prettier -w .",
     "take-snapshot": "dotenv -c development -- node --experimental-transform-types src/index.ts",
+    "take-snapshot-prod": "dotenv -c production -- node --experimental-transform-types src/index.ts",
     "prisma": "dotenv -c development -- npx prisma",
     "prisma-prod": "dotenv -c production -- npx prisma"
   },
