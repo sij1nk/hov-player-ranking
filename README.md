@@ -1,6 +1,6 @@
 # Heroes of Valor player ranking
 
-Last updated: **Sun Aug  3 05:08:17 UTC 2025** (updated every hour)
+Last updated: **Sun Aug  3 06:02:56 UTC 2025** (updated every hour)
 
 This leaderboard is derived from the two official leaderboards found here:
 
@@ -96,9 +96,9 @@ lowest possible score ratio (if unknown).
 | 72    | <a href="https://steamcommunity.com/id/tomeyrl/stats/2504090/">Tomey</a>                                          | 175        | 106      | 1358685     | 525776    | 0.387         |
 | 73    | <a href="https://steamcommunity.com/profiles/76561198244490020/stats/2504090/">PoKrFace</a>                       |            | 120      |             | 500150    | 0.387 - 1.000 |
 | 74    | <a href="https://steamcommunity.com/id/Convictive/stats/2504090/">taco</a>                                        |            | 121      |             | 498431    | 0.385 - 1.000 |
-| 75    | <a href="https://steamcommunity.com/id/iplay5/stats/2504090/">IPlay5</a>                                          |            | 123      |             | 494690    | 0.382 - 1.000 |
-| 76    | <a href="https://steamcommunity.com/profiles/76561199801966805/stats/2504090/">champagnerwowa</a>                 |            | 126      |             | 492608    | 0.381 - 1.000 |
-| 77    | <a href="https://steamcommunity.com/id/rushvh/stats/2504090/">EmO $kuff ^^ &lt;3</a>                              |            | 127      |             | 492230    | 0.381 - 1.000 |
+| 75    | <a href="https://steamcommunity.com/id/rushvh/stats/2504090/">EmO $kuff ^^ &lt;3</a>                              |            | 123      |             | 496901    | 0.384 - 1.000 |
+| 76    | <a href="https://steamcommunity.com/id/iplay5/stats/2504090/">IPlay5</a>                                          |            | 124      |             | 494690    | 0.382 - 1.000 |
+| 77    | <a href="https://steamcommunity.com/profiles/76561199801966805/stats/2504090/">champagnerwowa</a>                 |            | 127      |             | 492608    | 0.381 - 1.000 |
 | 78    | <a href="https://steamcommunity.com/id/Terezi/stats/2504090/">PK Freeze</a>                                       |            | 128      |             | 491945    | 0.380 - 1.000 |
 | 79    | <a href="https://steamcommunity.com/profiles/76561198032309532/stats/2504090/">Kvast</a>                          | 46         | 24       | 2840072     | 1077776   | 0.379         |
 | 80    | <a href="https://steamcommunity.com/profiles/76561198035674474/stats/2504090/">StrawberryCream</a>                |            | 130      |             | 489949    | 0.379 - 1.000 |
@@ -115,7 +115,7 @@ lowest possible score ratio (if unknown).
 | 91    | <a href="https://steamcommunity.com/profiles/76561198270214352/stats/2504090/">Guy</a>                            |            | 141      |             | 473955    | 0.366 - 1.000 |
 | 92    | <a href="https://steamcommunity.com/id/9inSHINE/stats/2504090/">%COLOR(000000)George</a>                          |            | 143      |             | 471876    | 0.365 - 1.000 |
 | 93    | <a href="https://steamcommunity.com/profiles/76561198805217911/stats/2504090/">Fr0sT</a>                          |            | 144      |             | 471793    | 0.365 - 1.000 |
-| 94    | <a href="https://steamcommunity.com/profiles/76561198047229798/stats/2504090/">DEWSKI</a>                         | 174        | 125      | 1359421     | 493047    | 0.363         |
+| 94    | <a href="https://steamcommunity.com/profiles/76561198047229798/stats/2504090/">DEWSKI</a>                         | 174        | 126      | 1359421     | 493047    | 0.363         |
 | 95    | <a href="https://steamcommunity.com/profiles/76561198023473780/stats/2504090/">tinta_001</a>                      |            | 148      |             | 468652    | 0.362 - 1.000 |
 | 96    | <a href="https://steamcommunity.com/profiles/76561198015565718/stats/2504090/">SnexiHUN</a>                       |            | 149      |             | 468525    | 0.362 - 1.000 |
 | 97    | <a href="https://steamcommunity.com/id/LunarTM/stats/2504090/">Lunar™</a>                                         | 32         | 17       | 3342018     | 1210157   | 0.362         |
@@ -144,7 +144,7 @@ lowest possible score ratio (if unknown).
 | 120   | <a href="https://steamcommunity.com/profiles/76561198163432731/stats/2504090/">Jeeh</a>                           |            | 170      |             | 424850    | 0.328 - 1.000 |
 | 121   | <a href="https://steamcommunity.com/profiles/76561199186072913/stats/2504090/">blitzed_u1</a>                     | 131        | 94       | 1642848     | 539498    | 0.328         |
 | 122   | <a href="https://steamcommunity.com/profiles/76561199814439662/stats/2504090/">Flodelaqq</a>                      | 191        | 166      | 1315639     | 431219    | 0.328         |
-| 123   | <a href="https://steamcommunity.com/profiles/76561198219911045/stats/2504090/">Gsälzbär</a>                       | 149        | 124      | 1512937     | 493279    | 0.326         |
+| 123   | <a href="https://steamcommunity.com/profiles/76561198219911045/stats/2504090/">Gsälzbär</a>                       | 149        | 125      | 1512937     | 493279    | 0.326         |
 | 124   | <a href="https://steamcommunity.com/profiles/76561198199299862/stats/2504090/">BorneForHeaven</a>                 |            | 174      |             | 418977    | 0.324 - 1.000 |
 | 125   | <a href="https://steamcommunity.com/profiles/76561198035771561/stats/2504090/">Mr. Yikes</a>                      |            | 175      |             | 415750    | 0.321 - 1.000 |
 | 126   | <a href="https://steamcommunity.com/profiles/76561198017511092/stats/2504090/">Radosław Rumian</a>                |            | 176      |             | 415565    | 0.321 - 1.000 |
