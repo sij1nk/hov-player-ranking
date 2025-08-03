@@ -35,6 +35,22 @@ export type Player = PlayerCommon & {
   scoreRatio: ScoreRatio;
 };
 
+type PlayerSecondaryId = {
+  steamId: string;
+  // TODO: is a string due to incompability between SteamIdType (my enum)
+  // and SteamIdType (the prisma-generated one which is an object)
+  steamIdType: string;
+};
+
+export function isSamePlayer(
+  left: PlayerSecondaryId,
+  right: PlayerSecondaryId
+): boolean {
+  return (
+    left.steamId === right.steamId && left.steamIdType === right.steamIdType
+  );
+}
+
 export function playerComparator(p1: Player, p2: Player): number {
   return getPlayerMinimumScoreRatio(p2) - getPlayerMinimumScoreRatio(p1);
 }

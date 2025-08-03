@@ -4,10 +4,8 @@ import { promisify } from "node:util";
 import { exec as _exec } from "node:child_process";
 import type { Player } from "./types.ts";
 import { playerJsonToPlayer } from "./convert.ts";
-import {
-  PrismaClient,
-  SteamIdType,
-} from "../../data/src/generated/prisma/index.js";
+import { PrismaClient } from "../../data/src/generated/prisma/index.js";
+import { isSamePlayer } from "../../data/src/types.ts";
 
 async function writeToDb(
   prisma: PrismaClient,
@@ -50,20 +48,6 @@ async function writeToDb(
 
     await tx.playerStats.createMany({ data: newStats });
   });
-}
-
-type PlayerSecondaryId = {
-  steamId: string;
-  steamIdType: SteamIdType;
-};
-
-function isSamePlayer(
-  left: PlayerSecondaryId,
-  right: PlayerSecondaryId
-): boolean {
-  return (
-    left.steamId === right.steamId && left.steamIdType === right.steamIdType
-  );
 }
 
 function arg(i: number): number | undefined {

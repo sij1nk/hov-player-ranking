@@ -1,5 +1,5 @@
 import { PrismaClient } from "../generated/prisma/index.js";
-import type { Leaderboard } from "../types.ts";
+import { isSamePlayer, type Leaderboard } from "../types.ts";
 import type { LeaderboardWriter } from "./index.ts";
 
 export class DbLeaderboardWriter implements LeaderboardWriter {
@@ -13,51 +13,58 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
         },
       });
 
-      const upsertPlayerPromises = leaderboard.players.map((p) => {
-        const newStats = {
-          snapshotId: newLeaderboardSnapshot.id,
-          totalRank: p.totalRank,
-          totalScore: p.totalScore,
-          pvpRank: p.pvpRank,
-          pvpScore: p.pvpScore,
-          scoreRatioMin:
-            p.scoreRatio._type === "known"
-              ? p.scoreRatio.value
-              : p.scoreRatio.min,
-          scoreRatioMax:
-            p.scoreRatio._type === "known"
-              ? p.scoreRatio.value
-              : p.scoreRatio.max,
-        };
+      const dbPlayers = await tx.player.findMany();
 
-        return tx.player.upsert({
+      const missingPlayers = leaderboard.players.filter(
+        (p) => !dbPlayers.some((dbp) => isSamePlayer(dbp, p))
+      );
+
+      const addedDbPlayers = await tx.player.createManyAndReturn({
+        data: missingPlayers.map((p) => ({
+          name: p.name,
+          steamId: p.steamId,
+          steamIdType: p.steamIdType,
+        })),
+      });
+
+      const allDbPlayers = [...dbPlayers, ...addedDbPlayers];
+
+      const updatePlayerPromises = leaderboard.players.map((p) => {
+        const dbp = allDbPlayers.find((_dbp) => isSamePlayer(_dbp, p))!;
+        if (dbp.name === p.name && dbp.profileImageId === p.profileImageId)
+          return null;
+        return tx.player.update({
           where: {
             steamId: p.steamId,
             steamIdType: p.steamIdType,
           },
-          update: {
+          data: {
             name: p.name,
             profileImageId: p.profileImageId,
-            stats: {
-              create: newStats,
-            },
-          },
-          create: {
-            name: p.name,
-            steamId: p.steamId,
-            steamIdType: p.steamIdType,
-            profileImageId: p.profileImageId,
-            stats: {
-              create: newStats,
-            },
-          },
-          include: {
-            stats: true,
           },
         });
       });
 
-      await Promise.all(upsertPlayerPromises);
+      await Promise.all(updatePlayerPromises);
+
+      const newStats = leaderboard.players.map((p) => ({
+        snapshotId: newLeaderboardSnapshot.id,
+        playerId: allDbPlayers.find((dbp) => isSamePlayer(dbp, p))!.id,
+        totalRank: p.totalRank,
+        totalScore: p.totalScore,
+        pvpRank: p.pvpRank,
+        pvpScore: p.pvpScore,
+        scoreRatioMin:
+          p.scoreRatio._type === "known"
+            ? p.scoreRatio.value
+            : p.scoreRatio.min,
+        scoreRatioMax:
+          p.scoreRatio._type === "known"
+            ? p.scoreRatio.value
+            : p.scoreRatio.max,
+      }));
+
+      await tx.playerStats.createMany({ data: newStats });
     });
   }
 }
