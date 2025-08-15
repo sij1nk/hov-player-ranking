@@ -4,9 +4,9 @@ import {
   type LeaderboardPlayer,
   type Leaderboard,
   type Player,
-  SteamIdType,
 } from "../types.ts";
 import util from "node:util";
+import { SteamIdType } from "common";
 
 export type SteamWebLeaderboardFetcherParams = {
   gameId: string;

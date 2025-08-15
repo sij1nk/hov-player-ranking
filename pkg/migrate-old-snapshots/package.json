@@ -13,5 +13,8 @@
   "devDependencies": {
     "dotenv-cli": "^8.0.0",
     "mdt2json": "^1.1.0"
+  },
+  "dependencies": {
+    "common": "file:../common"
   }
 }

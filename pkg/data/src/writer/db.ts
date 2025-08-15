@@ -1,5 +1,6 @@
+import { isSamePlayer } from "common";
 import { PrismaClient } from "../generated/prisma/index.js";
-import { isSamePlayer, type Leaderboard } from "../types.ts";
+import { type Leaderboard } from "../types.ts";
 import type { LeaderboardWriter } from "./index.ts";
 
 export class DbLeaderboardWriter implements LeaderboardWriter {

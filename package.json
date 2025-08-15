@@ -5,7 +5,9 @@
   "workspaces": [
     "pkg/data",
     "pkg/ui",
-    "pkg/migrate-old-snapshots"
+    "pkg/migrate-old-snapshots",
+    "pkg/db",
+    "pkg/common"
   ],
   "scripts": {
     "check": "npm run check --workspaces --if-present",

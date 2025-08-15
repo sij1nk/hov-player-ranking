@@ -1,3 +1,5 @@
+import { SteamIdType } from "common";
+
 export type PlayerCommon = {
   name: string;
   steamId: string;
@@ -9,11 +11,6 @@ export type Leaderboard = {
   date: string;
   players: Player[];
 };
-
-export enum SteamIdType {
-  Id = "ID",
-  Custom = "CUSTOM",
-}
 
 export type LeaderboardPlayer = PlayerCommon & {
   rank: number;
@@ -34,22 +31,6 @@ export type Player = PlayerCommon & {
   pvpScore?: number;
   scoreRatio: ScoreRatio;
 };
-
-type PlayerSecondaryId = {
-  steamId: string;
-  // TODO: is a string due to incompability between SteamIdType (my enum)
-  // and SteamIdType (the prisma-generated one which is an object)
-  steamIdType: string;
-};
-
-export function isSamePlayer(
-  left: PlayerSecondaryId,
-  right: PlayerSecondaryId
-): boolean {
-  return (
-    left.steamId === right.steamId && left.steamIdType === right.steamIdType
-  );
-}
 
 export function playerComparator(p1: Player, p2: Player): number {
   return getPlayerMinimumScoreRatio(p2) - getPlayerMinimumScoreRatio(p1);

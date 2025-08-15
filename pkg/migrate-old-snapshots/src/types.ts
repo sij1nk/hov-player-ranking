@@ -1,4 +1,4 @@
-import type { SteamIdType } from "../../data/src/types.ts";
+import type { SteamIdType } from "common";
 
 export type PlayerJson = {
   Rank: string;

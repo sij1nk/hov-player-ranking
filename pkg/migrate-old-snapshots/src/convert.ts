@@ -1,4 +1,4 @@
-import { SteamIdType } from "../../data/src/types.ts";
+import { SteamIdType } from "common";
 import type { PlayerJson, Player } from "./types.ts";
 
 export function playerJsonToPlayer(playerJson: PlayerJson): Player {

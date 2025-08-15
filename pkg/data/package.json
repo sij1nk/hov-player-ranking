@@ -8,19 +8,16 @@
     "lint": "eslint",
     "format": "prettier -w .",
     "take-snapshot": "dotenv -c development -- node --experimental-transform-types src/index.ts",
-    "take-snapshot-prod": "dotenv -c production -- node --experimental-transform-types src/index.ts",
-    "prisma": "dotenv -c development -- npx prisma",
-    "prisma-prod": "dotenv -c production -- npx prisma"
+    "take-snapshot-prod": "dotenv -c production -- node --experimental-transform-types src/index.ts"
   },
   "devDependencies": {
     "@commander-js/extra-typings": "^14.0.0",
     "dotenv-cli": "^8.0.0",
-    "prisma": "^6.12.0",
     "tablemark-cli": "^3.0.0"
   },
   "dependencies": {
-    "@prisma/client": "^6.12.0",
     "commander": "^14.0.0",
+    "common": "file:../common",
     "node-fetch": "^3.3.2",
     "node-html-parser": "^7.0.1"
   }

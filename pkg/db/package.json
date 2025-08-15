@@ -1,0 +1,13 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "author": "sijink",
+  "type": "module",
+  "scripts": {
+    "prisma": "dotenv -c development -- npx prisma",
+    "prisma-prod": "dotenv -c production -- npx prisma"
+  },
+  "devDependencies": {
+    "prisma": "^6.14.0"
+  }
+}
