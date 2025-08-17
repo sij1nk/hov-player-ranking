@@ -1,0 +1,9 @@
+<script lang="ts">
+  import type { PageProps } from "./$types";
+
+  let { data }: PageProps = $props();
+</script>
+
+<h1>Leaderboard</h1>
+
+Snapshots count: {data.snapshots.length}
