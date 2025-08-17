@@ -4,7 +4,7 @@ import { promisify } from "node:util";
 import { exec as _exec } from "node:child_process";
 import type { Player } from "./types.ts";
 import { playerJsonToPlayer } from "./convert.ts";
-import { PrismaClient } from "./generated/prisma/index.js";
+import { PrismaClient } from "./generated/prisma/client.ts";
 import { isSamePlayer } from "common";
 
 async function writeToDb(

@@ -1,5 +1,5 @@
 import { isSamePlayer } from "common";
-import { PrismaClient } from "../generated/prisma/index.js";
+import { PrismaClient } from "../generated/prisma/client.ts";
 import { type Leaderboard } from "../types.ts";
 import type { LeaderboardWriter } from "./index.ts";
 
