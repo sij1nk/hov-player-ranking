@@ -66,6 +66,8 @@
 
   // NOTE: `data.snapshots` is ordered by `dateShort` desc
   let { data }: PageProps = $props();
+
+  console.log("Snapshot count:", data.snapshots.length);
 </script>
 
 {#snippet navigationButton(button)}
