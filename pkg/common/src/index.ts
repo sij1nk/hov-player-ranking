@@ -1,3 +1,5 @@
+import util from "node:util";
+
 export enum SteamIdType {
   Id = "ID",
   Custom = "CUSTOM",
@@ -16,5 +18,15 @@ export function isSamePlayer(
 ): boolean {
   return (
     left.steamId === right.steamId && left.steamIdType === right.steamIdType
+  );
+}
+
+export function getDateShort(date: Date): string {
+  return util.format(
+    "%s-%s-%s-%s",
+    date.getFullYear(),
+    String(date.getMonth()).padStart(2, "0"),
+    String(date.getDate()).padStart(2, "0"),
+    String(date.getHours()).padStart(2, "0")
   );
 }

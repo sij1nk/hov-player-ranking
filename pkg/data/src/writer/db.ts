@@ -1,4 +1,4 @@
-import { isSamePlayer } from "common";
+import { getDateShort, isSamePlayer } from "common";
 import { PrismaClient } from "../generated/prisma/client.ts";
 import { type Leaderboard } from "../types.ts";
 import type { LeaderboardWriter } from "./index.ts";
@@ -18,6 +18,7 @@ export class DbLeaderboardWriter implements LeaderboardWriter {
       const newLeaderboardSnapshot = await tx.leaderboardSnapshot.create({
         data: {
           date: leaderboard.date,
+          dateShort: getDateShort(new Date(leaderboard.date)),
         },
       });
 
