@@ -1,4 +1,4 @@
-import { PrismaClient } from "../../generated/prisma/client";
+import { PrismaClient } from "$lib/generated/prisma/client";
 import { DATABASE_URL } from "$env/static/private";
 
 const client = new PrismaClient({
