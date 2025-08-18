@@ -18,4 +18,5 @@ jobs:
         run: |
           npm ci
           npm run build -w pkg/common
+          npm run prisma generate -w pkg/db
           npm run take-snapshot -w pkg/data
