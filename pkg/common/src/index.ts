@@ -24,9 +24,9 @@ export function isSamePlayer(
 export function getDateShort(date: Date): string {
   return util.format(
     "%s-%s-%s-%s",
-    date.getFullYear(),
-    String(date.getMonth()).padStart(2, "0"),
-    String(date.getDate()).padStart(2, "0"),
-    String(date.getHours()).padStart(2, "0")
+    date.getUTCFullYear(),
+    String(date.getUTCMonth() + 1).padStart(2, "0"),
+    String(date.getUTCDate()).padStart(2, "0"),
+    String(date.getUTCHours()).padStart(2, "0")
   );
 }
