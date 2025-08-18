@@ -8,15 +8,9 @@
   import ChevronLast from "@lucide/svelte/icons/chevron-last";
   import type { PageProps } from "./$types";
   import type { Component } from "svelte";
-  import {
-    back,
-    back24Hours,
-    forward,
-    forward24Hours,
-    latest,
-    oldest,
-    type Snapshot,
-  } from "./navigation";
+  import { back, back24Hours, forward, forward24Hours, latest, oldest } from "./navigation";
+  import { type Snapshot } from "$lib/types";
+  import SnapshotPickerDialog from "$lib/components/snapshot-picker-dialog/snapshot-picker-dialog.svelte";
 
   type ButtonDescription = {
     id: string;
@@ -66,6 +60,7 @@
 
   // NOTE: `data.snapshots` is ordered by `dateShort` desc
   let { data }: PageProps = $props();
+  let isLatest = $derived(data.snapshots[0].id === data.snapshot.id);
 
   console.log("Snapshot count:", data.snapshots.length);
 </script>
@@ -85,7 +80,11 @@
   {#each buttons.slice(0, 3) as button (button.id)}
     {@render navigationButton(button)}
   {/each}
-  {data.snapshot.date.toLocaleString()}
+  <SnapshotPickerDialog
+    currentSnapshot={data.snapshot}
+    snapshots={data.snapshots}
+    snapshotCalendarDates={data.snapshotCalendarDates}
+  />
   {#each buttons.slice(3) as button (button.id)}
     {@render navigationButton(button)}
   {/each}

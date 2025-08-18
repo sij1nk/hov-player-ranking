@@ -1,14 +1,6 @@
-// FIXME: prisma generated models cannot be imported on the client
-// https://github.com/prisma/prisma/issues/26897
-// import { type LeaderboardSnapshotModel as Snapshot } from "$lib/generated/prisma/models/LeaderboardSnapshot";
-type Snapshot = {
-  id: number;
-  date: Date;
-  dateShort: string;
-};
+import type { Snapshot } from "$lib/types";
 
 export type NavigationHrefFn = (snapshot: Snapshot, snapshots: Snapshot[]) => Snapshot | null;
-export { type Snapshot };
 
 const oneDayMs = 1000 * 60 * 60 * 24;
 

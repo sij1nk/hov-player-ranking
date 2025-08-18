@@ -1,14 +1,7 @@
 import { describe, expect, test } from "vitest";
-import {
-  back,
-  back24Hours,
-  forward,
-  forward24Hours,
-  latest,
-  oldest,
-  type Snapshot,
-} from "./navigation";
+import { back, back24Hours, forward, forward24Hours, latest, oldest } from "./navigation";
 import util from "node:util";
+import type { Snapshot } from "$lib/types";
 
 const snapshot = (id: number, dateString: string): Snapshot => {
   const date = new Date(dateString);
