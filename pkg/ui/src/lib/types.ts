@@ -6,3 +6,18 @@ export type Snapshot = {
   date: Date;
   dateShort: string;
 };
+
+export type PlayerLeaderboardStats = {
+  player: {
+    name: string;
+    steamId: string;
+    steamIdType: string;
+    profileImageId: string | null;
+  };
+  totalRank: number | null;
+  totalScore: number | null;
+  pvpRank: number | null;
+  pvpScore: number | null;
+  scoreRatioMin: number;
+  scoreRatioMax: number;
+};

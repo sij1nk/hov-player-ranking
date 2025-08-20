@@ -13,8 +13,17 @@ export const load: PageServerLoad = async ({ parent, params }) => {
 
   const leaderboard = client.playerStats.findMany({
     where: { snapshotId: snapshot.id },
+    omit: {
+      id: true,
+      playerId: true,
+      snapshotId: true,
+    },
     include: {
-      player: true,
+      player: {
+        omit: {
+          id: true,
+        },
+      },
     },
   });
 

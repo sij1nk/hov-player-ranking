@@ -11,7 +11,11 @@
   import { back, back24Hours, forward, forward24Hours, latest, oldest } from "./navigation";
   import { type Snapshot } from "$lib/types";
   import SnapshotPickerDialog from "$lib/components/snapshot-picker-dialog/snapshot-picker-dialog.svelte";
-  import { columns, type LeaderboardEntry } from "$lib/components/leaderboard-table/columns";
+  import {
+    columns,
+    toLeaderboardEntry,
+    type LeaderboardEntry,
+  } from "$lib/components/leaderboard-table/columns";
   import LeaderboardTable from "$lib/components/leaderboard-table/leaderboard-table.svelte";
 
   type ButtonDescription = {
@@ -20,8 +24,6 @@
     tooltip: string;
     hrefFn: (snapshot: Snapshot, snapshots: Snapshot[]) => Snapshot | null;
   };
-
-  const defaultSteamProfileImageId = "fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb";
 
   const buttons: ButtonDescription[] = [
     {
@@ -94,17 +96,7 @@
 {#await data.leaderboard}
   Loading leaderboard...
 {:then leaderboard}
-  {@const entries: LeaderboardEntry[] = leaderboard.map(l => ({
-    name: l.player.name,
-    profileImageUrl: `https://avatars.akamai.steamstatic.com/${l.player.profileImageId ?? defaultSteamProfileImageId}.jpg`,
-    pvpRank: l.pvpRank ?? undefined,
-    pvpScore: l.pvpScore ?? undefined,
-    totalRank: l.totalRank ?? undefined,
-    totalScore: l.totalScore ?? undefined,
-    scoreRatioMin: l.scoreRatioMin,
-    scoreRatioMax: l.scoreRatioMax
-  }))}
-  <LeaderboardTable data={entries} {columns} />
+  <LeaderboardTable data={leaderboard.map(toLeaderboardEntry)} {columns} />
 {:catch error}
   Error loading leaderdboard: {error.message}
 {/await}

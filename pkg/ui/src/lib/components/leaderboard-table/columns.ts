@@ -1,7 +1,9 @@
-import { createColumnHelper, type ColumnDef } from "@tanstack/table-core";
+import { type ColumnDef } from "@tanstack/table-core";
 import { renderComponent, renderSnippet } from "../ui/data-table";
 import LeaderboardTableSortableHeader from "./leaderboard-table-sortable-header.svelte";
 import { createRawSnippet } from "svelte";
+import type { PlayerLeaderboardStats } from "$lib/types";
+import { getProfileImageUrl } from "$lib/profile-image";
 
 export type LeaderboardEntry = {
   name: string;
@@ -13,6 +15,19 @@ export type LeaderboardEntry = {
   scoreRatioMin: number;
   scoreRatioMax: number;
 };
+
+export function toLeaderboardEntry(stats: PlayerLeaderboardStats): LeaderboardEntry {
+  return {
+    name: stats.player.name,
+    profileImageUrl: getProfileImageUrl(stats.player.profileImageId),
+    pvpRank: stats.pvpRank ?? undefined,
+    pvpScore: stats.pvpScore ?? undefined,
+    totalRank: stats.totalRank ?? undefined,
+    totalScore: stats.totalScore ?? undefined,
+    scoreRatioMin: stats.scoreRatioMin,
+    scoreRatioMax: stats.scoreRatioMax,
+  };
+}
 
 export const columns: ColumnDef<LeaderboardEntry>[] = [
   {
