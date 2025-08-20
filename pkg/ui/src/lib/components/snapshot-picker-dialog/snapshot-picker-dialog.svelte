@@ -27,7 +27,7 @@
   let matchingSnapshots = $derived(
     snapshots
       .filter((s) => equalsCalendarDate(s.date, currentCalendarDate))
-      .sort((left, right) => left.date.valueOf() - right.date.valueOf()),
+      .sort((left, right) => left.date.valueOf() - right.date.valueOf()), // sort by date asc
   );
 
   let selectSnapshot = (snapshot: Snapshot) => {
@@ -56,7 +56,7 @@
         bind:value={currentCalendarDate}
         isDateDisabled={(date) => snapshotCalendarDates.every((s) => s.compare(date) !== 0)}
       />
-      <ScrollArea class="h-120">
+      <ScrollArea class="h-80" type="always">
         <ul>
           {#each matchingSnapshots as matchingSnapshot (matchingSnapshot.id)}
             <li>

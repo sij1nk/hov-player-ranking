@@ -1,7 +1,7 @@
 import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async ({ parent, params }) => {
+export const load: PageLoad = async ({ parent, params, data }) => {
   const { snapshots } = await parent();
 
   const snapshot = snapshots.find((s) => s.dateShort === params.date);
@@ -10,5 +10,5 @@ export const load: PageLoad = async ({ parent, params }) => {
     error(404, "no snapshot found");
   }
 
-  return { snapshot };
+  return { snapshot, leaderboard: data.leaderboard };
 };

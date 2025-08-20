@@ -11,6 +11,8 @@
   import { back, back24Hours, forward, forward24Hours, latest, oldest } from "./navigation";
   import { type Snapshot } from "$lib/types";
   import SnapshotPickerDialog from "$lib/components/snapshot-picker-dialog/snapshot-picker-dialog.svelte";
+  import { columns, type LeaderboardEntry } from "$lib/components/leaderboard-table/columns";
+  import LeaderboardTable from "$lib/components/leaderboard-table/leaderboard-table.svelte";
 
   type ButtonDescription = {
     id: string;
@@ -60,9 +62,6 @@
 
   // NOTE: `data.snapshots` is ordered by `dateShort` desc
   let { data }: PageProps = $props();
-  let isLatest = $derived(data.snapshots[0].id === data.snapshot.id);
-
-  console.log("Snapshot count:", data.snapshots.length);
 </script>
 
 {#snippet navigationButton(button)}
@@ -89,6 +88,23 @@
     {@render navigationButton(button)}
   {/each}
 </header>
+
+{#await data.leaderboard}
+  Loading leaderboard...
+{:then leaderboard}
+  {@const entries: LeaderboardEntry[] = leaderboard.map(l => ({
+    name: l.player.name,
+    pvpRank: l.pvpRank ?? undefined,
+    pvpScore: l.pvpScore ?? undefined,
+    totalRank: l.totalRank ?? undefined,
+    totalScore: l.totalScore ?? undefined,
+    scoreRatioMin: l.scoreRatioMin,
+    scoreRatioMax: l.scoreRatioMax
+  }))}
+  <LeaderboardTable data={entries} {columns} />
+{:catch error}
+  Error loading leaderdboard: {error.message}
+{/await}
 
 <style>
   header {
