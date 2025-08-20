@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "dotenv -c development -- vite dev",
+    "dev:proddb": "dotenv -c production -- vite dev",
     "build": "dotenv -c production -- vite build",
     "preview": "dotenv -c production -- vite preview",
     "prepare": "svelte-kit sync || echo ''",
