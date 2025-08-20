@@ -1,9 +1,11 @@
-import type { ColumnDef } from "@tanstack/table-core";
-import { renderComponent } from "../ui/data-table";
+import { createColumnHelper, type ColumnDef } from "@tanstack/table-core";
+import { renderComponent, renderSnippet } from "../ui/data-table";
 import LeaderboardTableSortableHeader from "./leaderboard-table-sortable-header.svelte";
+import { createRawSnippet } from "svelte";
 
 export type LeaderboardEntry = {
   name: string;
+  profileImageUrl: string | undefined;
   pvpRank: number | undefined;
   pvpScore: number | undefined;
   totalRank: number | undefined;
@@ -22,12 +24,28 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
   {
     accessorKey: "name",
     header: "Name",
+    cell: (params) => {
+      const profileImageUrl = params.row.original.profileImageUrl;
+      const name = params.row.original.name;
+
+      const snippet = createRawSnippet(() => ({
+        render: () =>
+          `<div class="flex items-center gap-2">
+            <img src=${profileImageUrl} class="w-8 h-8 rounded-full"/>
+            <span>${name}</span>
+          </div>`,
+      }));
+
+      return renderSnippet(snippet, "");
+    },
   },
   {
     accessorKey: "pvpRank",
-    header: ({ column }) =>
+    header: ({ column, table }) =>
       renderComponent(LeaderboardTableSortableHeader, {
+        id: "pvpRank",
         name: "PvP Rank",
+        sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
     sortUndefined: 1,
@@ -35,19 +53,23 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
   },
   {
     accessorKey: "pvpScore",
-    header: ({ column }) =>
+    header: ({ column, table }) =>
       renderComponent(LeaderboardTableSortableHeader, {
+        id: "pvpScore",
         name: "PvP Score",
+        sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
-    cell: (value) => value.getValue()?.toLocaleString(),
+    cell: (value) => value.getValue<number>()?.toLocaleString(),
     sortUndefined: -1,
   },
   {
     accessorKey: "totalRank",
-    header: ({ column }) =>
+    header: ({ column, table }) =>
       renderComponent(LeaderboardTableSortableHeader, {
+        id: "totalRank",
         name: "Total Rank",
+        sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
     sortUndefined: 1,
@@ -55,9 +77,11 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
   },
   {
     accessorKey: "totalScore",
-    header: ({ column }) =>
+    header: ({ column, table }) =>
       renderComponent(LeaderboardTableSortableHeader, {
+        id: "totalScore",
         name: "Total Score",
+        sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
     cell: (value) => value.getValue()?.toLocaleString(),
@@ -69,11 +93,14 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
       e.scoreRatioMin === e.scoreRatioMax
         ? e.scoreRatioMin.toFixed(3)
         : `${e.scoreRatioMin.toFixed(3)} - ${e.scoreRatioMax.toFixed(3)}`,
-    sortingFn: (rowA, rowB) => rowA.original.scoreRatioMin - rowB.original.scoreRatioMin,
+    sortingFn: (rowA, rowB) => rowB.original.scoreRatioMin - rowA.original.scoreRatioMin,
     invertSorting: true,
-    header: ({ column }) =>
+    sortDescFirst: true,
+    header: ({ column, table }) =>
       renderComponent(LeaderboardTableSortableHeader, {
+        id: "scoreRatio",
         name: "Score Ratio",
+        sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
   },

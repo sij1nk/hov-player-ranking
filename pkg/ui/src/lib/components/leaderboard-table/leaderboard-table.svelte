@@ -15,8 +15,16 @@
 
   let { data, columns }: DataTableProps<TData, TValue> = $props();
 
-  let sorting = $state<SortingState>([]);
+  let sorting = $state<SortingState>([
+    {
+      id: "scoreRatio",
+      desc: true,
+    },
+  ]);
 
+  // FIXME: table gets gradually slower the more we sort
+  // (check dev tools perf graph)
+  // number of findSourceWithKey steadily increases
   const table = createSvelteTable({
     get data() {
       return data;

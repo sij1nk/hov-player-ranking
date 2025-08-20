@@ -21,6 +21,8 @@
     hrefFn: (snapshot: Snapshot, snapshots: Snapshot[]) => Snapshot | null;
   };
 
+  const defaultSteamProfileImageId = "fef49e7fa7e1997310d705b2a6158ff8dc1cdfeb";
+
   const buttons: ButtonDescription[] = [
     {
       id: "oldest",
@@ -94,6 +96,7 @@
 {:then leaderboard}
   {@const entries: LeaderboardEntry[] = leaderboard.map(l => ({
     name: l.player.name,
+    profileImageUrl: `https://avatars.akamai.steamstatic.com/${l.player.profileImageId ?? defaultSteamProfileImageId}.jpg`,
     pvpRank: l.pvpRank ?? undefined,
     pvpScore: l.pvpScore ?? undefined,
     totalRank: l.totalRank ?? undefined,
