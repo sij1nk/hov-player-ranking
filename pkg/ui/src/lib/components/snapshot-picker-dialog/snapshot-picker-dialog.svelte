@@ -38,10 +38,10 @@
 
 <Dialog.Root bind:open={isOpen}>
   <Dialog.Trigger class={buttonVariants({ variant: "ghost" })}>
-    <div class="dialog-trigger">
-      <span>{currentSnapshot.date.toLocaleString()}</span>
+    <div class="relative flex flex-col items-center">
+      <span class="text-2xl">{currentSnapshot.date.toLocaleString()}</span>
       {#if isLatest}
-        <span>(latest)</span>
+        <span class="text-md absolute top-8 opacity-50">(latest)</span>
       {/if}
     </div>
   </Dialog.Trigger>

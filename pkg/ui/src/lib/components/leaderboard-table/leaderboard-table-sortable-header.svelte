@@ -24,7 +24,7 @@
   let sort: ColumnSort | undefined = $derived(sortingState[0]);
 </script>
 
-<Button {variant} {...restProps}>
+<Button {variant} {...restProps} class="text-lg">
   {name}
   {#if sort?.id === id}
     {#if sort?.desc}

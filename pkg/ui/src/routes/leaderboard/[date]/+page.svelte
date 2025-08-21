@@ -11,11 +11,7 @@
   import { back, back24Hours, forward, forward24Hours, latest, oldest } from "./navigation";
   import { type Snapshot } from "$lib/types";
   import SnapshotPickerDialog from "$lib/components/snapshot-picker-dialog/snapshot-picker-dialog.svelte";
-  import {
-    columns,
-    toLeaderboardEntry,
-    type LeaderboardEntry,
-  } from "$lib/components/leaderboard-table/columns";
+  import { columns, toLeaderboardEntry } from "$lib/components/leaderboard-table/columns";
   import LeaderboardTable from "$lib/components/leaderboard-table/leaderboard-table.svelte";
 
   type ButtonDescription = {
@@ -79,31 +75,26 @@
   </Button>
 {/snippet}
 
-<header>
-  {#each buttons.slice(0, 3) as button (button.id)}
-    {@render navigationButton(button)}
-  {/each}
-  <SnapshotPickerDialog
-    currentSnapshot={data.snapshot}
-    snapshots={data.snapshots}
-    snapshotCalendarDates={data.snapshotCalendarDates}
-  />
-  {#each buttons.slice(3) as button (button.id)}
-    {@render navigationButton(button)}
-  {/each}
-</header>
+<div class="flex flex-col items-center">
+  <nav class="flex gap-2 py-8">
+    {#each buttons.slice(0, 3) as button (button.id)}
+      {@render navigationButton(button)}
+    {/each}
+    <SnapshotPickerDialog
+      currentSnapshot={data.snapshot}
+      snapshots={data.snapshots}
+      snapshotCalendarDates={data.snapshotCalendarDates}
+    />
+    {#each buttons.slice(3) as button (button.id)}
+      {@render navigationButton(button)}
+    {/each}
+  </nav>
 
-{#await data.leaderboard}
-  Loading leaderboard...
-{:then leaderboard}
-  <LeaderboardTable data={leaderboard.map(toLeaderboardEntry)} {columns} />
-{:catch error}
-  Error loading leaderdboard: {error.message}
-{/await}
-
-<style>
-  header {
-    display: flex;
-    gap: 16px;
-  }
-</style>
+  {#await data.leaderboard}
+    Loading leaderboard...
+  {:then leaderboard}
+    <LeaderboardTable data={leaderboard.map(toLeaderboardEntry)} {columns} />
+  {:catch error}
+    Error loading leaderdboard: {error.message}
+  {/await}
+</div>

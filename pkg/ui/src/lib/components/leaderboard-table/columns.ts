@@ -4,6 +4,7 @@ import LeaderboardTableSortableHeader from "./leaderboard-table-sortable-header.
 import { createRawSnippet } from "svelte";
 import type { PlayerLeaderboardStats } from "$lib/types";
 import { getProfileImageUrl } from "$lib/profile-image";
+import type { RenderSnippetConfig } from "../ui/data-table/render-helpers";
 
 export type LeaderboardEntry = {
   name: string;
@@ -29,6 +30,13 @@ export function toLeaderboardEntry(stats: PlayerLeaderboardStats): LeaderboardEn
   };
 }
 
+function centerSortableColumnCell(value: unknown): RenderSnippetConfig<unknown> {
+  const snippet = createRawSnippet(() => ({
+    render: () => `<div class="text-center pr-8">${value}</div>`,
+  }));
+  return renderSnippet(snippet);
+}
+
 export const columns: ColumnDef<LeaderboardEntry>[] = [
   {
     cell: ({ row, table }) =>
@@ -51,7 +59,7 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
           </div>`,
       }));
 
-      return renderSnippet(snippet, "");
+      return renderSnippet(snippet);
     },
   },
   {
@@ -65,6 +73,11 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
       }),
     sortUndefined: 1,
     invertSorting: true,
+    cell: (value) => {
+      const v = value.getValue();
+      if (!v) return "";
+      return centerSortableColumnCell(v);
+    },
   },
   {
     accessorKey: "pvpScore",
@@ -75,7 +88,11 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
         sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
-    cell: (value) => value.getValue<number>()?.toLocaleString(),
+    cell: (value) => {
+      const v = value.getValue();
+      if (!v) return "";
+      return centerSortableColumnCell(v.toLocaleString());
+    },
     sortUndefined: -1,
   },
   {
@@ -89,6 +106,11 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
       }),
     sortUndefined: 1,
     invertSorting: true,
+    cell: (value) => {
+      const v = value.getValue();
+      if (!v) return "";
+      return centerSortableColumnCell(v);
+    },
   },
   {
     accessorKey: "totalScore",
@@ -99,7 +121,11 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
         sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
-    cell: (value) => value.getValue()?.toLocaleString(),
+    cell: (value) => {
+      const v = value.getValue();
+      if (!v) return "";
+      return centerSortableColumnCell(v.toLocaleString());
+    },
     sortUndefined: -1,
   },
   {
@@ -118,5 +144,13 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
         sortingState: table.getState().sorting,
         onclick: column.getToggleSortingHandler(),
       }),
+    cell: (value) => {
+      const v = value.getValue();
+      if (!v) return "";
+      const snippet = createRawSnippet(() => ({
+        render: () => `<div class="pl-8">${v}</div>`,
+      }));
+      return renderSnippet(snippet);
+    },
   },
 ];
