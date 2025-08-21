@@ -11,6 +11,10 @@
 </script>
 
 <!-- shadcn-svelte forces a small size on svgs within buttons, which we need to override -->
-<Button {href} size="icon" class="hover:text-(--accent) [&_svg:not([class*='size-'])]:size-6">
+<Button
+  {href}
+  size="icon"
+  class="text-secondary/80 hover:text-(--accent) [&_svg:not([class*='size-'])]:size-6"
+>
   {@render children()}
 </Button>

@@ -23,7 +23,7 @@
 >
   <header class="bg-primary p-4 text-lg text-primary-foreground lg:text-xl xl:text-2xl">
     <div class="mx-auto flex w-full flex-row items-center justify-between lg:w-4xl">
-      <span class="s-4 text-(--accent)">Heroes of Valor player ranking</span>
+      <a href="/" class="s-4 text-(--accent)">Heroes of Valor player ranking</a>
       <div class="flex flex-row items-center gap-2">
         <BrandButton href="https://github.com/sij1nk/hov-player-ranking">
           <SiGithub />

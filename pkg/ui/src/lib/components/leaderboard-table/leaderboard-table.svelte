@@ -57,7 +57,7 @@
 
 <ScrollArea orientation="both" class={cn("border lg:rounded-md", className)}>
   <Table.Root>
-    <Table.Header>
+    <Table.Header class="bg-(--border)">
       {#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
         <Table.Row>
           {#each headerGroup.headers as header (header.id)}

@@ -21,6 +21,7 @@
   };
 
   let { class: className, currentSnapshot, snapshots, snapshotCalendarDates }: Props = $props();
+  let isOldest = $derived(snapshots.at(-1)!.id === currentSnapshot.id);
   let isLatest = $derived(snapshots[0].id === currentSnapshot.id);
 
   let isOpen = $state(false);
@@ -48,6 +49,8 @@
       <span class="text-2xl">{currentSnapshot.date.toLocaleString()}</span>
       {#if isLatest}
         <span class="text-md absolute top-8 opacity-50">(latest)</span>
+      {:else if isOldest}
+        <span class="text-md absolute top-8 opacity-50">(oldest)</span>
       {/if}
     </div>
   </Dialog.Trigger>
