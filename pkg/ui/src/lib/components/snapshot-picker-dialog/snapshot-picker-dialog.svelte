@@ -45,7 +45,7 @@
     class={cn(buttonVariants({ variant: "ghost" }), "cursor-pointer", className)}
   >
     <div class="relative flex w-40 flex-col items-center px-2 md:w-50 lg:w-60">
-      <span class="text-lg md:text-xl lg:text-2xl">{currentSnapshot.date.toLocaleString()}</span>
+      <span class="text-2xl">{currentSnapshot.date.toLocaleString()}</span>
       {#if isLatest}
         <span class="text-md absolute top-8 opacity-50">(latest)</span>
       {/if}
@@ -56,13 +56,13 @@
       <Dialog.Title>Pick a leaderboard snapshot</Dialog.Title>
     </Dialog.Header>
     <Separator />
-    <div class="flex h-80 gap-2 px-2">
+    <div class="flex flex-col items-center justify-center gap-2 px-2 lg:h-80 lg:flex-row">
       <Calendar
         type="single"
         bind:value={currentCalendarDate}
         isDateDisabled={(date) => snapshotCalendarDates.every((s) => s.compare(date) !== 0)}
       />
-      <ScrollArea class="h-80" type="always">
+      <ScrollArea class="mx-auto h-40 lg:h-80" type="always">
         <ul>
           {#each matchingSnapshots as matchingSnapshot (matchingSnapshot.id)}
             <li>
