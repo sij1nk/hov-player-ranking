@@ -8,13 +8,19 @@
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table/index.js";
   import * as Table from "$lib/components/ui/table/index.js";
   import ScrollArea from "../ui/scroll-area/scroll-area.svelte";
+  import type { ClassValue } from "clsx";
+  import { cn } from "$lib/utils";
+
+  type Props = {
+    class?: ClassValue;
+  };
 
   type DataTableProps<TData, TValue> = {
     columns: ColumnDef<TData, TValue>[];
     data: TData[];
   };
 
-  let { data, columns }: DataTableProps<TData, TValue> = $props();
+  let { class: className, data, columns }: Props & DataTableProps<TData, TValue> = $props();
 
   let sorting = $state<SortingState>([
     {
@@ -49,7 +55,7 @@
   });
 </script>
 
-<div class="rounded-md border">
+<ScrollArea orientation="both" class={cn("border lg:rounded-md", className)}>
   <Table.Root>
     <Table.Header>
       {#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
@@ -83,4 +89,4 @@
       {/each}
     </Table.Body>
   </Table.Root>
-</div>
+</ScrollArea>

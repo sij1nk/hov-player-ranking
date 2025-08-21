@@ -10,14 +10,17 @@
   import ScrollArea from "../ui/scroll-area/scroll-area.svelte";
   import { goto } from "$app/navigation";
   import { buttonVariants } from "../ui/button";
+  import { cn } from "$lib/utils";
+  import type { ClassValue } from "clsx";
 
   type Props = {
     currentSnapshot: Snapshot;
     snapshots: Snapshot[];
     snapshotCalendarDates: CalendarDate[];
+    class?: ClassValue;
   };
 
-  let { currentSnapshot, snapshots, snapshotCalendarDates }: Props = $props();
+  let { class: className, currentSnapshot, snapshots, snapshotCalendarDates }: Props = $props();
   let isLatest = $derived(snapshots[0].id === currentSnapshot.id);
 
   let isOpen = $state(false);
@@ -37,20 +40,23 @@
 </script>
 
 <Dialog.Root bind:open={isOpen}>
-  <Dialog.Trigger class={buttonVariants({ variant: "ghost" })}>
-    <div class="relative flex flex-col items-center">
-      <span class="text-2xl">{currentSnapshot.date.toLocaleString()}</span>
+  <Dialog.Trigger
+    title="Pick a specific leaderboard snapshot"
+    class={cn(buttonVariants({ variant: "ghost" }), "cursor-pointer", className)}
+  >
+    <div class="relative flex w-40 flex-col items-center px-2 md:w-50 lg:w-60">
+      <span class="text-lg md:text-xl lg:text-2xl">{currentSnapshot.date.toLocaleString()}</span>
       {#if isLatest}
         <span class="text-md absolute top-8 opacity-50">(latest)</span>
       {/if}
     </div>
   </Dialog.Trigger>
-  <Dialog.Content>
+  <Dialog.Content class="">
     <Dialog.Header>
       <Dialog.Title>Pick a leaderboard snapshot</Dialog.Title>
     </Dialog.Header>
     <Separator />
-    <div class="dialog-content">
+    <div class="flex h-80 gap-2 px-2">
       <Calendar
         type="single"
         bind:value={currentCalendarDate}
@@ -77,14 +83,4 @@
 </Dialog.Root>
 
 <style>
-  .dialog-trigger {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dialog-content {
-    display: flex;
-    padding: 1em;
-  }
 </style>

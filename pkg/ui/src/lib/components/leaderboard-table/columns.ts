@@ -32,7 +32,7 @@ export function toLeaderboardEntry(stats: PlayerLeaderboardStats): LeaderboardEn
 
 function centerSortableColumnCell(value: unknown): RenderSnippetConfig<unknown> {
   const snippet = createRawSnippet(() => ({
-    render: () => `<div class="text-center pr-8">${value}</div>`,
+    render: () => `<div class="text-center md:pr-4 lg:pr-8">${value}</div>`,
   }));
   return renderSnippet(snippet);
 }
@@ -148,7 +148,7 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
       const v = value.getValue();
       if (!v) return "";
       const snippet = createRawSnippet(() => ({
-        render: () => `<div class="pl-8">${v}</div>`,
+        render: () => `<div class="pl-4">${v}</div>`,
       }));
       return renderSnippet(snippet);
     },
