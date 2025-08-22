@@ -24,7 +24,7 @@
   let sort: ColumnSort | undefined = $derived(sortingState[0]);
 </script>
 
-<Button {variant} {...restProps} class="h-fit flex-col text-lg lg:flex-row">
+<Button {variant} {...restProps} class="h-fit flex-col rounded-none text-lg lg:flex-row">
   {name}
   {#if sort?.id === id}
     {#if sort?.desc}

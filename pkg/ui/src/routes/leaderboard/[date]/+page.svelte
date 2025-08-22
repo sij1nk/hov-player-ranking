@@ -107,7 +107,7 @@
     <LeaderboardTable
       data={leaderboard.map(toLeaderboardEntry)}
       {columns}
-      class="min-h-0 grow lg:mb-6"
+      class="min-h-0 lg:mb-6"
     />
   {:catch error}
     Error loading leaderdboard: {error.message}
