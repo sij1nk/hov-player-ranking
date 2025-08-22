@@ -64,7 +64,6 @@
   <PlayerProfileChart
     title="Rank over time"
     stats={player.stats}
-    domainMinBound={1}
     domainMaxBoundFn={(stats) =>
       stats
         .map((s) => Math.max(s.pvpRank ?? 0, s.totalRank ?? 0))

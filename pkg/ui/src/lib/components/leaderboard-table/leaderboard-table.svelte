@@ -5,7 +5,6 @@
     getCoreRowModel,
     getFilteredRowModel,
     getSortedRowModel,
-    type Row,
     type SortingState,
   } from "@tanstack/table-core";
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table/index.js";
@@ -14,7 +13,6 @@
   import type { ClassValue } from "clsx";
   import { cn } from "$lib/utils";
   import Input from "../ui/input/input.svelte";
-  import { goto } from "$app/navigation";
 
   type Props = {
     class?: ClassValue;

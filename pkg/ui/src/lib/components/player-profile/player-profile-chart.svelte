@@ -61,7 +61,7 @@
 </script>
 
 <Card.Root class="@container/card rounded-none lg:rounded-lg">
-  <Card.Header>
+  <Card.Header class="border-b">
     {#if title}
       <Card.Title>{title}</Card.Title>
     {/if}
