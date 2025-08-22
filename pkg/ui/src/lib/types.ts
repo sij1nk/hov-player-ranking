@@ -11,7 +11,7 @@ export type PlayerLeaderboardStats = {
   player: {
     name: string;
     steamId: string;
-    steamIdType: string;
+    steamIdType: string; // TODO: actually an enum
     profileImageId: string | null;
   };
   totalRank: number | null;

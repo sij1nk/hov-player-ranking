@@ -5,6 +5,7 @@
     getCoreRowModel,
     getFilteredRowModel,
     getSortedRowModel,
+    type Row,
     type SortingState,
   } from "@tanstack/table-core";
   import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table/index.js";
@@ -13,6 +14,7 @@
   import type { ClassValue } from "clsx";
   import { cn } from "$lib/utils";
   import Input from "../ui/input/input.svelte";
+  import { goto } from "$app/navigation";
 
   type Props = {
     class?: ClassValue;
@@ -68,6 +70,17 @@
       },
     },
   });
+
+  // FIXME: setTimeout return type is Node-specific, but we're in the browser
+  let filter = $state("");
+  let filterTimer: number | undefined = $state();
+  const onNameFilterChange = (e: Event & { currentTarget: EventTarget & HTMLInputElement }) => {
+    filter = e.currentTarget.value;
+    clearTimeout(filterTimer);
+    filterTimer = setTimeout(() => {
+      table.getColumn("name")?.setFilterValue(filter);
+    }, 500);
+  };
 </script>
 
 <div class={cn(className, "flex flex-col")}>
@@ -75,10 +88,8 @@
     class="mx-4 mb-4 w-auto md:w-1/3 lg:mx-0 lg:w-1/4"
     placeholder="Filter by name..."
     value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-    oninput={(e) => table.getColumn("name")?.setFilterValue(e.currentTarget.value)}
-    onchange={(e) => {
-      table.getColumn("name")?.setFilterValue(e.currentTarget.value);
-    }}
+    oninput={(e) => onNameFilterChange(e)}
+    onchange={(e) => onNameFilterChange(e)}
   />
 
   <ScrollArea orientation="both" class="min-h-0 grow border lg:rounded-md">

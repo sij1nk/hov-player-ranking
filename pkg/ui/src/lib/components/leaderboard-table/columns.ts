@@ -8,6 +8,7 @@ import type { RenderSnippetConfig } from "../ui/data-table/render-helpers";
 
 export type LeaderboardEntry = {
   name: string;
+  steamId: string;
   profileImageUrl: string | undefined;
   pvpRank: number | undefined;
   pvpScore: number | undefined;
@@ -20,6 +21,7 @@ export type LeaderboardEntry = {
 export function toLeaderboardEntry(stats: PlayerLeaderboardStats): LeaderboardEntry {
   return {
     name: stats.player.name,
+    steamId: stats.player.steamId,
     profileImageUrl: getProfileImageUrl(stats.player.profileImageId),
     pvpRank: stats.pvpRank ?? undefined,
     pvpScore: stats.pvpScore ?? undefined,
@@ -50,13 +52,14 @@ export const columns: ColumnDef<LeaderboardEntry>[] = [
     cell: (params) => {
       const profileImageUrl = params.row.original.profileImageUrl;
       const name = params.row.original.name;
+      const steamId = params.row.original.steamId;
 
       const snippet = createRawSnippet(() => ({
         render: () =>
-          `<div class="flex items-center gap-2">
+          `<a href="/profile/${steamId}" class="flex items-center gap-2">
             <img src=${profileImageUrl} class="w-8 h-8 rounded-full"/>
             <span>${name}</span>
-          </div>`,
+          </a>`,
       }));
 
       return renderSnippet(snippet);
