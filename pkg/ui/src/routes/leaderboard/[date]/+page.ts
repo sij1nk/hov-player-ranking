@@ -12,3 +12,5 @@ export const load: PageLoad = async ({ parent, params, data }) => {
 
   return { snapshot, leaderboard: data.leaderboard };
 };
+
+export const ssr = false;

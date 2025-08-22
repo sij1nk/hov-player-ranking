@@ -2,7 +2,7 @@ import { client } from "$lib/server/database";
 import { error } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = async ({ parent, params }) => {
+export const load: PageServerLoad = async ({ parent, params, setHeaders }) => {
   const { snapshots } = await parent();
 
   const snapshot = snapshots.find((s) => s.dateShort === params.date);
@@ -25,6 +25,10 @@ export const load: PageServerLoad = async ({ parent, params }) => {
         },
       },
     },
+  });
+
+  setHeaders({
+    "Cache-Control": "max-age=31536000",
   });
 
   return { leaderboard };
