@@ -17,9 +17,11 @@
   />
 </svelte:head>
 
-<div class="h-screen w-screen bg-[url($lib/assets/background.webp)] bg-cover bg-no-repeat">
-  <div class="flex h-screen w-screen flex-col">
-    <header class="bg-primary p-4 text-lg text-primary-foreground lg:text-xl xl:text-2xl">
+<div class="w-screen bg-[url($lib/assets/background.webp)] bg-cover bg-fixed bg-no-repeat">
+  <div class="relative flex w-screen flex-col">
+    <header
+      class="fixed top-0 right-0 left-0 z-10 bg-primary p-4 text-lg text-primary-foreground lg:text-xl xl:text-2xl"
+    >
       <div class="mx-auto flex w-full flex-row items-center justify-between lg:w-4xl">
         <a href="/" class="s-4 text-(--accent)">Heroes of Valor player ranking</a>
         <div class="flex flex-row items-center gap-2">
@@ -36,9 +38,10 @@
       </div>
     </header>
 
-    <main class="relative mx-auto flex min-h-0 w-screen max-w-5xl grow flex-col items-center">
+    <main class="mx-auto mt-17 flex min-h-screen w-screen max-w-5xl grow flex-col items-center">
       {@render children()}
     </main>
+
+    <footer class="h-[200px] bg-primary"></footer>
   </div>
-  <footer class="h-[200px] bg-primary"></footer>
 </div>

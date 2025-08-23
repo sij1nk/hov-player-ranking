@@ -92,7 +92,7 @@
 
   <ScrollArea orientation="both" class="min-h-0 grow border lg:rounded-md">
     <Table.Root>
-      <Table.Header class="sticky top-0 z-10">
+      <Table.Header class="sticky top-0 z-5">
         {#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
           <Table.Row>
             {#each headerGroup.headers as header (header.id)}

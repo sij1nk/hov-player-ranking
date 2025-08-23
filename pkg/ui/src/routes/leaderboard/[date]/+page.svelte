@@ -78,7 +78,7 @@
   </Button>
 {/snippet}
 
-<div class="flex h-full w-full flex-col bg-secondary lg:px-4">
+<div class="flex w-full grow flex-col bg-secondary lg:px-4">
   <nav class="grid grid-cols-2 grid-rows-2 gap-4 gap-y-8 py-8 lg:grid-cols-11 lg:grid-rows-1">
     <div class="col-1 row-2 flex justify-end gap-4 lg:col-span-4 lg:row-1">
       {#each buttons.slice(0, 3) as button (button.id)}
@@ -99,7 +99,7 @@
   </nav>
 
   {#await data.leaderboard}
-    <div class="m-auto flex flex-col items-center justify-center gap-8 text-2xl">
+    <div class="m-auto flex grow flex-col items-center justify-center gap-8 text-2xl">
       Loading leaderboard
       <Loader2Icon size={64} class="animate-spin" />
     </div>

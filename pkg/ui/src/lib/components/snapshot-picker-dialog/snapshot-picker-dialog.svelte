@@ -59,7 +59,7 @@
       <Dialog.Title>Pick a leaderboard snapshot</Dialog.Title>
     </Dialog.Header>
     <Separator />
-    <div class="flex flex-col items-center justify-center gap-2 px-2 lg:h-80 lg:flex-row">
+    <div class="flex flex-col items-start justify-center gap-2 px-2 lg:h-80 lg:flex-row">
       <Calendar
         type="single"
         bind:value={currentCalendarDate}

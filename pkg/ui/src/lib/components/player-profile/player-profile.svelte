@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<div class="flex flex-col items-stretch gap-8">
+<div class="flex flex-col items-stretch gap-4 lg:gap-8">
   <PlayerProfileChart
     title="Score over time"
     stats={player.stats}

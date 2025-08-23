@@ -60,7 +60,7 @@
   );
 </script>
 
-<Card.Root class="@container/card rounded-none lg:rounded-lg">
+<Card.Root class="@container/card">
   <Card.Header class="border-b">
     {#if title}
       <Card.Title>{title}</Card.Title>
@@ -95,7 +95,7 @@
     </Card.Action>
   </Card.Header>
   <Card.Content>
-    <Chart.Container config={chartConfig} class="my-auto max-h-80 w-full">
+    <Chart.Container config={chartConfig} class="my-auto max-h-60 w-full">
       <AreaChart
         data={statsInRange}
         xScale={scaleUtc()}
