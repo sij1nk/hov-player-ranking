@@ -44,11 +44,24 @@
   <PlayerProfileChart
     title="Score over time"
     stats={player.stats}
-    domainMaxBoundFn={(stats) =>
-      stats
+    chartClass="pl-8"
+    domainFn={(stats, timeRange) => {
+      const max = stats
         .map((s) => Math.max(s.totalScore ?? 0, s.pvpScore ?? 0))
         .filter((s): s is number => Boolean(s))
-        .reduce((prev, curr) => (prev < curr ? curr : prev))}
+        .reduce((prev, curr) => (prev < curr ? curr : prev));
+
+      let min = 0;
+      if (timeRange === "7d") {
+        min = stats
+          .map((s) => Math.min(s.totalScore ?? Infinity, s.pvpScore ?? Infinity))
+          .filter((s): s is number => Boolean(s))
+          .reduce((prev, curr) => (prev < curr ? prev : curr));
+        min = Math.max(min - 100000, 0);
+      }
+
+      return [min, max];
+    }}
     chartConfig={{
       totalScore: {
         label: "Total Score",
@@ -64,11 +77,14 @@
   <PlayerProfileChart
     title="Rank over time"
     stats={player.stats}
-    domainMaxBoundFn={(stats) =>
-      stats
+    domainFn={(stats) => {
+      const max = stats
         .map((s) => Math.max(s.pvpRank ?? 0, s.totalRank ?? 0))
         .filter((s): s is number => Boolean(s))
-        .reduce((prev, curr) => (prev < curr ? curr : prev))}
+        .reduce((prev, curr) => (prev < curr ? curr : prev));
+
+      return [1, max];
+    }}
     chartConfig={{
       totalRank: {
         label: "Total Rank",

@@ -7,15 +7,18 @@
   import * as Card from "$lib/components/ui/card/index.js";
   import { firstStatsPerDay, type PlayerStats } from "./player";
   import { SvelteDate } from "svelte/reactivity";
+  import { cn } from "$lib/utils";
+  import type { ClassValue } from "clsx";
 
   type Props = {
     title?: string;
     stats: PlayerStats[];
-    domainMaxBoundFn: (stats: PlayerStats[]) => number;
+    chartClass?: ClassValue;
+    domainFn: (stats: PlayerStats[], timeRange: TimeRange) => [number, number];
     chartConfig: Chart.ChartConfig;
   };
 
-  let { title, stats, domainMaxBoundFn, chartConfig }: Props = $props();
+  let { title, stats, chartClass, domainFn, chartConfig }: Props = $props();
 
   type TimeRange = "all-time" | "30d" | "7d";
 
@@ -49,7 +52,7 @@
     }
   });
 
-  let domainMaxBound = $derived(domainMaxBoundFn(statsInRange));
+  let yDomain = $derived(domainFn(statsInRange, timeRange));
 
   let chartSeries = $derived(
     Object.entries(chartConfig).map(([k, v]) => ({
@@ -95,12 +98,12 @@
     </Card.Action>
   </Card.Header>
   <Card.Content>
-    <Chart.Container config={chartConfig} class="my-auto max-h-60 w-full">
+    <Chart.Container config={chartConfig} class={cn(chartClass, "my-auto max-h-60 w-full")}>
       <AreaChart
         data={statsInRange}
         xScale={scaleUtc()}
         x="date"
-        yDomain={[1, domainMaxBound]}
+        {yDomain}
         legend
         seriesLayout="group"
         series={chartSeries}
@@ -120,11 +123,6 @@
                 day: "numeric",
               });
             },
-          },
-          yAxis: {
-            placement: "right",
-            ticks: [domainMaxBound],
-            tickLabelProps: { dx: "0", dy: -8, textAnchor: "end" },
           },
         }}
       >
