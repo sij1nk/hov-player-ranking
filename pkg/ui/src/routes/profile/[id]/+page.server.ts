@@ -1,6 +1,7 @@
 import type { PageServerLoad } from "./$types";
 import { client } from "$lib/server/database";
 import { convertPlayer } from "$lib/components/player-profile/player";
+import { error } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async ({ params, setHeaders }) => {
   const steamId = params.id;
@@ -19,7 +20,8 @@ export const load: PageServerLoad = async ({ params, setHeaders }) => {
       omit: { id: true },
     })
     .then((player) => {
-      if (!player) return player;
+      if (!player) error(404, "Player does not exist");
+      // FIXME: tsc is being stupid (this is fine)
       return convertPlayer(player);
     });
 

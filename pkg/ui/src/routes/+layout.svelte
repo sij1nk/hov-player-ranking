@@ -1,14 +1,12 @@
 <script lang="ts">
-  import BrandButton from "$lib/components/brand-button/brand-button.svelte";
   import "../app.css";
-  import SiDiscord from "@icons-pack/svelte-simple-icons/icons/SiDiscord";
-  import SiGithub from "@icons-pack/svelte-simple-icons/icons/SiGithub";
-  import SiSteam from "@icons-pack/svelte-simple-icons/icons/SiSteam";
 
   let { children } = $props();
 </script>
 
 <svelte:head>
+  <title>HoV player ranking</title>
+  <link rel="icon" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link

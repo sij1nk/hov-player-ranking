@@ -110,6 +110,9 @@
       class="min-h-0 lg:mb-6"
     />
   {:catch error}
-    Error loading leaderdboard: {error.message}
+    <div class="m-auto flex flex-col items-center gap-4">
+      <p class="text-xl">An unexpected error happened :(</p>
+      <p class="text-sm opacity-50">{error.message}</p>
+    </div>
   {/await}
 </div>

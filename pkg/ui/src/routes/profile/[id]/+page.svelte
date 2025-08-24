@@ -14,11 +14,14 @@
     </div>
   {:then player}
     {#if !player}
-      Player is null!
+      <span class="m-auto text-xl">This player doesn't exist!</span>
     {:else}
       <PlayerProfile {player} />
     {/if}
   {:catch error}
-    Error loading player: {error.message}
+    <div class="m-auto flex flex-col items-center gap-4">
+      <p class="text-xl">An unexpected error happened :(</p>
+      <p class="text-sm opacity-50">{error.message}</p>
+    </div>
   {/await}
 </div>
