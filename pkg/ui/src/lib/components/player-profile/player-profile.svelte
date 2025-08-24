@@ -46,7 +46,7 @@
     stats={player.stats}
     domainMaxBoundFn={(stats) =>
       stats
-        .map((s) => s.totalScore)
+        .map((s) => Math.max(s.totalScore ?? 0, s.pvpScore ?? 0))
         .filter((s): s is number => Boolean(s))
         .reduce((prev, curr) => (prev < curr ? curr : prev))}
     chartConfig={{
