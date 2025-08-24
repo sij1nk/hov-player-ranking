@@ -24,24 +24,38 @@
     >
       <div class="mx-auto flex w-full flex-row items-center justify-between lg:w-4xl">
         <a href="/" class="s-4 text-(--accent)">Heroes of Valor player ranking</a>
-        <div class="flex flex-row items-center gap-2">
-          <BrandButton href="https://github.com/sij1nk/hov-player-ranking">
-            <SiGithub />
-          </BrandButton>
-          <BrandButton href="https://discord.com/invite/SQEYH4wJ7d">
-            <SiDiscord />
-          </BrandButton>
-          <BrandButton href="https://store.steampowered.com/app/2504090/Heroes_of_Valor/">
-            <SiSteam />
-          </BrandButton>
-        </div>
       </div>
     </header>
 
-    <main class="mx-auto mt-17 flex min-h-screen w-screen max-w-5xl grow flex-col items-center">
+    <main class="mx-auto mt-15 flex min-h-screen w-screen max-w-5xl grow flex-col items-center">
       {@render children()}
     </main>
 
-    <footer class="h-[200px] bg-primary"></footer>
+    <footer class="bg-primary font-[Roboto] text-xs text-(--muted-foreground) lg:h-[200px]">
+      <div
+        class="mx-auto flex h-full flex-col items-center justify-between gap-12 p-8 lg:w-4xl lg:flex-row lg:gap-4 lg:p-0"
+      >
+        <div class="flex flex-col gap-6">
+          <p>
+            This is an unofficial leaderboard and is not affiliated with Fancy Cat Interactive or
+            Iceberg Interactive.
+          </p>
+          <p>
+            Leaderboard data is scraped from the official <a
+              class="text-(--accent)"
+              href="https://steamcommunity.com/stats/2504090/leaderboards/"
+              >Heroes of Valor Steam leaderboards</a
+            > on a hourly basis.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2 text-(--accent)">
+          <a href="https://discord.com/invite/SQEYH4wJ7d">Heroes of Valor Discord</a>
+          <a href="https://store.steampowered.com/app/2504090/Heroes_of_Valor/"
+            >Heroes of Valor Steam</a
+          >
+          <a href="https://github.com/sij1nk/hov-player-ranking"> Source code</a>
+        </div>
+      </div>
+    </footer>
   </div>
 </div>
