@@ -59,13 +59,14 @@
       <Dialog.Title>Pick a leaderboard snapshot</Dialog.Title>
     </Dialog.Header>
     <Separator />
-    <div class="flex flex-col items-start justify-center gap-2 px-2 lg:h-80 lg:flex-row">
+    <div class="flex flex-col items-start justify-center gap-2 px-2 md:h-80 md:flex-row">
       <Calendar
+        class="mx-auto"
         type="single"
         bind:value={currentCalendarDate}
         isDateDisabled={(date) => snapshotCalendarDates.every((s) => s.compare(date) !== 0)}
       />
-      <ScrollArea class="mx-auto h-40 lg:h-80" type="always">
+      <ScrollArea class="mx-auto h-40 md:h-80" type="always">
         <ul>
           {#each matchingSnapshots as matchingSnapshot (matchingSnapshot.id)}
             <li>
