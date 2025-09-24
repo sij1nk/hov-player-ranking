@@ -43,7 +43,7 @@
               class="text-(--accent)"
               href="https://steamcommunity.com/stats/2504090/leaderboards/"
               >Heroes of Valor Steam leaderboards</a
-            > on a hourly basis.
+            > on an hourly basis.
           </p>
         </div>
         <div class="flex flex-col gap-2 text-(--accent)">
