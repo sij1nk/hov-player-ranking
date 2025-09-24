@@ -52,7 +52,7 @@
     }
   });
 
-  let yDomain = $derived(domainFn(statsInRange, timeRange));
+  let yDomain = $derived(statsInRange.length ? domainFn(statsInRange, timeRange) : null);
 
   let chartSeries = $derived(
     Object.entries(chartConfig).map(([k, v]) => ({
@@ -99,49 +99,53 @@
   </Card.Header>
   <Card.Content>
     <Chart.Container config={chartConfig} class={cn(chartClass, "my-auto max-h-60 w-full")}>
-      <AreaChart
-        data={statsInRange}
-        xScale={scaleUtc()}
-        x="date"
-        {yDomain}
-        legend
-        seriesLayout="group"
-        series={chartSeries}
-        props={{
-          area: {
-            "fill-opacity": 0.4,
-            line: { class: "stroke-1" },
-            motion: "tween",
-          },
-          legend: {
-            placement: "bottom",
-          },
-          xAxis: {
-            format: (v: Date) => {
-              return v.toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-              });
+      {#if statsInRange.length}
+        <AreaChart
+          data={statsInRange}
+          xScale={scaleUtc()}
+          x="date"
+          {yDomain}
+          legend
+          seriesLayout="group"
+          series={chartSeries}
+          props={{
+            area: {
+              "fill-opacity": 0.4,
+              line: { class: "stroke-1" },
+              motion: "tween",
             },
-          },
-        }}
-      >
-        {#snippet tooltip()}
-          <Chart.Tooltip labelFormatter={(v: Date) => v.toLocaleString()} />
-        {/snippet}
-        {#snippet marks({ series, getAreaProps })}
-          {#each series as s, i (s.key)}
-            <LinearGradient
-              stops={[s.color ?? "", "color-mix(in lch, " + s.color + " 10%, transparent)"]}
-              vertical
-            >
-              {#snippet children({ gradient })}
-                <Area {...getAreaProps(s, i)} fill={gradient} />
-              {/snippet}
-            </LinearGradient>
-          {/each}
-        {/snippet}
-      </AreaChart>
+            legend: {
+              placement: "bottom",
+            },
+            xAxis: {
+              format: (v: Date) => {
+                return v.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                });
+              },
+            },
+          }}
+        >
+          {#snippet tooltip()}
+            <Chart.Tooltip labelFormatter={(v: Date) => v.toLocaleString()} />
+          {/snippet}
+          {#snippet marks({ series, getAreaProps })}
+            {#each series as s, i (s.key)}
+              <LinearGradient
+                stops={[s.color ?? "", "color-mix(in lch, " + s.color + " 10%, transparent)"]}
+                vertical
+              >
+                {#snippet children({ gradient })}
+                  <Area {...getAreaProps(s, i)} fill={gradient} />
+                {/snippet}
+              </LinearGradient>
+            {/each}
+          {/snippet}
+        </AreaChart>
+      {:else}
+        <p class="self-center text-lg">Player has no known stats from this period</p>
+      {/if}
     </Chart.Container>
   </Card.Content>
 </Card.Root>

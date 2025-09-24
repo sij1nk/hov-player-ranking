@@ -6,6 +6,7 @@
   import Button from "../ui/button/button.svelte";
   import { SteamIdType } from "common";
   import PlayerProfileChart from "./player-profile-chart.svelte";
+
   type Props = {
     player: Player;
   };
