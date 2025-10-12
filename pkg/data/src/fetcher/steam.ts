@@ -1,7 +1,7 @@
 import type { LeaderboardFetcher } from "./index.ts";
 import { parse, HTMLElement } from "node-html-parser";
 import {
-  type LeaderboardPlayer,
+  type LeaderboardPlayer as SteamLeaderboardPlayer,
   type Leaderboard,
   type Player,
 } from "../types.ts";
@@ -20,22 +20,24 @@ export class SteamWebLeaderboardFetcher implements LeaderboardFetcher {
   constructor(private readonly _params: SteamWebLeaderboardFetcherParams) {}
 
   public async fetch(): Promise<Leaderboard> {
-    const totalScoreLeaderboardPlayers = await fetchPlayersFromLeaderboard(
-      this._params.gameId,
-      this._params.totalScoreLeaderboardId,
-      this._params.leaderboardSize,
-      this._params.leaderboardPageSize
-    );
-    const pvpScoreLeaderboardPlayers = await fetchPlayersFromLeaderboard(
-      this._params.gameId,
-      this._params.pvpScoreLeaderboardId,
-      this._params.leaderboardSize,
-      this._params.leaderboardPageSize
-    );
+    const totalScoreSteamLeaderboardPlayers =
+      await scrapePlayersFromSteamLeaderboard(
+        this._params.gameId,
+        this._params.totalScoreLeaderboardId,
+        this._params.leaderboardSize,
+        this._params.leaderboardPageSize
+      );
+    const pvpScoreSteamLeaderboardPlayers =
+      await scrapePlayersFromSteamLeaderboard(
+        this._params.gameId,
+        this._params.pvpScoreLeaderboardId,
+        this._params.leaderboardSize,
+        this._params.leaderboardPageSize
+      );
 
-    const players = getPlayerList(
-      totalScoreLeaderboardPlayers,
-      pvpScoreLeaderboardPlayers
+    const players = mergeSteamLeaderboards(
+      totalScoreSteamLeaderboardPlayers,
+      pvpScoreSteamLeaderboardPlayers
     );
 
     const date = new Date();
@@ -47,24 +49,34 @@ export class SteamWebLeaderboardFetcher implements LeaderboardFetcher {
   }
 }
 
-async function fetchPlayersFromLeaderboard(
+/**
+ * Scrape the list of players from a steam web leaderboard.
+ *
+ * @param gameId - the game's steam id
+ * @param leaderboardId - the ledearboard's steam id
+ * @param leaderboardSize - amount of players on the leaderboard (assuming it has a fixed size, which it does)
+ * @param leaderboardPageSize - the amount of players on a page of the leaderboard (assuming it's paginated, which it is)
+ * @returns the players, in the same order as they are on the leaderboard
+ */
+async function scrapePlayersFromSteamLeaderboard(
   gameId: string,
   leaderboardId: string,
   leaderboardSize: number,
   leaderboardPageSize: number
-): Promise<LeaderboardPlayer[]> {
+): Promise<SteamLeaderboardPlayer[]> {
   const urlFormatString =
     "https://steamcommunity.com/stats/%s/leaderboards/%s?sr=%d";
 
   const range = [
     ...Array(Math.ceil(leaderboardSize / leaderboardPageSize)),
   ].map((_, i) => i * leaderboardPageSize);
-  return await Promise.all(
+
+  const players = await Promise.all(
     range.map(async (r) => {
       const url = util.format(urlFormatString, gameId, leaderboardId, r + 1);
       const res = await fetch(url);
       const text = await res.text();
-      let players = await parsePlayers(parse(text));
+      let players = await scrapePlayers(parse(text));
 
       // steam always shows `leaderboardPageSize` entries per page, so we may
       // need to throw away some entries from the last page
@@ -77,30 +89,48 @@ async function fetchPlayersFromLeaderboard(
       return players;
     })
   ).then((arr) => arr.flat());
-}
 
-async function parsePlayers(root: HTMLElement): Promise<LeaderboardPlayer[]> {
+  if (players.length !== leaderboardSize) {
+    console.warn(
+      `Expected to scrape ${leaderboardSize} players, but only found ${players.length}`
+    );
+  }
+
+  return players;
+}
+async function scrapePlayers(
+  root: HTMLElement
+): Promise<SteamLeaderboardPlayer[]> {
   const stats = root.querySelector("#stats");
   if (!stats) {
-    throw new Error("#stats not found");
+    throw new Error("#stats HTML element not found");
   }
 
   const lbEntries = stats.querySelectorAll(".lbentry");
 
   return lbEntries.map((lbEntry) => {
-    const rank = parseInt(lbEntry.querySelector(".rR")!.innerText.slice(1), 10);
-    const profileImageLink =
-      lbEntry.querySelector(".avatarIcon img")!.attributes["src"];
-    const profileImageId = profileImageLink.split(/\/|\./).at(-2)!;
+    const rank = parseInt(querySelector(lbEntry, ".rR").innerText.slice(1), 10);
+    const profileImageLink = querySelector(lbEntry, ".avatarIcon img")
+      .attributes["src"];
+    const profileImageId = profileImageLink.split(/\/|\./).at(-2);
+    if (profileImageId === undefined) {
+      throw new Error(
+        `Failed to parse profile image id from profile image link '${profileImageLink}'`
+      );
+    }
 
-    const playerNameElement = lbEntry.querySelector("a.playerName")!;
+    const playerNameElement = querySelector(lbEntry, "a.playerName");
     const profileLink = playerNameElement.attributes["href"];
     const profileLinkParts = profileLink.split("/");
     const steamId = profileLinkParts[4];
-    const steamIdType = getSteamIdType(profileLinkParts[3])!;
+    const steamIdTypeRaw = profileLinkParts[3];
+    const steamIdType = getSteamIdType(steamIdTypeRaw);
+    if (!steamIdType) {
+      throw new Error(`Unknown steam id type '${steamIdTypeRaw}'`);
+    }
     const name = playerNameElement.innerText;
     const score = parseInt(
-      lbEntry.querySelector("div.score")!.innerText.replaceAll(",", ""),
+      querySelector(lbEntry, "div.score").innerText.replaceAll(",", ""),
       10
     );
 
@@ -116,7 +146,7 @@ async function parsePlayers(root: HTMLElement): Promise<LeaderboardPlayer[]> {
 }
 
 function fromPvpOnlyPlayer(
-  player: LeaderboardPlayer,
+  player: SteamLeaderboardPlayer,
   maxTotalScore: number
 ): Player {
   const { rank, score, ...rest } = player;
@@ -129,7 +159,7 @@ function fromPvpOnlyPlayer(
 }
 
 function fromTotalOnlyPlayer(
-  player: LeaderboardPlayer,
+  player: SteamLeaderboardPlayer,
   maxPvpScore: number
 ): Player {
   const { rank, score, ...rest } = player;
@@ -142,8 +172,8 @@ function fromTotalOnlyPlayer(
 }
 
 function fromPlayerOnBothLeaderboards(
-  totalPlayer: LeaderboardPlayer,
-  pvpPlayer: LeaderboardPlayer
+  totalPlayer: SteamLeaderboardPlayer,
+  pvpPlayer: SteamLeaderboardPlayer
 ): Player {
   const { rank, score, ...rest } = totalPlayer;
   return {
@@ -156,12 +186,13 @@ function fromPlayerOnBothLeaderboards(
   };
 }
 
-export function getPlayerList(
-  totalScoreLeaderboardPlayers: LeaderboardPlayer[],
-  pvpScoreLeaderboardPlayers: (LeaderboardPlayer | null)[]
+export function mergeSteamLeaderboards(
+  totalScoreLeaderboardPlayers: SteamLeaderboardPlayer[],
+  pvpScoreLeaderboardPlayers: (SteamLeaderboardPlayer | null)[] // to allow splicing with null during processing
 ): Player[] {
   const players = [];
 
+  // We know the leaderboards are populated and ordered
   const lowestTotalScore = totalScoreLeaderboardPlayers.at(-1)!.score;
   const lowestPvpScore = pvpScoreLeaderboardPlayers.at(-1)!.score;
 
@@ -188,7 +219,7 @@ export function getPlayerList(
 
   players.push(
     ...pvpScoreLeaderboardPlayers
-      .filter((p): p is LeaderboardPlayer => Boolean(p))
+      .filter((p): p is SteamLeaderboardPlayer => Boolean(p))
       .map((p) => fromPvpOnlyPlayer(p, lowestTotalScore))
   );
 
@@ -199,4 +230,14 @@ function getSteamIdType(pathSegment: string): SteamIdType | null {
   if (pathSegment === "id") return SteamIdType.Custom;
   if (pathSegment === "profiles") return SteamIdType.Id;
   return null;
+}
+
+function querySelector(element: HTMLElement, selector: string): HTMLElement {
+  const ret = element.querySelector(selector);
+  if (!ret) {
+    throw new Error(
+      `Failed to get HTML element matching selector '${selector}'`
+    );
+  }
+  return ret;
 }
