@@ -1,26 +1,47 @@
 import type { PageServerLoad } from "./$types";
-import { client } from "$lib/server/database";
 import { convertPlayer } from "$lib/components/player-profile/player";
+import { database } from "$lib/server/database";
+import { error } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async ({ params, setHeaders }) => {
   const steamId = params.id;
 
-  const player = client.player
-    .findFirst({
-      where: { steamId: steamId },
-      include: {
-        stats: {
-          include: {
-            snapshot: { omit: { dateShort: true, id: true } },
-          },
-          omit: { id: true, playerId: true, snapshotId: true },
-        },
-      },
-      omit: { id: true },
-    })
-    .then((player) => {
+  const player = database
+    .from("players")
+    .select(
+      `
+    id,
+    steamId,
+    steamIdType,
+    name,
+    profileImageId,
+    stats:player_stats (
+      id,
+      playerId,
+      totalRank,
+      totalScore,
+      pvpRank,
+      pvpScore,
+      scoreRatioMin,
+      scoreRatioMax,
+      snapshotId,
+      snapshot:leaderboard_snapshots (
+        id,
+        date
+      )
+    )
+`,
+    )
+    .filter("steamId", "eq", steamId)
+    .then((response) => {
+      if (response.error) {
+        console.error(response.error);
+        error(500, "Could not fetch player");
+      }
+
+      const player = response.data?.[0];
+
       if (!player) return null;
-      // FIXME: tsc is being stupid (this is fine)
       return convertPlayer(player);
     });
 

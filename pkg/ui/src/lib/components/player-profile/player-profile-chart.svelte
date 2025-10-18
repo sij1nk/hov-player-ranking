@@ -42,7 +42,10 @@
       case "30d": {
         const threshold = new SvelteDate();
         threshold.setMonth(threshold.getMonth() - 1);
-        return stats.filter((s) => s.date > threshold);
+        return stats.filter((s) => {
+          console.log(`${s.date}, ${threshold}`);
+          return s.date > threshold;
+        });
       }
       case "7d": {
         const threshold = new SvelteDate();
@@ -51,6 +54,8 @@
       }
     }
   });
+
+  $inspect(statsInRange);
 
   let yDomain = $derived(statsInRange.length ? domainFn(statsInRange, timeRange) : null);
 

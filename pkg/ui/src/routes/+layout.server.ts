@@ -1,12 +1,25 @@
 import type { LayoutServerLoad } from "./$types";
-import { client } from "$lib/server/database";
 import type { CalendarDate } from "@internationalized/date";
 import { toCalendarDate } from "$lib/date";
+import { database } from "$lib/server/database";
+import { error } from "@sveltejs/kit";
 
 export const load: LayoutServerLoad = async () => {
-  const snapshots = await client.leaderboardSnapshot.findMany({ orderBy: { dateShort: "desc" } });
+  const response = await database
+    .from("leaderboard_snapshots")
+    .select("*")
+    .order("dateShort", { ascending: false });
 
-  // TODO: error if no snapshots
+  if (response.error) {
+    console.error(response.error);
+    error(500, "Could not fetch list of leaderboard snapshots");
+  }
+
+  const snapshots = response.data.map((s) => ({
+    id: s.id,
+    date: new Date(s.date),
+    dateShort: s.dateShort,
+  }));
 
   const snapshotCalendarDates: CalendarDate[] = [toCalendarDate(snapshots[0].date)];
   for (const snapshot of snapshots.slice(1)) {
@@ -21,7 +34,7 @@ export const load: LayoutServerLoad = async () => {
 
   // TODO: custom error page for when the database cannot be reached
   return {
-    snapshots,
+    snapshots: snapshots,
     snapshotCalendarDates: snapshotCalendarDates,
   };
 };

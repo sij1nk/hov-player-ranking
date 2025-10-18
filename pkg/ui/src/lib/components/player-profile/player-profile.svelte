@@ -17,6 +17,7 @@
     `${steamProfileUrlStem}/${steamIdType === SteamIdType.Custom ? "id" : "profiles"}/${steamId}`;
 
   let { player }: Props = $props();
+
   let latestStats = $derived(player.stats.at(-1));
 </script>
 

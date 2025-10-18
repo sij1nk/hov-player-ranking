@@ -1,7 +1,8 @@
 import { CalendarDate } from "@internationalized/date";
 
-export const toCalendarDate = (date: Date): CalendarDate =>
-  new CalendarDate(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate());
+export function toCalendarDate(date: Date): CalendarDate {
+  return new CalendarDate(date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate());
+}
 
 export const equalsCalendarDate = (date: Date, calendarDate: CalendarDate): boolean =>
   date.getUTCFullYear() === calendarDate.year &&

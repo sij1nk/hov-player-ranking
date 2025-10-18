@@ -46,7 +46,7 @@ export const convertPlayer = (p: PlayerDTO): Player => {
       pvpScore: s.pvpScore,
       scoreRatioMin: s.scoreRatioMin,
       scoreRatioMax: s.scoreRatioMax,
-      date: s.snapshot.date,
+      date: new Date(s.snapshot.date),
     }))
     .sort((left, right) => left.date.valueOf() - right.date.valueOf());
   return {
