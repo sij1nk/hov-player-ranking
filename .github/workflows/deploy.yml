@@ -19,5 +19,4 @@ jobs:
         run: |
           npm ci
           npm run build -w pkg/common
-          npm run prisma-prod generate -w pkg/db
           npm run deploy -w pkg/ui

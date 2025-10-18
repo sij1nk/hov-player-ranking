@@ -16,6 +16,7 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
-          cd pkg/data
           npm ci
-          npm run take-snapshot
+          npm run build -w pkg/common
+          npm run prisma-prod generate -w pkg/db
+          npm run take-snapshot -w pkg/data
