@@ -3,7 +3,7 @@ generator client {
   previewFeatures = ["driverAdapters"]
   output   = "../src/generated/prisma"
 
-  runtime                = "workerd"
+  runtime                = "nodejs"
   moduleFormat           = "esm"
   generatedFileExtension = "ts"
   importFileExtension    = "ts"
