@@ -1,0 +1,128 @@
+<script lang="ts" generics="TData, TValue">
+  import {
+    type ColumnDef,
+    type ColumnFiltersState,
+    getCoreRowModel,
+    getFilteredRowModel,
+    getSortedRowModel,
+    type SortingState,
+  } from "@tanstack/table-core";
+  import { createSvelteTable, FlexRender } from "$lib/components/ui/data-table/index.js";
+  import * as Table from "$lib/components/ui/table/index.js";
+  import ScrollArea from "../ui/scroll-area/scroll-area.svelte";
+  import type { ClassValue } from "clsx";
+  import { cn } from "$lib/utils";
+  import Input from "../ui/input/input.svelte";
+
+  type Props = {
+    class?: ClassValue;
+  };
+
+  type DataTableProps<TData, TValue> = {
+    columns: ColumnDef<TData, TValue>[];
+    data: TData[];
+  };
+
+  let { class: className, data, columns }: Props & DataTableProps<TData, TValue> = $props();
+
+  let sorting = $state<SortingState>([
+    {
+      id: "scoreRatio",
+      desc: true,
+    },
+  ]);
+  let columnFilters = $state<ColumnFiltersState>([]);
+
+  // FIXME: table gets gradually slower the more we sort
+  // (check dev tools perf graph)
+  // number of findSourceWithKey steadily increases
+  const table = createSvelteTable({
+    get data() {
+      return data;
+    },
+    columns,
+    enableMultiSort: false,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    onSortingChange: (updater) => {
+      if (typeof updater === "function") {
+        sorting = updater(sorting);
+      } else {
+        sorting = updater;
+      }
+    },
+    onColumnFiltersChange: (updater) => {
+      if (typeof updater === "function") {
+        columnFilters = updater(columnFilters);
+      } else {
+        columnFilters = updater;
+      }
+    },
+    state: {
+      get sorting() {
+        return sorting;
+      },
+      get columnFilters() {
+        return columnFilters;
+      },
+    },
+  });
+
+  // FIXME: setTimeout return type is Node-specific, but we're in the browser
+  let filter = $state("");
+  let filterTimer: number | undefined = $state();
+  const onNameFilterChange = (e: Event & { currentTarget: EventTarget & HTMLInputElement }) => {
+    filter = e.currentTarget.value;
+    clearTimeout(filterTimer);
+    filterTimer = setTimeout(() => {
+      table.getColumn("name")?.setFilterValue(filter);
+    }, 500);
+  };
+</script>
+
+<div class={cn(className, "flex flex-col")}>
+  <Input
+    class="mx-4 mb-4 w-auto md:w-1/3 lg:mx-0 lg:w-1/4"
+    placeholder="Filter by name..."
+    value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+    oninput={(e) => onNameFilterChange(e)}
+    onchange={(e) => onNameFilterChange(e)}
+  />
+
+  <ScrollArea orientation="both" class="min-h-0 grow border lg:rounded-md">
+    <Table.Root>
+      <Table.Header class="sticky top-0 z-5">
+        {#each table.getHeaderGroups() as headerGroup (headerGroup.id)}
+          <Table.Row>
+            {#each headerGroup.headers as header (header.id)}
+              <Table.Head colspan={header.colSpan}>
+                {#if !header.isPlaceholder}
+                  <FlexRender
+                    content={header.column.columnDef.header}
+                    context={header.getContext()}
+                  />
+                {/if}
+              </Table.Head>
+            {/each}
+          </Table.Row>
+        {/each}
+      </Table.Header>
+      <Table.Body>
+        {#each table.getRowModel().rows as row (row.id)}
+          <Table.Row data-state={row.getIsSelected() && "selected"}>
+            {#each row.getVisibleCells() as cell (cell.id)}
+              <Table.Cell>
+                <FlexRender content={cell.column.columnDef.cell} context={cell.getContext()} />
+              </Table.Cell>
+            {/each}
+          </Table.Row>
+        {:else}
+          <Table.Row>
+            <Table.Cell colspan={columns.length} class="h-24 text-center">No results.</Table.Cell>
+          </Table.Row>
+        {/each}
+      </Table.Body>
+    </Table.Root>
+  </ScrollArea>
+</div>

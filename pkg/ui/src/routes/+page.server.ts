@@ -4,8 +4,7 @@ import type { PageServerLoad } from "./$types";
 export const load: PageServerLoad = async ({ parent }) => {
   const { snapshots } = await parent();
 
-  // TODO: sort by newest first, get [0]
-  const latestSnapshot = snapshots.reduce((prev, curr) => (prev.date > curr.date ? prev : curr));
+  const latestSnapshot = snapshots[0];
 
-  redirect(307, `/leaderboard/${latestSnapshot.id}`);
+  redirect(307, `/leaderboard/${latestSnapshot.dateShort}`);
 };

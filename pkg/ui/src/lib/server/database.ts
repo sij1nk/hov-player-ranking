@@ -1,8 +1,7 @@
-import { PrismaClient } from "../../generated/prisma/client";
-import { DATABASE_URL } from "$env/static/private";
+import { createClient } from "@supabase/supabase-js";
+import type { Database } from "./types";
+import { SUPABASE_URL, SUPABASE_KEY } from "$env/static/private";
 
-const client = new PrismaClient({
-  datasourceUrl: DATABASE_URL,
-});
+const database = createClient<Database>(SUPABASE_URL, SUPABASE_KEY);
 
-export { client };
+export { database };
